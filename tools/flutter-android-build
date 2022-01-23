@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# This script builds the Android release package.
+
+set -e
+
+source $(dirname $0)/library
+
+pushd dart/android/trustwalletcore
+./gradlew assembleRelease
+cp -a build/intermediates/cmake/release/obj/. ../src/main/jniLibs/
+popd
