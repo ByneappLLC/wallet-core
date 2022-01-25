@@ -80,6 +80,10 @@ class CodeGenerator
     render_template(header: 'java/header.erb', template: 'java.erb', output_subfolder: 'jni/java/wallet/core/jni', extension: 'java')
   end
 
+  def render_dart
+    render_template(header: 'dart/header.erb', template: 'dart.erb', output_subfolder: 'dart/lib/generated', extension: 'dart')
+  end
+
   def render_jni_h
     render_template(header: 'jni/header.erb', template: 'jni_h.erb', output_subfolder: 'jni/cpp/generated', extension: 'h')
   end

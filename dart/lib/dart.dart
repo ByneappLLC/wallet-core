@@ -7,7 +7,7 @@ class Dart {
   static const MethodChannel _channel = MethodChannel('dart');
 
   static Future<String?> get platformVersion async {
-    final t = TrustWallet(dynamicLibrary);
+    final t = TWHDWallet();
 
     final String? version = await _channel.invokeMethod('getPlatformVersion');
     return version;

@@ -1,0 +1,7 @@
+<%  if entity.is_a?(EnumDecl) %>
+<%=   render('dart/enum.erb') -%>
+<%  elsif entity.is_struct -%>
+<%=   render('dart/struct.erb') -%>
+<%- else -%>
+<%=   render('dart/class.erb') -%>
+<%- end -%>
