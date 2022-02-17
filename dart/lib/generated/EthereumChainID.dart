@@ -7,28 +7,60 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum EthereumChainID {
-    ETHEREUM (1),
-    GO (60),
-    POA (99),
-    CALLISTO (820),
-    ETHEREUMCLASSIC (61),
-    VECHAIN (74),
-    THUNDERTOKEN (108),
-    TOMOCHAIN (88),
-    BINANCESMARTCHAIN (56),
-    POLYGON (137),
-    WANCHAIN (888),
-    OPTIMISM (10),
-    ARBITRUM (42161),
-    HECO (128),
-    AVALANCHE (43114),
-    XDAI (100),
-    FANTOM (250),
-    CELO (42220),
-    RONIN (2020);
-
+    Ethereum,
+    Go,
+    POA,
+    Callisto,
+    EthereumClassic,
+    VeChain,
+    ThunderToken,
+    TomoChain,
+    BinanceSmartChain,
+    Polygon,
+    Wanchain,
+    Optimism,
+    Arbitrum,
+    Heco,
+    Avalanche,
+    XDai,
+    Fantom,
+    Celo,
+    Ronin
 }
+
+
+EthereumChainID? createEthereumChainIDFromValue(int value) {
+    switch (value) {
+        case 1: return EthereumChainID.Ethereum;
+        case 60: return EthereumChainID.Go;
+        case 99: return EthereumChainID.POA;
+        case 820: return EthereumChainID.Callisto;
+        case 61: return EthereumChainID.EthereumClassic;
+        case 74: return EthereumChainID.VeChain;
+        case 108: return EthereumChainID.ThunderToken;
+        case 88: return EthereumChainID.TomoChain;
+        case 56: return EthereumChainID.BinanceSmartChain;
+        case 137: return EthereumChainID.Polygon;
+        case 888: return EthereumChainID.Wanchain;
+        case 10: return EthereumChainID.Optimism;
+        case 42161: return EthereumChainID.Arbitrum;
+        case 128: return EthereumChainID.Heco;
+        case 43114: return EthereumChainID.Avalanche;
+        case 100: return EthereumChainID.XDai;
+        case 250: return EthereumChainID.Fantom;
+        case 42220: return EthereumChainID.Celo;
+        case 2020: return EthereumChainID.Ronin;
+        default: return null;
+    }
+}
+
+
+
+abstract class EthereumChainIDExt {
+
+                }
+

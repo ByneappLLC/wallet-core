@@ -7,13 +7,30 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum Purpose {
-    BIP44 (44),
-    BIP49 (49),
-    BIP84 (84),
-    BIP1852 (1852);
-
+    BIP44,
+    BIP49,
+    BIP84,
+    BIP1852
 }
+
+
+Purpose? createPurposeFromValue(int value) {
+    switch (value) {
+        case 44: return Purpose.BIP44;
+        case 49: return Purpose.BIP49;
+        case 84: return Purpose.BIP84;
+        case 1852: return Purpose.BIP1852;
+        default: return null;
+    }
+}
+
+
+
+abstract class PurposeExt {
+
+                }
+

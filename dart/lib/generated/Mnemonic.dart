@@ -7,7 +7,7 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 class Mnemonic {

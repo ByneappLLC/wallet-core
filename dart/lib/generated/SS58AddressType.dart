@@ -7,11 +7,26 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum SS58AddressType {
-    POLKADOT ((byte) 0),
-    KUSAMA ((byte) 2);
-
+    Polkadot,
+    Kusama
 }
+
+
+SS58AddressType? createSS58AddressTypeFromValue(int value) {
+    switch (value) {
+        case 0: return SS58AddressType.Polkadot;
+        case 2: return SS58AddressType.Kusama;
+        default: return null;
+    }
+}
+
+
+
+abstract class SS58AddressTypeExt {
+
+                }
+

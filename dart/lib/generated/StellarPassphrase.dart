@@ -7,11 +7,34 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum StellarPassphrase {
-    STELLAR (0),
-    KIN (1);
-
+    Stellar,
+    Kin
 }
+
+
+StellarPassphrase? createStellarPassphraseFromValue(int value) {
+    switch (value) {
+        case 0: return StellarPassphrase.Stellar;
+        case 1: return StellarPassphrase.Kin;
+        default: return null;
+    }
+}
+
+
+
+abstract class StellarPassphraseExt {
+
+                    
+        String toString() {
+            switch (this) {
+                case STELLAR: return "Public Global Stellar Network ; September 2015";
+                case KIN: return "Kin Mainnet ; December 2018";
+                default: return "";
+            }
+        }
+    }
+

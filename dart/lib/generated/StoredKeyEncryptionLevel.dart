@@ -7,13 +7,30 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum StoredKeyEncryptionLevel {
-    DEFAULT (0),
-    MINIMAL (1),
-    WEAK (2),
-    STANDARD (3);
-
+    Default,
+    Minimal,
+    Weak,
+    Standard
 }
+
+
+StoredKeyEncryptionLevel? createStoredKeyEncryptionLevelFromValue(int value) {
+    switch (value) {
+        case 0: return StoredKeyEncryptionLevel.Default;
+        case 1: return StoredKeyEncryptionLevel.Minimal;
+        case 2: return StoredKeyEncryptionLevel.Weak;
+        case 3: return StoredKeyEncryptionLevel.Standard;
+        default: return null;
+    }
+}
+
+
+
+abstract class StoredKeyEncryptionLevelExt {
+
+                }
+

@@ -7,14 +7,32 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum StellarMemoType {
-    NONE (0),
-    TEXT (1),
-    ID (2),
-    HASH (3),
-    RETURN (4);
-
+    None,
+    Text,
+    Id,
+    Hash,
+    Return
 }
+
+
+StellarMemoType? createStellarMemoTypeFromValue(int value) {
+    switch (value) {
+        case 0: return StellarMemoType.None;
+        case 1: return StellarMemoType.Text;
+        case 2: return StellarMemoType.Id;
+        case 3: return StellarMemoType.Hash;
+        case 4: return StellarMemoType.Return;
+        default: return null;
+    }
+}
+
+
+
+abstract class StellarMemoTypeExt {
+
+                }
+

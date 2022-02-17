@@ -7,14 +7,34 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum BitcoinSigHashType {
-    ALL (0x01),
-    NONE (0x02),
-    SINGLE (0x03),
-    FORK (0x40),
-    FORKBTG (0x4f40);
-
+    All,
+    None,
+    Single,
+    Fork,
+    ForkBTG
 }
+
+
+BitcoinSigHashType? createBitcoinSigHashTypeFromValue(int value) {
+    switch (value) {
+        case 0x01: return BitcoinSigHashType.All;
+        case 0x02: return BitcoinSigHashType.None;
+        case 0x03: return BitcoinSigHashType.Single;
+        case 0x40: return BitcoinSigHashType.Fork;
+        case 0x4f40: return BitcoinSigHashType.ForkBTG;
+        default: return null;
+    }
+}
+
+
+
+abstract class BitcoinSigHashTypeExt {
+
+                 bool isSingle();
+         bool isNone();
+        }
+

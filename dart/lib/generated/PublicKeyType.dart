@@ -7,17 +7,38 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum PublicKeyType {
-    SECP256K1 (0),
-    SECP256K1EXTENDED (1),
-    NIST256P1 (2),
-    NIST256P1EXTENDED (3),
-    ED25519 (4),
-    ED25519BLAKE2B (5),
-    CURVE25519 (6),
-    ED25519EXTENDED (7);
-
+    SECP256k1,
+    SECP256k1Extended,
+    NIST256p1,
+    NIST256p1Extended,
+    ED25519,
+    ED25519Blake2b,
+    CURVE25519,
+    ED25519Extended
 }
+
+
+PublicKeyType? createPublicKeyTypeFromValue(int value) {
+    switch (value) {
+        case 0: return PublicKeyType.SECP256k1;
+        case 1: return PublicKeyType.SECP256k1Extended;
+        case 2: return PublicKeyType.NIST256p1;
+        case 3: return PublicKeyType.NIST256p1Extended;
+        case 4: return PublicKeyType.ED25519;
+        case 5: return PublicKeyType.ED25519Blake2b;
+        case 6: return PublicKeyType.CURVE25519;
+        case 7: return PublicKeyType.ED25519Extended;
+        default: return null;
+    }
+}
+
+
+
+abstract class PublicKeyTypeExt {
+
+                }
+

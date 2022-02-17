@@ -5,6 +5,7 @@ require 'fileutils'
 require 'java_helper'
 require 'jni_helper'
 require 'swift_helper'
+require 'dart_helper'
 
 # Code generation
 class CodeGenerator

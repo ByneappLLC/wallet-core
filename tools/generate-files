@@ -40,6 +40,7 @@ $PROTOC --version
 rm -rf swift/Sources/Generated
 rm -rf jni/java/wallet/core/jni
 rm -rf jni/cpp/generated
+rm -rf dart/lib/generated
 
 mkdir -p swift/Sources/Generated/Protobuf swift/Sources/Generated/Enums
 
@@ -51,9 +52,9 @@ codegen/bin/codegen
 
 # Generate Java, C++ and Swift Protobuf files
 if [ -x "$(command -v protoc-gen-swift)" ]; then
-    "$PROTOC" -I=$PREFIX/include -I=src/proto --cpp_out=src/proto --java_out=jni/java --dart_out=dart/lib/generated --swift_out=swift/Sources/Generated/Protobuf --swift_opt=Visibility=Public src/proto/*.proto
+    "$PROTOC" -I=$PREFIX/include -I=src/proto --cpp_out=src/proto --java_out=jni/java --dart_out=dart/lib/proto --swift_out=swift/Sources/Generated/Protobuf --swift_opt=Visibility=Public src/proto/*.proto
 else
-    "$PROTOC" -I=$PREFIX/include -I=src/proto --cpp_out=src/proto --java_out=jni/java --dart_out=dart/lib/generated src/proto/*.proto
+    "$PROTOC" -I=$PREFIX/include -I=src/proto --cpp_out=src/proto --java_out=jni/java --dart_out=dart/lib/proto src/proto/*.proto
 fi
 
 # Generate internal message protocol Protobuf files

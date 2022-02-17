@@ -7,11 +7,26 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum AESPaddingMode {
-    ZERO (0),
-    PKCS7 (1);
-
+    Zero,
+    PKCS7
 }
+
+
+AESPaddingMode? createAESPaddingModeFromValue(int value) {
+    switch (value) {
+        case 0: return AESPaddingMode.Zero;
+        case 1: return AESPaddingMode.PKCS7;
+        default: return null;
+    }
+}
+
+
+
+abstract class AESPaddingModeExt {
+
+                }
+

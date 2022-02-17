@@ -7,13 +7,30 @@
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 //
 
-library wallet_core;
+part of wallet_core;
 
 
 enum StellarVersionByte {
-    ACCOUNTID ((short) 0x30),
-    SEED ((short) 0xc0),
-    PREAUTHTX ((short) 0xc8),
-    SHA256HASH ((short) 0x118);
-
+    AccountID,
+    Seed,
+    PreAuthTX,
+    SHA256Hash
 }
+
+
+StellarVersionByte? createStellarVersionByteFromValue(int value) {
+    switch (value) {
+        case 0x30: return StellarVersionByte.AccountID;
+        case 0xc0: return StellarVersionByte.Seed;
+        case 0xc8: return StellarVersionByte.PreAuthTX;
+        case 0x118: return StellarVersionByte.SHA256Hash;
+        default: return null;
+    }
+}
+
+
+
+abstract class StellarVersionByteExt {
+
+                }
+
