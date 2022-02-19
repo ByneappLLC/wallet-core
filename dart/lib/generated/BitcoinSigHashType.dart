@@ -32,9 +32,10 @@ BitcoinSigHashType? createBitcoinSigHashTypeFromValue(int value) {
 
 
 
-abstract class BitcoinSigHashTypeExt {
+abstract class BitcoinSigHashTypeBase {
 
                  bool isSingle();
          bool isNone();
-        }
+}
 
+    

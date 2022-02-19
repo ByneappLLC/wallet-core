@@ -12,6 +12,12 @@ part of wallet_core;
 
 class FIOAccount {
 
+    static FIOAccount createFromNative(long nativeHandle) {
+        FIOAccount instance = new FIOAccount();
+        instance.nativeHandle = nativeHandle;
+        FIOAccountPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

@@ -88,7 +88,8 @@ Blockchain? createBlockchainFromValue(int value) {
 
 
 
-abstract class BlockchainExt {
+abstract class BlockchainBase {
 
-                }
+        }
 
+    

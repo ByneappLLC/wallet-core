@@ -12,6 +12,12 @@ part of wallet_core;
 
 class SegwitAddress {
 
+    static SegwitAddress createFromNative(long nativeHandle) {
+        SegwitAddress instance = new SegwitAddress();
+        instance.nativeHandle = nativeHandle;
+        SegwitAddressPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

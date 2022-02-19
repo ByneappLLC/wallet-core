@@ -22,7 +22,7 @@ enum <%= entity.name %> {
 <%  end -%>
 
 
-abstract class <%= entity.name %>Ext {
+abstract class <%= entity.name %>Base {
 
     <%# Property declarations -%>
     <%- entity.properties.each do |property| -%>
@@ -41,17 +41,19 @@ abstract class <%= entity.name %>Ext {
          <%= DartHelper.type(method.return_type) %> <%= DartHelper.format_name(method.name) %>(<%= DartHelper.parameters(method.parameters.drop(1)) %>);
     <%-   end -%>
     <%- end -%>
-    <%# toString -%>
-    <%  if has_string -%>
-    
-        String toString() {
-            switch (this) {
-    <%    entity.cases.each do |c| -%>
-            case <%= DartHelper.format_constant(c.name) %>: return <%= c.string %>;
-    <%    end -%>
-            default: return "";
-            }
-        }
-    <%  end -%>
 }
 
+<%# toString -%>
+    <%  if has_string -%>
+    
+extension <%= entity.name %>Ext on <%= entity.name %> {
+    String stringName() {
+        switch (this) {
+    <%    entity.cases.each do |c| -%>
+        case <%= entity.name %>.<%= c.name %>: return <%= c.string %>;
+    <%    end -%>
+        default: return "";
+        }
+    }
+}
+<%  end -%>

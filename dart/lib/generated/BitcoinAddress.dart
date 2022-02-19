@@ -12,6 +12,12 @@ part of wallet_core;
 
 class BitcoinAddress {
 
+    static BitcoinAddress createFromNative(long nativeHandle) {
+        BitcoinAddress instance = new BitcoinAddress();
+        instance.nativeHandle = nativeHandle;
+        BitcoinAddressPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

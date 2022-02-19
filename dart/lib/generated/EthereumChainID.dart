@@ -60,7 +60,8 @@ EthereumChainID? createEthereumChainIDFromValue(int value) {
 
 
 
-abstract class EthereumChainIDExt {
+abstract class EthereumChainIDBase {
 
-                }
+        }
 
+    

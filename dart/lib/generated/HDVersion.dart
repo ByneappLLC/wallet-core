@@ -52,9 +52,10 @@ HDVersion? createHDVersionFromValue(int value) {
 
 
 
-abstract class HDVersionExt {
+abstract class HDVersionBase {
 
              bool isPublic();
          bool isPrivate();
-            }
+    }
 
+    

@@ -12,6 +12,12 @@ part of wallet_core;
 
 class AnyAddress {
 
+    static AnyAddress createFromNative(long nativeHandle) {
+        AnyAddress instance = new AnyAddress();
+        instance.nativeHandle = nativeHandle;
+        AnyAddressPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

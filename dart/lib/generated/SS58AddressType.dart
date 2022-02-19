@@ -26,7 +26,8 @@ SS58AddressType? createSS58AddressTypeFromValue(int value) {
 
 
 
-abstract class SS58AddressTypeExt {
+abstract class SS58AddressTypeBase {
 
-                }
+        }
 
+    

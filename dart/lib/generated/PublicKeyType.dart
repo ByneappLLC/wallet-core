@@ -38,7 +38,8 @@ PublicKeyType? createPublicKeyTypeFromValue(int value) {
 
 
 
-abstract class PublicKeyTypeExt {
+abstract class PublicKeyTypeBase {
 
-                }
+        }
 
+    

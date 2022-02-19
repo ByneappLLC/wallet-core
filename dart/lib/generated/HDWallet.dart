@@ -12,6 +12,12 @@ part of wallet_core;
 
 class HDWallet {
 
+    static HDWallet createFromNative(long nativeHandle) {
+        HDWallet instance = new HDWallet();
+        instance.nativeHandle = nativeHandle;
+        HDWalletPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

@@ -12,6 +12,12 @@ part of wallet_core;
 
 class NEARAccount {
 
+    static NEARAccount createFromNative(long nativeHandle) {
+        NEARAccount instance = new NEARAccount();
+        instance.nativeHandle = nativeHandle;
+        NEARAccountPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

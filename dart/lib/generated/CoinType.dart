@@ -174,7 +174,7 @@ CoinType? createCoinTypeFromValue(int value) {
 
 
 
-abstract class CoinTypeExt {
+abstract class CoinTypeBase {
 
              Blockchain blockchain();
          Purpose purpose();
@@ -190,5 +190,6 @@ abstract class CoinTypeExt {
          String derivationPath();
          String deriveAddress(PrivateKey privateKey);
          String deriveAddressFromPublicKey(PublicKey publicKey);
-        }
+}
 
+    

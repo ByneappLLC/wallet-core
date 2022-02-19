@@ -6,6 +6,14 @@ class <%= entity.name %> implements Comparable<<%= entity.name %>> {
 <%  else -%>
 class <%= entity.name %> {
 
+    static <%= entity.name %> createFromNative(long nativeHandle) {
+        <%= entity.name %> instance = new <%= entity.name %>();
+        instance.nativeHandle = nativeHandle;
+<%  unless entity.methods.select{ |x| x.name == "Delete" }.empty? -%>
+        <%= entity.name %>PhantomReference.register(instance, nativeHandle);
+<%  end -%>
+        return instance;
+    }
 
 }
 <%  end -%>

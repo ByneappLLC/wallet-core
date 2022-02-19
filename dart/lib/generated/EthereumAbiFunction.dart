@@ -12,6 +12,12 @@ part of wallet_core;
 
 class EthereumAbiFunction {
 
+    static EthereumAbiFunction createFromNative(long nativeHandle) {
+        EthereumAbiFunction instance = new EthereumAbiFunction();
+        instance.nativeHandle = nativeHandle;
+        EthereumAbiFunctionPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

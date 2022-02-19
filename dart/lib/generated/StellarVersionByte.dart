@@ -30,7 +30,8 @@ StellarVersionByte? createStellarVersionByteFromValue(int value) {
 
 
 
-abstract class StellarVersionByteExt {
+abstract class StellarVersionByteBase {
 
-                }
+        }
 
+    

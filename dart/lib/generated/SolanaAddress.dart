@@ -12,6 +12,12 @@ part of wallet_core;
 
 class SolanaAddress {
 
+    static SolanaAddress createFromNative(long nativeHandle) {
+        SolanaAddress instance = new SolanaAddress();
+        instance.nativeHandle = nativeHandle;
+        SolanaAddressPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

@@ -26,15 +26,17 @@ StellarPassphrase? createStellarPassphraseFromValue(int value) {
 
 
 
-abstract class StellarPassphraseExt {
+abstract class StellarPassphraseBase {
 
-                    
-        String toString() {
-            switch (this) {
-                case STELLAR: return "Public Global Stellar Network ; September 2015";
-                case KIN: return "Kin Mainnet ; December 2018";
-                default: return "";
-            }
+        }
+
+        
+extension StellarPassphraseExt on StellarPassphrase {
+    String stringName() {
+        switch (this) {
+            case StellarPassphrase.Stellar: return "Public Global Stellar Network ; September 2015";
+            case StellarPassphrase.Kin: return "Kin Mainnet ; December 2018";
+            default: return "";
         }
     }
-
+}

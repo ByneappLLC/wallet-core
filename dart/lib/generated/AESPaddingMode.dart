@@ -26,7 +26,8 @@ AESPaddingMode? createAESPaddingModeFromValue(int value) {
 
 
 
-abstract class AESPaddingModeExt {
+abstract class AESPaddingModeBase {
 
-                }
+        }
 
+    

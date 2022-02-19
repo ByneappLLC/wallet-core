@@ -12,6 +12,12 @@ part of wallet_core;
 
 class BitcoinScript {
 
+    static BitcoinScript createFromNative(long nativeHandle) {
+        BitcoinScript instance = new BitcoinScript();
+        instance.nativeHandle = nativeHandle;
+        BitcoinScriptPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

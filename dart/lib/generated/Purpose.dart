@@ -30,7 +30,8 @@ Purpose? createPurposeFromValue(int value) {
 
 
 
-abstract class PurposeExt {
+abstract class PurposeBase {
 
-                }
+        }
 
+    

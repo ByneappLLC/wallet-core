@@ -74,39 +74,41 @@ HRP? createHRPFromValue(int value) {
 
 
 
-abstract class HRPExt {
+abstract class HRPBase {
 
-                    
-        String toString() {
-            switch (this) {
-                case UNKNOWN: return "";
-                case BITCOIN: return "bc";
-                case LITECOIN: return "ltc";
-                case VIACOIN: return "via";
-                case GROESTLCOIN: return "grs";
-                case DIGIBYTE: return "dgb";
-                case MONACOIN: return "mona";
-                case COSMOS: return "cosmos";
-                case BITCOINCASH: return "bitcoincash";
-                case BITCOINGOLD: return "btg";
-                case IOTEX: return "io";
-                case ZILLIQA: return "zil";
-                case TERRA: return "terra";
-                case CRYPTOORG: return "cro";
-                case KAVA: return "kava";
-                case OASIS: return "oasis";
-                case BLUZELLE: return "bluzelle";
-                case BANDCHAIN: return "band";
-                case ELROND: return "erd";
-                case BINANCE: return "bnb";
-                case ECASH: return "ecash";
-                case THORCHAIN: return "thor";
-                case HARMONY: return "one";
-                case CARDANO: return "addr";
-                case QTUM: return "qc";
-                case OSMOSIS: return "osmo";
-                default: return "";
-            }
+        }
+
+        
+extension HRPExt on HRP {
+    String stringName() {
+        switch (this) {
+            case HRP.Unknown: return "";
+            case HRP.Bitcoin: return "bc";
+            case HRP.Litecoin: return "ltc";
+            case HRP.Viacoin: return "via";
+            case HRP.Groestlcoin: return "grs";
+            case HRP.DigiByte: return "dgb";
+            case HRP.Monacoin: return "mona";
+            case HRP.Cosmos: return "cosmos";
+            case HRP.BitcoinCash: return "bitcoincash";
+            case HRP.BitcoinGold: return "btg";
+            case HRP.IoTeX: return "io";
+            case HRP.Zilliqa: return "zil";
+            case HRP.Terra: return "terra";
+            case HRP.CryptoOrg: return "cro";
+            case HRP.Kava: return "kava";
+            case HRP.Oasis: return "oasis";
+            case HRP.Bluzelle: return "bluzelle";
+            case HRP.BandChain: return "band";
+            case HRP.Elrond: return "erd";
+            case HRP.Binance: return "bnb";
+            case HRP.ECash: return "ecash";
+            case HRP.THORChain: return "thor";
+            case HRP.Harmony: return "one";
+            case HRP.Cardano: return "addr";
+            case HRP.Qtum: return "qc";
+            case HRP.Osmosis: return "osmo";
+            default: return "";
         }
     }
-
+}

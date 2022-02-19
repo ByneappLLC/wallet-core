@@ -34,19 +34,21 @@ Curve? createCurveFromValue(int value) {
 
 
 
-abstract class CurveExt {
+abstract class CurveBase {
 
-                    
-        String toString() {
-            switch (this) {
-                case SECP256K1: return "secp256k1";
-                case ED25519: return "ed25519";
-                case ED25519BLAKE2BNANO: return "ed25519-blake2b-nano";
-                case CURVE25519: return "curve25519";
-                case NIST256P1: return "nist256p1";
-                case ED25519EXTENDED: return "ed25519-cardano-seed";
-                default: return "";
-            }
+        }
+
+        
+extension CurveExt on Curve {
+    String stringName() {
+        switch (this) {
+            case Curve.SECP256k1: return "secp256k1";
+            case Curve.ED25519: return "ed25519";
+            case Curve.ED25519Blake2bNano: return "ed25519-blake2b-nano";
+            case Curve.Curve25519: return "curve25519";
+            case Curve.NIST256p1: return "nist256p1";
+            case Curve.ED25519Extended: return "ed25519-cardano-seed";
+            default: return "";
         }
     }
-
+}

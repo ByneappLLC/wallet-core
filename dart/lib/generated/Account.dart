@@ -12,6 +12,12 @@ part of wallet_core;
 
 class Account {
 
+    static Account createFromNative(long nativeHandle) {
+        Account instance = new Account();
+        instance.nativeHandle = nativeHandle;
+        AccountPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

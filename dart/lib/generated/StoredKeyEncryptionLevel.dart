@@ -30,7 +30,8 @@ StoredKeyEncryptionLevel? createStoredKeyEncryptionLevelFromValue(int value) {
 
 
 
-abstract class StoredKeyEncryptionLevelExt {
+abstract class StoredKeyEncryptionLevelBase {
 
-                }
+        }
 
+    

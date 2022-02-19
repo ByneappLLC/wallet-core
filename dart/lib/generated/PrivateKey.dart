@@ -12,6 +12,12 @@ part of wallet_core;
 
 class PrivateKey {
 
+    static PrivateKey createFromNative(long nativeHandle) {
+        PrivateKey instance = new PrivateKey();
+        instance.nativeHandle = nativeHandle;
+        PrivateKeyPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   

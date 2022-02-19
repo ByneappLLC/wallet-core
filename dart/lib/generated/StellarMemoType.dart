@@ -32,7 +32,8 @@ StellarMemoType? createStellarMemoTypeFromValue(int value) {
 
 
 
-abstract class StellarMemoTypeExt {
+abstract class StellarMemoTypeBase {
 
-                }
+        }
 
+    

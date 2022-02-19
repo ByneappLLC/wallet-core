@@ -12,6 +12,12 @@ part of wallet_core;
 
 class StoredKey {
 
+    static StoredKey createFromNative(long nativeHandle) {
+        StoredKey instance = new StoredKey();
+        instance.nativeHandle = nativeHandle;
+        StoredKeyPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
   
