@@ -1,5 +1,7 @@
 library wallet_core;
 
+import 'dart:ffi';
+
 part 'generated/Account.dart';
 part 'generated/AES.dart';
 part 'generated/AESPaddingMode.dart';
