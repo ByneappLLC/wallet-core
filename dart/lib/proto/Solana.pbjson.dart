@@ -14,11 +14,13 @@ const Transfer$json = const {
   '2': const [
     const {'1': 'recipient', '3': 1, '4': 1, '5': 9, '10': 'recipient'},
     const {'1': 'value', '3': 2, '4': 1, '5': 4, '10': 'value'},
+    const {'1': 'memo', '3': 3, '4': 1, '5': 9, '10': 'memo'},
+    const {'1': 'references', '3': 4, '4': 3, '5': 9, '10': 'references'},
   ],
 };
 
 /// Descriptor for `Transfer`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List transferDescriptor = $convert.base64Decode('CghUcmFuc2ZlchIcCglyZWNpcGllbnQYASABKAlSCXJlY2lwaWVudBIUCgV2YWx1ZRgCIAEoBFIFdmFsdWU=');
+final $typed_data.Uint8List transferDescriptor = $convert.base64Decode('CghUcmFuc2ZlchIcCglyZWNpcGllbnQYASABKAlSCXJlY2lwaWVudBIUCgV2YWx1ZRgCIAEoBFIFdmFsdWUSEgoEbWVtbxgDIAEoCVIEbWVtbxIeCgpyZWZlcmVuY2VzGAQgAygJUgpyZWZlcmVuY2Vz');
 @$core.Deprecated('Use delegateStakeDescriptor instead')
 const DelegateStake$json = const {
   '1': 'DelegateStake',
@@ -104,11 +106,13 @@ const TokenTransfer$json = const {
     const {'1': 'recipient_token_address', '3': 3, '4': 1, '5': 9, '10': 'recipientTokenAddress'},
     const {'1': 'amount', '3': 4, '4': 1, '5': 4, '10': 'amount'},
     const {'1': 'decimals', '3': 5, '4': 1, '5': 13, '10': 'decimals'},
+    const {'1': 'memo', '3': 6, '4': 1, '5': 9, '10': 'memo'},
+    const {'1': 'references', '3': 7, '4': 3, '5': 9, '10': 'references'},
   ],
 };
 
 /// Descriptor for `TokenTransfer`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List tokenTransferDescriptor = $convert.base64Decode('Cg1Ub2tlblRyYW5zZmVyEiwKEnRva2VuX21pbnRfYWRkcmVzcxgBIAEoCVIQdG9rZW5NaW50QWRkcmVzcxIwChRzZW5kZXJfdG9rZW5fYWRkcmVzcxgCIAEoCVISc2VuZGVyVG9rZW5BZGRyZXNzEjYKF3JlY2lwaWVudF90b2tlbl9hZGRyZXNzGAMgASgJUhVyZWNpcGllbnRUb2tlbkFkZHJlc3MSFgoGYW1vdW50GAQgASgEUgZhbW91bnQSGgoIZGVjaW1hbHMYBSABKA1SCGRlY2ltYWxz');
+final $typed_data.Uint8List tokenTransferDescriptor = $convert.base64Decode('Cg1Ub2tlblRyYW5zZmVyEiwKEnRva2VuX21pbnRfYWRkcmVzcxgBIAEoCVIQdG9rZW5NaW50QWRkcmVzcxIwChRzZW5kZXJfdG9rZW5fYWRkcmVzcxgCIAEoCVISc2VuZGVyVG9rZW5BZGRyZXNzEjYKF3JlY2lwaWVudF90b2tlbl9hZGRyZXNzGAMgASgJUhVyZWNpcGllbnRUb2tlbkFkZHJlc3MSFgoGYW1vdW50GAQgASgEUgZhbW91bnQSGgoIZGVjaW1hbHMYBSABKA1SCGRlY2ltYWxzEhIKBG1lbW8YBiABKAlSBG1lbW8SHgoKcmVmZXJlbmNlcxgHIAMoCVIKcmVmZXJlbmNlcw==');
 @$core.Deprecated('Use createAndTransferTokenDescriptor instead')
 const CreateAndTransferToken$json = const {
   '1': 'CreateAndTransferToken',
@@ -119,11 +123,13 @@ const CreateAndTransferToken$json = const {
     const {'1': 'sender_token_address', '3': 4, '4': 1, '5': 9, '10': 'senderTokenAddress'},
     const {'1': 'amount', '3': 5, '4': 1, '5': 4, '10': 'amount'},
     const {'1': 'decimals', '3': 6, '4': 1, '5': 13, '10': 'decimals'},
+    const {'1': 'memo', '3': 7, '4': 1, '5': 9, '10': 'memo'},
+    const {'1': 'references', '3': 8, '4': 3, '5': 9, '10': 'references'},
   ],
 };
 
 /// Descriptor for `CreateAndTransferToken`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createAndTransferTokenDescriptor = $convert.base64Decode('ChZDcmVhdGVBbmRUcmFuc2ZlclRva2VuEjQKFnJlY2lwaWVudF9tYWluX2FkZHJlc3MYASABKAlSFHJlY2lwaWVudE1haW5BZGRyZXNzEiwKEnRva2VuX21pbnRfYWRkcmVzcxgCIAEoCVIQdG9rZW5NaW50QWRkcmVzcxI2ChdyZWNpcGllbnRfdG9rZW5fYWRkcmVzcxgDIAEoCVIVcmVjaXBpZW50VG9rZW5BZGRyZXNzEjAKFHNlbmRlcl90b2tlbl9hZGRyZXNzGAQgASgJUhJzZW5kZXJUb2tlbkFkZHJlc3MSFgoGYW1vdW50GAUgASgEUgZhbW91bnQSGgoIZGVjaW1hbHMYBiABKA1SCGRlY2ltYWxz');
+final $typed_data.Uint8List createAndTransferTokenDescriptor = $convert.base64Decode('ChZDcmVhdGVBbmRUcmFuc2ZlclRva2VuEjQKFnJlY2lwaWVudF9tYWluX2FkZHJlc3MYASABKAlSFHJlY2lwaWVudE1haW5BZGRyZXNzEiwKEnRva2VuX21pbnRfYWRkcmVzcxgCIAEoCVIQdG9rZW5NaW50QWRkcmVzcxI2ChdyZWNpcGllbnRfdG9rZW5fYWRkcmVzcxgDIAEoCVIVcmVjaXBpZW50VG9rZW5BZGRyZXNzEjAKFHNlbmRlcl90b2tlbl9hZGRyZXNzGAQgASgJUhJzZW5kZXJUb2tlbkFkZHJlc3MSFgoGYW1vdW50GAUgASgEUgZhbW91bnQSGgoIZGVjaW1hbHMYBiABKA1SCGRlY2ltYWxzEhIKBG1lbW8YByABKAlSBG1lbW8SHgoKcmVmZXJlbmNlcxgIIAMoCVIKcmVmZXJlbmNlcw==');
 @$core.Deprecated('Use signingInputDescriptor instead')
 const SigningInput$json = const {
   '1': 'SigningInput',

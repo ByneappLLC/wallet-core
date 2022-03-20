@@ -14,6 +14,8 @@ class Transfer extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Transfer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Solana.Proto'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipient')
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memo')
+    ..pPS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'references')
     ..hasRequiredFields = false
   ;
 
@@ -21,6 +23,8 @@ class Transfer extends $pb.GeneratedMessage {
   factory Transfer({
     $core.String? recipient,
     $fixnum.Int64? value,
+    $core.String? memo,
+    $core.Iterable<$core.String>? references,
   }) {
     final _result = create();
     if (recipient != null) {
@@ -28,6 +32,12 @@ class Transfer extends $pb.GeneratedMessage {
     }
     if (value != null) {
       _result.value = value;
+    }
+    if (memo != null) {
+      _result.memo = memo;
+    }
+    if (references != null) {
+      _result.references.addAll(references);
     }
     return _result;
   }
@@ -69,6 +79,18 @@ class Transfer extends $pb.GeneratedMessage {
   $core.bool hasValue() => $_has(1);
   @$pb.TagNumber(2)
   void clearValue() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get memo => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set memo($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMemo() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMemo() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<$core.String> get references => $_getList(3);
 }
 
 class DelegateStake extends $pb.GeneratedMessage {
@@ -479,6 +501,8 @@ class TokenTransfer extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipientTokenAddress')
     ..a<$fixnum.Int64>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'decimals', $pb.PbFieldType.OU3)
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memo')
+    ..pPS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'references')
     ..hasRequiredFields = false
   ;
 
@@ -489,6 +513,8 @@ class TokenTransfer extends $pb.GeneratedMessage {
     $core.String? recipientTokenAddress,
     $fixnum.Int64? amount,
     $core.int? decimals,
+    $core.String? memo,
+    $core.Iterable<$core.String>? references,
   }) {
     final _result = create();
     if (tokenMintAddress != null) {
@@ -505,6 +531,12 @@ class TokenTransfer extends $pb.GeneratedMessage {
     }
     if (decimals != null) {
       _result.decimals = decimals;
+    }
+    if (memo != null) {
+      _result.memo = memo;
+    }
+    if (references != null) {
+      _result.references.addAll(references);
     }
     return _result;
   }
@@ -573,6 +605,18 @@ class TokenTransfer extends $pb.GeneratedMessage {
   $core.bool hasDecimals() => $_has(4);
   @$pb.TagNumber(5)
   void clearDecimals() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get memo => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set memo($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasMemo() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearMemo() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.String> get references => $_getList(6);
 }
 
 class CreateAndTransferToken extends $pb.GeneratedMessage {
@@ -583,6 +627,8 @@ class CreateAndTransferToken extends $pb.GeneratedMessage {
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'senderTokenAddress')
     ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'decimals', $pb.PbFieldType.OU3)
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memo')
+    ..pPS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'references')
     ..hasRequiredFields = false
   ;
 
@@ -594,6 +640,8 @@ class CreateAndTransferToken extends $pb.GeneratedMessage {
     $core.String? senderTokenAddress,
     $fixnum.Int64? amount,
     $core.int? decimals,
+    $core.String? memo,
+    $core.Iterable<$core.String>? references,
   }) {
     final _result = create();
     if (recipientMainAddress != null) {
@@ -613,6 +661,12 @@ class CreateAndTransferToken extends $pb.GeneratedMessage {
     }
     if (decimals != null) {
       _result.decimals = decimals;
+    }
+    if (memo != null) {
+      _result.memo = memo;
+    }
+    if (references != null) {
+      _result.references.addAll(references);
     }
     return _result;
   }
@@ -690,6 +744,18 @@ class CreateAndTransferToken extends $pb.GeneratedMessage {
   $core.bool hasDecimals() => $_has(5);
   @$pb.TagNumber(6)
   void clearDecimals() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get memo => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set memo($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasMemo() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearMemo() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<$core.String> get references => $_getList(7);
 }
 
 enum SigningInput_TransactionType {

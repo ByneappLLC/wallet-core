@@ -771,6 +771,206 @@ class Message_WithdrawDelegationReward extends $pb.GeneratedMessage {
   void clearTypePrefix() => clearField(3);
 }
 
+class Message_WasmTerraExecuteContractTransfer extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.WasmTerraExecuteContractTransfer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'senderAddress')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contractAddress')
+    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OY)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipientAddress')
+    ..hasRequiredFields = false
+  ;
+
+  Message_WasmTerraExecuteContractTransfer._() : super();
+  factory Message_WasmTerraExecuteContractTransfer({
+    $core.String? senderAddress,
+    $core.String? contractAddress,
+    $core.List<$core.int>? amount,
+    $core.String? recipientAddress,
+  }) {
+    final _result = create();
+    if (senderAddress != null) {
+      _result.senderAddress = senderAddress;
+    }
+    if (contractAddress != null) {
+      _result.contractAddress = contractAddress;
+    }
+    if (amount != null) {
+      _result.amount = amount;
+    }
+    if (recipientAddress != null) {
+      _result.recipientAddress = recipientAddress;
+    }
+    return _result;
+  }
+  factory Message_WasmTerraExecuteContractTransfer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_WasmTerraExecuteContractTransfer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_WasmTerraExecuteContractTransfer clone() => Message_WasmTerraExecuteContractTransfer()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_WasmTerraExecuteContractTransfer copyWith(void Function(Message_WasmTerraExecuteContractTransfer) updates) => super.copyWith((message) => updates(message as Message_WasmTerraExecuteContractTransfer)) as Message_WasmTerraExecuteContractTransfer; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmTerraExecuteContractTransfer create() => Message_WasmTerraExecuteContractTransfer._();
+  Message_WasmTerraExecuteContractTransfer createEmptyInstance() => create();
+  static $pb.PbList<Message_WasmTerraExecuteContractTransfer> createRepeated() => $pb.PbList<Message_WasmTerraExecuteContractTransfer>();
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmTerraExecuteContractTransfer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_WasmTerraExecuteContractTransfer>(create);
+  static Message_WasmTerraExecuteContractTransfer? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get senderAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set senderAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSenderAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSenderAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contractAddress => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contractAddress($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContractAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContractAddress() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get amount => $_getN(2);
+  @$pb.TagNumber(3)
+  set amount($core.List<$core.int> v) { $_setBytes(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAmount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAmount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get recipientAddress => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set recipientAddress($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRecipientAddress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRecipientAddress() => clearField(4);
+}
+
+class Message_WasmTerraExecuteContractSend extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.WasmTerraExecuteContractSend', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'senderAddress')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contractAddress')
+    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OY)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipientContractAddress')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msg')
+    ..pPS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'coin')
+    ..hasRequiredFields = false
+  ;
+
+  Message_WasmTerraExecuteContractSend._() : super();
+  factory Message_WasmTerraExecuteContractSend({
+    $core.String? senderAddress,
+    $core.String? contractAddress,
+    $core.List<$core.int>? amount,
+    $core.String? recipientContractAddress,
+    $core.String? msg,
+    $core.Iterable<$core.String>? coin,
+  }) {
+    final _result = create();
+    if (senderAddress != null) {
+      _result.senderAddress = senderAddress;
+    }
+    if (contractAddress != null) {
+      _result.contractAddress = contractAddress;
+    }
+    if (amount != null) {
+      _result.amount = amount;
+    }
+    if (recipientContractAddress != null) {
+      _result.recipientContractAddress = recipientContractAddress;
+    }
+    if (msg != null) {
+      _result.msg = msg;
+    }
+    if (coin != null) {
+      _result.coin.addAll(coin);
+    }
+    return _result;
+  }
+  factory Message_WasmTerraExecuteContractSend.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_WasmTerraExecuteContractSend.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_WasmTerraExecuteContractSend clone() => Message_WasmTerraExecuteContractSend()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_WasmTerraExecuteContractSend copyWith(void Function(Message_WasmTerraExecuteContractSend) updates) => super.copyWith((message) => updates(message as Message_WasmTerraExecuteContractSend)) as Message_WasmTerraExecuteContractSend; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmTerraExecuteContractSend create() => Message_WasmTerraExecuteContractSend._();
+  Message_WasmTerraExecuteContractSend createEmptyInstance() => create();
+  static $pb.PbList<Message_WasmTerraExecuteContractSend> createRepeated() => $pb.PbList<Message_WasmTerraExecuteContractSend>();
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmTerraExecuteContractSend getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_WasmTerraExecuteContractSend>(create);
+  static Message_WasmTerraExecuteContractSend? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get senderAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set senderAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSenderAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSenderAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contractAddress => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contractAddress($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContractAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContractAddress() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get amount => $_getN(2);
+  @$pb.TagNumber(3)
+  set amount($core.List<$core.int> v) { $_setBytes(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAmount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAmount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get recipientContractAddress => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set recipientContractAddress($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRecipientContractAddress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRecipientContractAddress() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get msg => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set msg($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMsg() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMsg() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.String> get coin => $_getList(5);
+}
+
 class Message_RawJSON extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.RawJSON', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
@@ -840,6 +1040,8 @@ enum Message_MessageOneof {
   restakeMessage, 
   withdrawStakeRewardMessage, 
   rawJsonMessage, 
+  wasmTerraExecuteContractTransferMessage, 
+  wasmTerraExecuteContractSendMessage, 
   notSet
 }
 
@@ -852,10 +1054,12 @@ class Message extends $pb.GeneratedMessage {
     5 : Message_MessageOneof.restakeMessage,
     6 : Message_MessageOneof.withdrawStakeRewardMessage,
     7 : Message_MessageOneof.rawJsonMessage,
+    8 : Message_MessageOneof.wasmTerraExecuteContractTransferMessage,
+    9 : Message_MessageOneof.wasmTerraExecuteContractSendMessage,
     0 : Message_MessageOneof.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4, 5, 6, 7])
+    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9])
     ..aOM<Message_Send>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sendCoinsMessage', subBuilder: Message_Send.create)
     ..aOM<Message_Transfer>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transferTokensMessage', subBuilder: Message_Transfer.create)
     ..aOM<Message_Delegate>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stakeMessage', subBuilder: Message_Delegate.create)
@@ -863,6 +1067,8 @@ class Message extends $pb.GeneratedMessage {
     ..aOM<Message_BeginRedelegate>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'restakeMessage', subBuilder: Message_BeginRedelegate.create)
     ..aOM<Message_WithdrawDelegationReward>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withdrawStakeRewardMessage', subBuilder: Message_WithdrawDelegationReward.create)
     ..aOM<Message_RawJSON>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rawJsonMessage', subBuilder: Message_RawJSON.create)
+    ..aOM<Message_WasmTerraExecuteContractTransfer>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wasmTerraExecuteContractTransferMessage', subBuilder: Message_WasmTerraExecuteContractTransfer.create)
+    ..aOM<Message_WasmTerraExecuteContractSend>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wasmTerraExecuteContractSendMessage', subBuilder: Message_WasmTerraExecuteContractSend.create)
     ..hasRequiredFields = false
   ;
 
@@ -875,6 +1081,8 @@ class Message extends $pb.GeneratedMessage {
     Message_BeginRedelegate? restakeMessage,
     Message_WithdrawDelegationReward? withdrawStakeRewardMessage,
     Message_RawJSON? rawJsonMessage,
+    Message_WasmTerraExecuteContractTransfer? wasmTerraExecuteContractTransferMessage,
+    Message_WasmTerraExecuteContractSend? wasmTerraExecuteContractSendMessage,
   }) {
     final _result = create();
     if (sendCoinsMessage != null) {
@@ -897,6 +1105,12 @@ class Message extends $pb.GeneratedMessage {
     }
     if (rawJsonMessage != null) {
       _result.rawJsonMessage = rawJsonMessage;
+    }
+    if (wasmTerraExecuteContractTransferMessage != null) {
+      _result.wasmTerraExecuteContractTransferMessage = wasmTerraExecuteContractTransferMessage;
+    }
+    if (wasmTerraExecuteContractSendMessage != null) {
+      _result.wasmTerraExecuteContractSendMessage = wasmTerraExecuteContractSendMessage;
     }
     return _result;
   }
@@ -1000,6 +1214,28 @@ class Message extends $pb.GeneratedMessage {
   void clearRawJsonMessage() => clearField(7);
   @$pb.TagNumber(7)
   Message_RawJSON ensureRawJsonMessage() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  Message_WasmTerraExecuteContractTransfer get wasmTerraExecuteContractTransferMessage => $_getN(7);
+  @$pb.TagNumber(8)
+  set wasmTerraExecuteContractTransferMessage(Message_WasmTerraExecuteContractTransfer v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasWasmTerraExecuteContractTransferMessage() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearWasmTerraExecuteContractTransferMessage() => clearField(8);
+  @$pb.TagNumber(8)
+  Message_WasmTerraExecuteContractTransfer ensureWasmTerraExecuteContractTransferMessage() => $_ensure(7);
+
+  @$pb.TagNumber(9)
+  Message_WasmTerraExecuteContractSend get wasmTerraExecuteContractSendMessage => $_getN(8);
+  @$pb.TagNumber(9)
+  set wasmTerraExecuteContractSendMessage(Message_WasmTerraExecuteContractSend v) { setField(9, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasWasmTerraExecuteContractSendMessage() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearWasmTerraExecuteContractSendMessage() => clearField(9);
+  @$pb.TagNumber(9)
+  Message_WasmTerraExecuteContractSend ensureWasmTerraExecuteContractSendMessage() => $_ensure(8);
 }
 
 class SigningInput extends $pb.GeneratedMessage {
