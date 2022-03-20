@@ -68,7 +68,7 @@ enum TWCoinType {
     TWCoinTypeViacoin = 14,
     TWCoinTypeWanchain = 5718350,
     TWCoinTypeZcash = 133,
-    TWCoinTypeZcoin = 136,
+    TWCoinTypeFiro = 136,
     TWCoinTypeZilliqa = 313,
     TWCoinTypeZelcash = 19167,
     TWCoinTypeRavencoin = 175,
@@ -98,6 +98,8 @@ enum TWCoinType {
     TWCoinTypeRonin = 10002020,
     TWCoinTypeOsmosis = 10000118,
     TWCoinTypeECash = 899,
+    TWCoinTypeCronosChain = 10000025,
+    TWCoinTypeSmartBitcoinCash = 10000145,
 };
 
 /// Returns the blockchain for a coin type.
