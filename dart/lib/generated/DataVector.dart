@@ -10,6 +10,14 @@
 part of wallet_core;
 
 
-class EthereumFee {
+class DataVector {
+
+    static DataVector createFromNative(long nativeHandle) {
+        DataVector instance = new DataVector();
+        instance.nativeHandle = nativeHandle;
+        DataVectorPhantomReference.register(instance, nativeHandle);
+        return instance;
+    }
 
 }
+  

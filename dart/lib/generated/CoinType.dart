@@ -57,7 +57,7 @@ enum CoinType {
     Viacoin,
     Wanchain,
     Zcash,
-    Zcoin,
+    Firo,
     Zilliqa,
     Zelcash,
     Ravencoin,
@@ -86,7 +86,9 @@ enum CoinType {
     Celo,
     Ronin,
     Osmosis,
-    ECash
+    ECash,
+    CronosChain,
+    SmartBitcoinCash
 }
 
 
@@ -138,7 +140,7 @@ CoinType? createCoinTypeFromValue(int value) {
         case 14: return CoinType.Viacoin;
         case 5718350: return CoinType.Wanchain;
         case 133: return CoinType.Zcash;
-        case 136: return CoinType.Zcoin;
+        case 136: return CoinType.Firo;
         case 313: return CoinType.Zilliqa;
         case 19167: return CoinType.Zelcash;
         case 175: return CoinType.Ravencoin;
@@ -168,6 +170,8 @@ CoinType? createCoinTypeFromValue(int value) {
         case 10002020: return CoinType.Ronin;
         case 10000118: return CoinType.Osmosis;
         case 899: return CoinType.ECash;
+        case 10000025: return CoinType.CronosChain;
+        case 10000145: return CoinType.SmartBitcoinCash;
         default: return null;
     }
 }

@@ -29,7 +29,9 @@ enum EthereumChainID {
     XDai,
     Fantom,
     Celo,
-    Ronin
+    Ronin,
+    Cronos,
+    SmartBitcoinCash
 }
 
 
@@ -54,6 +56,8 @@ EthereumChainID? createEthereumChainIDFromValue(int value) {
         case 250: return EthereumChainID.Fantom;
         case 42220: return EthereumChainID.Celo;
         case 2020: return EthereumChainID.Ronin;
+        case 25: return EthereumChainID.Cronos;
+        case 10000: return EthereumChainID.SmartBitcoinCash;
         default: return null;
     }
 }
