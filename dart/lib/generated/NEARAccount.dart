@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class NEARAccount {
+    late Pointer<Void> _pointer;
 
-    static NEARAccount createFromNative(long nativeHandle) {
-        NEARAccount instance = new NEARAccount();
-        instance.nativeHandle = nativeHandle;
-        NEARAccountPhantomReference.register(instance, nativeHandle);
-        return instance;
+    NEARAccount._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

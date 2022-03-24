@@ -1,8 +1,9 @@
+import 'package:dart/generated_bindings.dart';
+import 'package:dart/wallet_core.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:dart/dart.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,19 +22,22 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    initPlatformState();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion;
+    String mnemonic = 'none';
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      platformVersion =
-          await Dart.platformVersion ?? 'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+      final wallet = WalletCore();
+
+      wallet.createHDWallet();
+
+      //mnemonic = wallet.mnemonic();
+    } catch (e) {
+      print(e);
+      mnemonic = "Fail to craeted";
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -42,7 +46,7 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
 
     setState(() {
-      _platformVersion = platformVersion;
+      _platformVersion = mnemonic;
     });
   }
 
@@ -51,10 +55,20 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('TW Sample App'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Column(
+            children: [
+              Text('mNemocid: $_platformVersion\n'),
+              ElevatedButton(
+                onPressed: () {
+                  initPlatformState();
+                },
+                child: Text("Init"),
+              )
+            ],
+          ),
         ),
       ),
     );

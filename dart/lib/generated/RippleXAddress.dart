@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class RippleXAddress {
+    late Pointer<Void> _pointer;
 
-    static RippleXAddress createFromNative(long nativeHandle) {
-        RippleXAddress instance = new RippleXAddress();
-        instance.nativeHandle = nativeHandle;
-        RippleXAddressPhantomReference.register(instance, nativeHandle);
-        return instance;
+    RippleXAddress._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

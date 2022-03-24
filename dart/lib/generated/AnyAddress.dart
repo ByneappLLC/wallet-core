@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class AnyAddress {
+    late Pointer<Void> _pointer;
 
-    static AnyAddress createFromNative(long nativeHandle) {
-        AnyAddress instance = new AnyAddress();
-        instance.nativeHandle = nativeHandle;
-        AnyAddressPhantomReference.register(instance, nativeHandle);
-        return instance;
+    AnyAddress._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

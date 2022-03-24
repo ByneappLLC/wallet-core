@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class EthereumAbiFunction {
+    late Pointer<Void> _pointer;
 
-    static EthereumAbiFunction createFromNative(long nativeHandle) {
-        EthereumAbiFunction instance = new EthereumAbiFunction();
-        instance.nativeHandle = nativeHandle;
-        EthereumAbiFunctionPhantomReference.register(instance, nativeHandle);
-        return instance;
+    EthereumAbiFunction._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

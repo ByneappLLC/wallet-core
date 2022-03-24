@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class FIOAccount {
+    late Pointer<Void> _pointer;
 
-    static FIOAccount createFromNative(long nativeHandle) {
-        FIOAccount instance = new FIOAccount();
-        instance.nativeHandle = nativeHandle;
-        FIOAccountPhantomReference.register(instance, nativeHandle);
-        return instance;
+    FIOAccount._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

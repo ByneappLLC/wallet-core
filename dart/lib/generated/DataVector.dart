@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class DataVector {
+    late Pointer<Void> _pointer;
 
-    static DataVector createFromNative(long nativeHandle) {
-        DataVector instance = new DataVector();
-        instance.nativeHandle = nativeHandle;
-        DataVectorPhantomReference.register(instance, nativeHandle);
-        return instance;
+    DataVector._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

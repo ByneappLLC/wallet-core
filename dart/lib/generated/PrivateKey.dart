@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class PrivateKey {
+    late Pointer<Void> _pointer;
 
-    static PrivateKey createFromNative(long nativeHandle) {
-        PrivateKey instance = new PrivateKey();
-        instance.nativeHandle = nativeHandle;
-        PrivateKeyPhantomReference.register(instance, nativeHandle);
-        return instance;
+    PrivateKey._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

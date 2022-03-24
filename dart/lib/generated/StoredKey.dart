@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class StoredKey {
+    late Pointer<Void> _pointer;
 
-    static StoredKey createFromNative(long nativeHandle) {
-        StoredKey instance = new StoredKey();
-        instance.nativeHandle = nativeHandle;
-        StoredKeyPhantomReference.register(instance, nativeHandle);
-        return instance;
+    StoredKey._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

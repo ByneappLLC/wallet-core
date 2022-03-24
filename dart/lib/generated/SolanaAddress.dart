@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class SolanaAddress {
+    late Pointer<Void> _pointer;
 
-    static SolanaAddress createFromNative(long nativeHandle) {
-        SolanaAddress instance = new SolanaAddress();
-        instance.nativeHandle = nativeHandle;
-        SolanaAddressPhantomReference.register(instance, nativeHandle);
-        return instance;
+    SolanaAddress._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

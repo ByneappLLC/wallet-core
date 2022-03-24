@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class SegwitAddress {
+    late Pointer<Void> _pointer;
 
-    static SegwitAddress createFromNative(long nativeHandle) {
-        SegwitAddress instance = new SegwitAddress();
-        instance.nativeHandle = nativeHandle;
-        SegwitAddressPhantomReference.register(instance, nativeHandle);
-        return instance;
+    SegwitAddress._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

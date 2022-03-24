@@ -1638,36 +1638,6 @@ class TrustWallet {
 
   set suboptarg(ffi.Pointer<ffi.Int8> value) => _suboptarg.value = value;
 
-  bool TWHDVersionIsPublic(
-    int version,
-  ) {
-    return _TWHDVersionIsPublic(
-          version,
-        ) !=
-        0;
-  }
-
-  late final _TWHDVersionIsPublic_ptr =
-      _lookup<ffi.NativeFunction<_c_TWHDVersionIsPublic>>(
-          'TWHDVersionIsPublic');
-  late final _dart_TWHDVersionIsPublic _TWHDVersionIsPublic =
-      _TWHDVersionIsPublic_ptr.asFunction<_dart_TWHDVersionIsPublic>();
-
-  bool TWHDVersionIsPrivate(
-    int version,
-  ) {
-    return _TWHDVersionIsPrivate(
-          version,
-        ) !=
-        0;
-  }
-
-  late final _TWHDVersionIsPrivate_ptr =
-      _lookup<ffi.NativeFunction<_c_TWHDVersionIsPrivate>>(
-          'TWHDVersionIsPrivate');
-  late final _dart_TWHDVersionIsPrivate _TWHDVersionIsPrivate =
-      _TWHDVersionIsPrivate_ptr.asFunction<_dart_TWHDVersionIsPrivate>();
-
   /// Creates a block of data from a byte array.
   ffi.Pointer<ffi.Void> TWDataCreateWithBytes(
     ffi.Pointer<ffi.Uint8> bytes,
@@ -1942,6 +1912,242 @@ class TrustWallet {
   late final _dart_TWDataEqual _TWDataEqual =
       _TWDataEqual_ptr.asFunction<_dart_TWDataEqual>();
 
+  bool TWHDVersionIsPublic(
+    int version,
+  ) {
+    return _TWHDVersionIsPublic(
+          version,
+        ) !=
+        0;
+  }
+
+  late final _TWHDVersionIsPublic_ptr =
+      _lookup<ffi.NativeFunction<_c_TWHDVersionIsPublic>>(
+          'TWHDVersionIsPublic');
+  late final _dart_TWHDVersionIsPublic _TWHDVersionIsPublic =
+      _TWHDVersionIsPublic_ptr.asFunction<_dart_TWHDVersionIsPublic>();
+
+  bool TWHDVersionIsPrivate(
+    int version,
+  ) {
+    return _TWHDVersionIsPrivate(
+          version,
+        ) !=
+        0;
+  }
+
+  late final _TWHDVersionIsPrivate_ptr =
+      _lookup<ffi.NativeFunction<_c_TWHDVersionIsPrivate>>(
+          'TWHDVersionIsPrivate');
+  late final _dart_TWHDVersionIsPrivate _TWHDVersionIsPrivate =
+      _TWHDVersionIsPrivate_ptr.asFunction<_dart_TWHDVersionIsPrivate>();
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_BITCOIN =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_BITCOIN');
+
+  ffi.Pointer<ffi.Int8> get HRP_BITCOIN => _HRP_BITCOIN.value;
+
+  set HRP_BITCOIN(ffi.Pointer<ffi.Int8> value) => _HRP_BITCOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_LITECOIN =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_LITECOIN');
+
+  ffi.Pointer<ffi.Int8> get HRP_LITECOIN => _HRP_LITECOIN.value;
+
+  set HRP_LITECOIN(ffi.Pointer<ffi.Int8> value) => _HRP_LITECOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_VIACOIN =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_VIACOIN');
+
+  ffi.Pointer<ffi.Int8> get HRP_VIACOIN => _HRP_VIACOIN.value;
+
+  set HRP_VIACOIN(ffi.Pointer<ffi.Int8> value) => _HRP_VIACOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_GROESTLCOIN =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_GROESTLCOIN');
+
+  ffi.Pointer<ffi.Int8> get HRP_GROESTLCOIN => _HRP_GROESTLCOIN.value;
+
+  set HRP_GROESTLCOIN(ffi.Pointer<ffi.Int8> value) =>
+      _HRP_GROESTLCOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_DIGIBYTE =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_DIGIBYTE');
+
+  ffi.Pointer<ffi.Int8> get HRP_DIGIBYTE => _HRP_DIGIBYTE.value;
+
+  set HRP_DIGIBYTE(ffi.Pointer<ffi.Int8> value) => _HRP_DIGIBYTE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_MONACOIN =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_MONACOIN');
+
+  ffi.Pointer<ffi.Int8> get HRP_MONACOIN => _HRP_MONACOIN.value;
+
+  set HRP_MONACOIN(ffi.Pointer<ffi.Int8> value) => _HRP_MONACOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_COSMOS =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_COSMOS');
+
+  ffi.Pointer<ffi.Int8> get HRP_COSMOS => _HRP_COSMOS.value;
+
+  set HRP_COSMOS(ffi.Pointer<ffi.Int8> value) => _HRP_COSMOS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_BITCOINCASH =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_BITCOINCASH');
+
+  ffi.Pointer<ffi.Int8> get HRP_BITCOINCASH => _HRP_BITCOINCASH.value;
+
+  set HRP_BITCOINCASH(ffi.Pointer<ffi.Int8> value) =>
+      _HRP_BITCOINCASH.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_BITCOINGOLD =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_BITCOINGOLD');
+
+  ffi.Pointer<ffi.Int8> get HRP_BITCOINGOLD => _HRP_BITCOINGOLD.value;
+
+  set HRP_BITCOINGOLD(ffi.Pointer<ffi.Int8> value) =>
+      _HRP_BITCOINGOLD.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_IOTEX =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_IOTEX');
+
+  ffi.Pointer<ffi.Int8> get HRP_IOTEX => _HRP_IOTEX.value;
+
+  set HRP_IOTEX(ffi.Pointer<ffi.Int8> value) => _HRP_IOTEX.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_ZILLIQA =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_ZILLIQA');
+
+  ffi.Pointer<ffi.Int8> get HRP_ZILLIQA => _HRP_ZILLIQA.value;
+
+  set HRP_ZILLIQA(ffi.Pointer<ffi.Int8> value) => _HRP_ZILLIQA.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_TERRA =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_TERRA');
+
+  ffi.Pointer<ffi.Int8> get HRP_TERRA => _HRP_TERRA.value;
+
+  set HRP_TERRA(ffi.Pointer<ffi.Int8> value) => _HRP_TERRA.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_CRYPTOORG =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_CRYPTOORG');
+
+  ffi.Pointer<ffi.Int8> get HRP_CRYPTOORG => _HRP_CRYPTOORG.value;
+
+  set HRP_CRYPTOORG(ffi.Pointer<ffi.Int8> value) =>
+      _HRP_CRYPTOORG.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_KAVA =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_KAVA');
+
+  ffi.Pointer<ffi.Int8> get HRP_KAVA => _HRP_KAVA.value;
+
+  set HRP_KAVA(ffi.Pointer<ffi.Int8> value) => _HRP_KAVA.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_OASIS =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_OASIS');
+
+  ffi.Pointer<ffi.Int8> get HRP_OASIS => _HRP_OASIS.value;
+
+  set HRP_OASIS(ffi.Pointer<ffi.Int8> value) => _HRP_OASIS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_BLUZELLE =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_BLUZELLE');
+
+  ffi.Pointer<ffi.Int8> get HRP_BLUZELLE => _HRP_BLUZELLE.value;
+
+  set HRP_BLUZELLE(ffi.Pointer<ffi.Int8> value) => _HRP_BLUZELLE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_BAND =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_BAND');
+
+  ffi.Pointer<ffi.Int8> get HRP_BAND => _HRP_BAND.value;
+
+  set HRP_BAND(ffi.Pointer<ffi.Int8> value) => _HRP_BAND.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_ELROND =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_ELROND');
+
+  ffi.Pointer<ffi.Int8> get HRP_ELROND => _HRP_ELROND.value;
+
+  set HRP_ELROND(ffi.Pointer<ffi.Int8> value) => _HRP_ELROND.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_BINANCE =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_BINANCE');
+
+  ffi.Pointer<ffi.Int8> get HRP_BINANCE => _HRP_BINANCE.value;
+
+  set HRP_BINANCE(ffi.Pointer<ffi.Int8> value) => _HRP_BINANCE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_ECASH =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_ECASH');
+
+  ffi.Pointer<ffi.Int8> get HRP_ECASH => _HRP_ECASH.value;
+
+  set HRP_ECASH(ffi.Pointer<ffi.Int8> value) => _HRP_ECASH.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_THORCHAIN =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_THORCHAIN');
+
+  ffi.Pointer<ffi.Int8> get HRP_THORCHAIN => _HRP_THORCHAIN.value;
+
+  set HRP_THORCHAIN(ffi.Pointer<ffi.Int8> value) =>
+      _HRP_THORCHAIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_HARMONY =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_HARMONY');
+
+  ffi.Pointer<ffi.Int8> get HRP_HARMONY => _HRP_HARMONY.value;
+
+  set HRP_HARMONY(ffi.Pointer<ffi.Int8> value) => _HRP_HARMONY.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_CARDANO =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_CARDANO');
+
+  ffi.Pointer<ffi.Int8> get HRP_CARDANO => _HRP_CARDANO.value;
+
+  set HRP_CARDANO(ffi.Pointer<ffi.Int8> value) => _HRP_CARDANO.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_QTUM =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_QTUM');
+
+  ffi.Pointer<ffi.Int8> get HRP_QTUM => _HRP_QTUM.value;
+
+  set HRP_QTUM(ffi.Pointer<ffi.Int8> value) => _HRP_QTUM.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_OSMOSIS =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_OSMOSIS');
+
+  ffi.Pointer<ffi.Int8> get HRP_OSMOSIS => _HRP_OSMOSIS.value;
+
+  set HRP_OSMOSIS(ffi.Pointer<ffi.Int8> value) => _HRP_OSMOSIS.value = value;
+
+  ffi.Pointer<ffi.Int8> stringForHRP(
+    int hrp,
+  ) {
+    return _stringForHRP(
+      hrp,
+    );
+  }
+
+  late final _stringForHRP_ptr =
+      _lookup<ffi.NativeFunction<_c_stringForHRP>>('stringForHRP');
+  late final _dart_stringForHRP _stringForHRP =
+      _stringForHRP_ptr.asFunction<_dart_stringForHRP>();
+
+  int hrpForString(
+    ffi.Pointer<ffi.Int8> string,
+  ) {
+    return _hrpForString(
+      string,
+    );
+  }
+
+  late final _hrpForString_ptr =
+      _lookup<ffi.NativeFunction<_c_hrpForString>>('hrpForString');
+  late final _dart_hrpForString _hrpForString =
+      _hrpForString_ptr.asFunction<_dart_hrpForString>();
+
   /// Creates a string from a null-terminated UTF8 byte array. It must be deleted at the end.
   ffi.Pointer<ffi.Void> TWStringCreateWithUTF8Bytes(
     ffi.Pointer<ffi.Int8> bytes,
@@ -2202,6 +2408,25 @@ class TrustWallet {
       _lookup<ffi.NativeFunction<_c_TWPublicKeyVerify>>('TWPublicKeyVerify');
   late final _dart_TWPublicKeyVerify _TWPublicKeyVerify =
       _TWPublicKeyVerify_ptr.asFunction<_dart_TWPublicKeyVerify>();
+
+  bool TWPublicKeyVerifyAsDER(
+    ffi.Pointer<TWPublicKey> pk,
+    ffi.Pointer<ffi.Void> signature,
+    ffi.Pointer<ffi.Void> message,
+  ) {
+    return _TWPublicKeyVerifyAsDER(
+          pk,
+          signature,
+          message,
+        ) !=
+        0;
+  }
+
+  late final _TWPublicKeyVerifyAsDER_ptr =
+      _lookup<ffi.NativeFunction<_c_TWPublicKeyVerifyAsDER>>(
+          'TWPublicKeyVerifyAsDER');
+  late final _dart_TWPublicKeyVerifyAsDER _TWPublicKeyVerifyAsDER =
+      _TWPublicKeyVerifyAsDER_ptr.asFunction<_dart_TWPublicKeyVerifyAsDER>();
 
   bool TWPublicKeyVerifySchnorr(
     ffi.Pointer<TWPublicKey> pk,
@@ -3142,6 +3367,163 @@ class TrustWallet {
       _TWHDWalletGetPublicKeyFromExtended_ptr.asFunction<
           _dart_TWHDWalletGetPublicKeyFromExtended>();
 
+  ffi.Pointer<TWDataVector> TWDataVectorCreate() {
+    return _TWDataVectorCreate();
+  }
+
+  late final _TWDataVectorCreate_ptr =
+      _lookup<ffi.NativeFunction<_c_TWDataVectorCreate>>('TWDataVectorCreate');
+  late final _dart_TWDataVectorCreate _TWDataVectorCreate =
+      _TWDataVectorCreate_ptr.asFunction<_dart_TWDataVectorCreate>();
+
+  ffi.Pointer<TWDataVector> TWDataVectorCreateWithData(
+    ffi.Pointer<ffi.Void> data,
+  ) {
+    return _TWDataVectorCreateWithData(
+      data,
+    );
+  }
+
+  late final _TWDataVectorCreateWithData_ptr =
+      _lookup<ffi.NativeFunction<_c_TWDataVectorCreateWithData>>(
+          'TWDataVectorCreateWithData');
+  late final _dart_TWDataVectorCreateWithData _TWDataVectorCreateWithData =
+      _TWDataVectorCreateWithData_ptr.asFunction<
+          _dart_TWDataVectorCreateWithData>();
+
+  void TWDataVectorDelete(
+    ffi.Pointer<TWDataVector> dataVector,
+  ) {
+    return _TWDataVectorDelete(
+      dataVector,
+    );
+  }
+
+  late final _TWDataVectorDelete_ptr =
+      _lookup<ffi.NativeFunction<_c_TWDataVectorDelete>>('TWDataVectorDelete');
+  late final _dart_TWDataVectorDelete _TWDataVectorDelete =
+      _TWDataVectorDelete_ptr.asFunction<_dart_TWDataVectorDelete>();
+
+  void TWDataVectorAdd(
+    ffi.Pointer<TWDataVector> dataVector,
+    ffi.Pointer<ffi.Void> data,
+  ) {
+    return _TWDataVectorAdd(
+      dataVector,
+      data,
+    );
+  }
+
+  late final _TWDataVectorAdd_ptr =
+      _lookup<ffi.NativeFunction<_c_TWDataVectorAdd>>('TWDataVectorAdd');
+  late final _dart_TWDataVectorAdd _TWDataVectorAdd =
+      _TWDataVectorAdd_ptr.asFunction<_dart_TWDataVectorAdd>();
+
+  int TWDataVectorSize(
+    ffi.Pointer<TWDataVector> dataVector,
+  ) {
+    return _TWDataVectorSize(
+      dataVector,
+    );
+  }
+
+  late final _TWDataVectorSize_ptr =
+      _lookup<ffi.NativeFunction<_c_TWDataVectorSize>>('TWDataVectorSize');
+  late final _dart_TWDataVectorSize _TWDataVectorSize =
+      _TWDataVectorSize_ptr.asFunction<_dart_TWDataVectorSize>();
+
+  ffi.Pointer<ffi.Void> TWDataVectorGet(
+    ffi.Pointer<TWDataVector> dataVector,
+    int index,
+  ) {
+    return _TWDataVectorGet(
+      dataVector,
+      index,
+    );
+  }
+
+  late final _TWDataVectorGet_ptr =
+      _lookup<ffi.NativeFunction<_c_TWDataVectorGet>>('TWDataVectorGet');
+  late final _dart_TWDataVectorGet _TWDataVectorGet =
+      _TWDataVectorGet_ptr.asFunction<_dart_TWDataVectorGet>();
+
+  /// Build a coin-specific SigningInput protobuf transaction input, from simple transaction parameters
+  /// - amount: decimal number as string
+  /// - asset: optional asset name, like "BNB"
+  /// - memo: optional memo
+  /// - chainId: optional chainId to override default
+  ffi.Pointer<ffi.Void> TWTransactionCompilerBuildInput(
+    int coinType,
+    ffi.Pointer<ffi.Void> from,
+    ffi.Pointer<ffi.Void> to,
+    ffi.Pointer<ffi.Void> amount,
+    ffi.Pointer<ffi.Void> asset,
+    ffi.Pointer<ffi.Void> memo,
+    ffi.Pointer<ffi.Void> chainId,
+  ) {
+    return _TWTransactionCompilerBuildInput(
+      coinType,
+      from,
+      to,
+      amount,
+      asset,
+      memo,
+      chainId,
+    );
+  }
+
+  late final _TWTransactionCompilerBuildInput_ptr =
+      _lookup<ffi.NativeFunction<_c_TWTransactionCompilerBuildInput>>(
+          'TWTransactionCompilerBuildInput');
+  late final _dart_TWTransactionCompilerBuildInput
+      _TWTransactionCompilerBuildInput = _TWTransactionCompilerBuildInput_ptr
+          .asFunction<_dart_TWTransactionCompilerBuildInput>();
+
+  /// Obtain pre-signing hashes of a transaction. For each hash its corresponding publickKeyHash follows, so return is always even size.
+  /// For chains with one signature only, the result contains 2 elements, but the second may be ignored.
+  ffi.Pointer<TWDataVector> TWTransactionCompilerPreImageHashes(
+    int coinType,
+    ffi.Pointer<ffi.Void> txInputData,
+  ) {
+    return _TWTransactionCompilerPreImageHashes(
+      coinType,
+      txInputData,
+    );
+  }
+
+  late final _TWTransactionCompilerPreImageHashes_ptr =
+      _lookup<ffi.NativeFunction<_c_TWTransactionCompilerPreImageHashes>>(
+          'TWTransactionCompilerPreImageHashes');
+  late final _dart_TWTransactionCompilerPreImageHashes
+      _TWTransactionCompilerPreImageHashes =
+      _TWTransactionCompilerPreImageHashes_ptr.asFunction<
+          _dart_TWTransactionCompilerPreImageHashes>();
+
+  /// Compile a complete transation with one or more external signatures, put together from transaction input and provided public keys and signatures.
+  /// The signatures must match the hashes returned by TWTransactionCompilerPreImageHashes, in the same order.
+  /// The publicKeyHash attached to the hashes enable identifying the private key needed for signing the hash.
+  ffi.Pointer<ffi.Void> TWTransactionCompilerCompileWithSignatures(
+    int coinType,
+    ffi.Pointer<ffi.Void> txInputData,
+    ffi.Pointer<TWDataVector> signatures,
+    ffi.Pointer<TWDataVector> publicKeys,
+  ) {
+    return _TWTransactionCompilerCompileWithSignatures(
+      coinType,
+      txInputData,
+      signatures,
+      publicKeys,
+    );
+  }
+
+  late final _TWTransactionCompilerCompileWithSignatures_ptr = _lookup<
+          ffi.NativeFunction<_c_TWTransactionCompilerCompileWithSignatures>>(
+      'TWTransactionCompilerCompileWithSignatures');
+  late final _dart_TWTransactionCompilerCompileWithSignatures
+      _TWTransactionCompilerCompileWithSignatures =
+      _TWTransactionCompilerCompileWithSignatures_ptr.asFunction<
+          _dart_TWTransactionCompilerCompileWithSignatures>();
+
   bool TWBitcoinSigHashTypeIsSingle(
     int type,
   ) {
@@ -4059,6 +4441,56 @@ class TrustWallet {
           'TWRippleXAddressTag');
   late final _dart_TWRippleXAddressTag _TWRippleXAddressTag =
       _TWRippleXAddressTag_ptr.asFunction<_dart_TWRippleXAddressTag>();
+
+  /// Derives a key from a password and a salt using PBKDF2 + Sha256.
+  ///
+  /// \param password is the master password from which a derived key is generated
+  /// \param salt is a sequence of bits, known as a cryptographic salt
+  /// \param iterations is the number of iterations desired
+  /// \param dkLen is the desired bit-length of the derived key
+  ffi.Pointer<ffi.Void> TWPBKDF2HmacSha256(
+    ffi.Pointer<ffi.Void> password,
+    ffi.Pointer<ffi.Void> salt,
+    int iterations,
+    int dkLen,
+  ) {
+    return _TWPBKDF2HmacSha256(
+      password,
+      salt,
+      iterations,
+      dkLen,
+    );
+  }
+
+  late final _TWPBKDF2HmacSha256_ptr =
+      _lookup<ffi.NativeFunction<_c_TWPBKDF2HmacSha256>>('TWPBKDF2HmacSha256');
+  late final _dart_TWPBKDF2HmacSha256 _TWPBKDF2HmacSha256 =
+      _TWPBKDF2HmacSha256_ptr.asFunction<_dart_TWPBKDF2HmacSha256>();
+
+  /// Derives a key from a password and a salt using PBKDF2 + Sha512.
+  ///
+  /// \param password is the master password from which a derived key is generated
+  /// \param salt is a sequence of bits, known as a cryptographic salt
+  /// \param iterations is the number of iterations desired
+  /// \param dkLen is the desired bit-length of the derived key
+  ffi.Pointer<ffi.Void> TWPBKDF2HmacSha512(
+    ffi.Pointer<ffi.Void> password,
+    ffi.Pointer<ffi.Void> salt,
+    int iterations,
+    int dkLen,
+  ) {
+    return _TWPBKDF2HmacSha512(
+      password,
+      salt,
+      iterations,
+      dkLen,
+    );
+  }
+
+  late final _TWPBKDF2HmacSha512_ptr =
+      _lookup<ffi.NativeFunction<_c_TWPBKDF2HmacSha512>>('TWPBKDF2HmacSha512');
+  late final _dart_TWPBKDF2HmacSha512 _TWPBKDF2HmacSha512 =
+      _TWPBKDF2HmacSha512_ptr.asFunction<_dart_TWPBKDF2HmacSha512>();
 
   /// Encode function to Eth ABI binary
   ffi.Pointer<ffi.Void> TWEthereumAbiEncode(
@@ -6610,21 +7042,6 @@ class TrustWallet {
   late final _dart_TWAccountCoin _TWAccountCoin =
       _TWAccountCoin_ptr.asFunction<_dart_TWAccountCoin>();
 
-  /// Suggest baseFee and maxPriorityFee based on eth_feeHistory RPC call response
-  ffi.Pointer<ffi.Void> TWEthereumFeeSuggest(
-    ffi.Pointer<ffi.Void> feeHistory,
-  ) {
-    return _TWEthereumFeeSuggest(
-      feeHistory,
-    );
-  }
-
-  late final _TWEthereumFeeSuggest_ptr =
-      _lookup<ffi.NativeFunction<_c_TWEthereumFeeSuggest>>(
-          'TWEthereumFeeSuggest');
-  late final _dart_TWEthereumFeeSuggest _TWEthereumFeeSuggest =
-      _TWEthereumFeeSuggest_ptr.asFunction<_dart_TWEthereumFeeSuggest>();
-
   /// Creates an address from a string representaion.
   ffi.Pointer<TWSolanaAddress> TWSolanaAddressCreateWithString(
     ffi.Pointer<ffi.Void> string,
@@ -7767,6 +8184,38 @@ abstract class TWHDVersion {
   static const int TWHDVersionDGPV = 49988504;
 }
 
+/// Registered human-readable parts for BIP-0173
+///
+/// - SeeAlso: https://github.com/satoshilabs/slips/blob/master/slip-0173.md
+abstract class TWHRP {
+  static const int TWHRPUnknown = 0;
+  static const int TWHRPBitcoin = 1;
+  static const int TWHRPLitecoin = 2;
+  static const int TWHRPViacoin = 3;
+  static const int TWHRPGroestlcoin = 4;
+  static const int TWHRPDigiByte = 5;
+  static const int TWHRPMonacoin = 6;
+  static const int TWHRPCosmos = 7;
+  static const int TWHRPBitcoinCash = 8;
+  static const int TWHRPBitcoinGold = 9;
+  static const int TWHRPIoTeX = 10;
+  static const int TWHRPZilliqa = 11;
+  static const int TWHRPTerra = 12;
+  static const int TWHRPCryptoOrg = 13;
+  static const int TWHRPKava = 14;
+  static const int TWHRPOasis = 15;
+  static const int TWHRPBluzelle = 16;
+  static const int TWHRPBandChain = 17;
+  static const int TWHRPElrond = 18;
+  static const int TWHRPBinance = 19;
+  static const int TWHRPECash = 20;
+  static const int TWHRPTHORChain = 21;
+  static const int TWHRPHarmony = 22;
+  static const int TWHRPCardano = 23;
+  static const int TWHRPQtum = 24;
+  static const int TWHRPOsmosis = 25;
+}
+
 /// Public key types
 abstract class TWPublicKeyType {
   static const int TWPublicKeyTypeSECP256k1 = 0;
@@ -7833,7 +8282,7 @@ abstract class TWCoinType {
   static const int TWCoinTypeViacoin = 14;
   static const int TWCoinTypeWanchain = 5718350;
   static const int TWCoinTypeZcash = 133;
-  static const int TWCoinTypeZcoin = 136;
+  static const int TWCoinTypeFiro = 136;
   static const int TWCoinTypeZilliqa = 313;
   static const int TWCoinTypeZelcash = 19167;
   static const int TWCoinTypeRavencoin = 175;
@@ -7863,9 +8312,9 @@ abstract class TWCoinType {
   static const int TWCoinTypeRonin = 10002020;
   static const int TWCoinTypeOsmosis = 10000118;
   static const int TWCoinTypeECash = 899;
+  static const int TWCoinTypeCronosChain = 10000025;
+  static const int TWCoinTypeSmartBitcoinCash = 10000145;
 }
-
-abstract class TWHRP {}
 
 class TWCoinTypeConfiguration extends ffi.Struct {
   @ffi.Uint8()
@@ -7873,6 +8322,11 @@ class TWCoinTypeConfiguration extends ffi.Struct {
 }
 
 class TWHDWallet extends ffi.Opaque {}
+
+class TWDataVector extends ffi.Opaque {}
+
+/// Non-core transaction utility methods, like building a transaction using an external signature.
+class TWTransactionCompiler extends ffi.Opaque {}
 
 abstract class TWBitcoinSigHashType {
   static const int TWBitcoinSigHashTypeAll = 1;
@@ -7919,6 +8373,8 @@ abstract class TWSS58AddressType {
 
 /// Represents a Ripple X-address.
 class TWRippleXAddress extends ffi.Opaque {}
+
+class TWPBKDF2 extends ffi.Opaque {}
 
 class TWEthereumAbiFunction extends ffi.Opaque {}
 
@@ -7984,8 +8440,6 @@ class TWAES extends ffi.Struct {
 /// Represents a NEAR Account name
 class TWNEARAccount extends ffi.Opaque {}
 
-class TWEthereumFee extends ffi.Opaque {}
-
 /// Chain identifier for Ethereum-based blockchains.
 abstract class TWEthereumChainID {
   static const int TWEthereumChainIDEthereum = 1;
@@ -8007,6 +8461,8 @@ abstract class TWEthereumChainID {
   static const int TWEthereumChainIDFantom = 250;
   static const int TWEthereumChainIDCelo = 42220;
   static const int TWEthereumChainIDRonin = 2020;
+  static const int TWEthereumChainIDCronos = 25;
+  static const int TWEthereumChainIDSmartBitcoinCash = 10000;
 }
 
 class TWSolanaAddress extends ffi.Opaque {}
@@ -10240,22 +10696,6 @@ typedef _dart_strtouq = int Function(
   int __base,
 );
 
-typedef _c_TWHDVersionIsPublic = ffi.Uint8 Function(
-  ffi.Int32 version,
-);
-
-typedef _dart_TWHDVersionIsPublic = int Function(
-  int version,
-);
-
-typedef _c_TWHDVersionIsPrivate = ffi.Uint8 Function(
-  ffi.Int32 version,
-);
-
-typedef _dart_TWHDVersionIsPrivate = int Function(
-  int version,
-);
-
 typedef _c_TWDataCreateWithBytes = ffi.Pointer<ffi.Void> Function(
   ffi.Pointer<ffi.Uint8> bytes,
   ffi.Uint64 size,
@@ -10422,6 +10862,38 @@ typedef _dart_TWDataEqual = int Function(
   ffi.Pointer<ffi.Void> rhs,
 );
 
+typedef _c_TWHDVersionIsPublic = ffi.Uint8 Function(
+  ffi.Int32 version,
+);
+
+typedef _dart_TWHDVersionIsPublic = int Function(
+  int version,
+);
+
+typedef _c_TWHDVersionIsPrivate = ffi.Uint8 Function(
+  ffi.Int32 version,
+);
+
+typedef _dart_TWHDVersionIsPrivate = int Function(
+  int version,
+);
+
+typedef _c_stringForHRP = ffi.Pointer<ffi.Int8> Function(
+  ffi.Int32 hrp,
+);
+
+typedef _dart_stringForHRP = ffi.Pointer<ffi.Int8> Function(
+  int hrp,
+);
+
+typedef _c_hrpForString = ffi.Int32 Function(
+  ffi.Pointer<ffi.Int8> string,
+);
+
+typedef _dart_hrpForString = int Function(
+  ffi.Pointer<ffi.Int8> string,
+);
+
 typedef _c_TWStringCreateWithUTF8Bytes = ffi.Pointer<ffi.Void> Function(
   ffi.Pointer<ffi.Int8> bytes,
 );
@@ -10559,6 +11031,18 @@ typedef _c_TWPublicKeyVerify = ffi.Uint8 Function(
 );
 
 typedef _dart_TWPublicKeyVerify = int Function(
+  ffi.Pointer<TWPublicKey> pk,
+  ffi.Pointer<ffi.Void> signature,
+  ffi.Pointer<ffi.Void> message,
+);
+
+typedef _c_TWPublicKeyVerifyAsDER = ffi.Uint8 Function(
+  ffi.Pointer<TWPublicKey> pk,
+  ffi.Pointer<ffi.Void> signature,
+  ffi.Pointer<ffi.Void> message,
+);
+
+typedef _dart_TWPublicKeyVerifyAsDER = int Function(
   ffi.Pointer<TWPublicKey> pk,
   ffi.Pointer<ffi.Void> signature,
   ffi.Pointer<ffi.Void> message,
@@ -11108,6 +11592,102 @@ typedef _dart_TWHDWalletGetPublicKeyFromExtended = ffi.Pointer<TWPublicKey>
   ffi.Pointer<ffi.Void> derivationPath,
 );
 
+typedef _c_TWDataVectorCreate = ffi.Pointer<TWDataVector> Function();
+
+typedef _dart_TWDataVectorCreate = ffi.Pointer<TWDataVector> Function();
+
+typedef _c_TWDataVectorCreateWithData = ffi.Pointer<TWDataVector> Function(
+  ffi.Pointer<ffi.Void> data,
+);
+
+typedef _dart_TWDataVectorCreateWithData = ffi.Pointer<TWDataVector> Function(
+  ffi.Pointer<ffi.Void> data,
+);
+
+typedef _c_TWDataVectorDelete = ffi.Void Function(
+  ffi.Pointer<TWDataVector> dataVector,
+);
+
+typedef _dart_TWDataVectorDelete = void Function(
+  ffi.Pointer<TWDataVector> dataVector,
+);
+
+typedef _c_TWDataVectorAdd = ffi.Void Function(
+  ffi.Pointer<TWDataVector> dataVector,
+  ffi.Pointer<ffi.Void> data,
+);
+
+typedef _dart_TWDataVectorAdd = void Function(
+  ffi.Pointer<TWDataVector> dataVector,
+  ffi.Pointer<ffi.Void> data,
+);
+
+typedef _c_TWDataVectorSize = ffi.Uint64 Function(
+  ffi.Pointer<TWDataVector> dataVector,
+);
+
+typedef _dart_TWDataVectorSize = int Function(
+  ffi.Pointer<TWDataVector> dataVector,
+);
+
+typedef _c_TWDataVectorGet = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<TWDataVector> dataVector,
+  ffi.Uint64 index,
+);
+
+typedef _dart_TWDataVectorGet = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<TWDataVector> dataVector,
+  int index,
+);
+
+typedef _c_TWTransactionCompilerBuildInput = ffi.Pointer<ffi.Void> Function(
+  ffi.Int32 coinType,
+  ffi.Pointer<ffi.Void> from,
+  ffi.Pointer<ffi.Void> to,
+  ffi.Pointer<ffi.Void> amount,
+  ffi.Pointer<ffi.Void> asset,
+  ffi.Pointer<ffi.Void> memo,
+  ffi.Pointer<ffi.Void> chainId,
+);
+
+typedef _dart_TWTransactionCompilerBuildInput = ffi.Pointer<ffi.Void> Function(
+  int coinType,
+  ffi.Pointer<ffi.Void> from,
+  ffi.Pointer<ffi.Void> to,
+  ffi.Pointer<ffi.Void> amount,
+  ffi.Pointer<ffi.Void> asset,
+  ffi.Pointer<ffi.Void> memo,
+  ffi.Pointer<ffi.Void> chainId,
+);
+
+typedef _c_TWTransactionCompilerPreImageHashes = ffi.Pointer<TWDataVector>
+    Function(
+  ffi.Int32 coinType,
+  ffi.Pointer<ffi.Void> txInputData,
+);
+
+typedef _dart_TWTransactionCompilerPreImageHashes = ffi.Pointer<TWDataVector>
+    Function(
+  int coinType,
+  ffi.Pointer<ffi.Void> txInputData,
+);
+
+typedef _c_TWTransactionCompilerCompileWithSignatures = ffi.Pointer<ffi.Void>
+    Function(
+  ffi.Int32 coinType,
+  ffi.Pointer<ffi.Void> txInputData,
+  ffi.Pointer<TWDataVector> signatures,
+  ffi.Pointer<TWDataVector> publicKeys,
+);
+
+typedef _dart_TWTransactionCompilerCompileWithSignatures = ffi.Pointer<ffi.Void>
+    Function(
+  int coinType,
+  ffi.Pointer<ffi.Void> txInputData,
+  ffi.Pointer<TWDataVector> signatures,
+  ffi.Pointer<TWDataVector> publicKeys,
+);
+
 typedef _c_TWBitcoinSigHashTypeIsSingle = ffi.Uint8 Function(
   ffi.Int32 type,
 );
@@ -11609,6 +12189,34 @@ typedef _c_TWRippleXAddressTag = ffi.Uint32 Function(
 
 typedef _dart_TWRippleXAddressTag = int Function(
   ffi.Pointer<TWRippleXAddress> address,
+);
+
+typedef _c_TWPBKDF2HmacSha256 = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> password,
+  ffi.Pointer<ffi.Void> salt,
+  ffi.Uint32 iterations,
+  ffi.Uint32 dkLen,
+);
+
+typedef _dart_TWPBKDF2HmacSha256 = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> password,
+  ffi.Pointer<ffi.Void> salt,
+  int iterations,
+  int dkLen,
+);
+
+typedef _c_TWPBKDF2HmacSha512 = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> password,
+  ffi.Pointer<ffi.Void> salt,
+  ffi.Uint32 iterations,
+  ffi.Uint32 dkLen,
+);
+
+typedef _dart_TWPBKDF2HmacSha512 = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<ffi.Void> password,
+  ffi.Pointer<ffi.Void> salt,
+  int iterations,
+  int dkLen,
 );
 
 typedef _c_TWEthereumAbiEncode = ffi.Pointer<ffi.Void> Function(
@@ -13041,14 +13649,6 @@ typedef _c_TWAccountCoin = ffi.Int32 Function(
 
 typedef _dart_TWAccountCoin = int Function(
   ffi.Pointer<TWAccount> account,
-);
-
-typedef _c_TWEthereumFeeSuggest = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> feeHistory,
-);
-
-typedef _dart_TWEthereumFeeSuggest = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> feeHistory,
 );
 
 typedef _c_TWSolanaAddressCreateWithString = ffi.Pointer<TWSolanaAddress>

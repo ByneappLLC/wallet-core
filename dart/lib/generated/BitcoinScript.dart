@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class BitcoinScript {
+    late Pointer<Void> _pointer;
 
-    static BitcoinScript createFromNative(long nativeHandle) {
-        BitcoinScript instance = new BitcoinScript();
-        instance.nativeHandle = nativeHandle;
-        BitcoinScriptPhantomReference.register(instance, nativeHandle);
-        return instance;
+    BitcoinScript._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

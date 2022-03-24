@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class HDWallet {
+    late Pointer<Void> _pointer;
 
-    static HDWallet createFromNative(long nativeHandle) {
-        HDWallet instance = new HDWallet();
-        instance.nativeHandle = nativeHandle;
-        HDWalletPhantomReference.register(instance, nativeHandle);
-        return instance;
+    HDWallet._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

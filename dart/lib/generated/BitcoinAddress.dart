@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class BitcoinAddress {
+    late Pointer<Void> _pointer;
 
-    static BitcoinAddress createFromNative(long nativeHandle) {
-        BitcoinAddress instance = new BitcoinAddress();
-        instance.nativeHandle = nativeHandle;
-        BitcoinAddressPhantomReference.register(instance, nativeHandle);
-        return instance;
+    BitcoinAddress._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }

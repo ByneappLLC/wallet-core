@@ -11,12 +11,10 @@ part of wallet_core;
 
 
 class GroestlcoinAddress {
+    late Pointer<Void> _pointer;
 
-    static GroestlcoinAddress createFromNative(long nativeHandle) {
-        GroestlcoinAddress instance = new GroestlcoinAddress();
-        instance.nativeHandle = nativeHandle;
-        GroestlcoinAddressPhantomReference.register(instance, nativeHandle);
-        return instance;
+    GroestlcoinAddress._(Pointer<Void> pointer) {
+        _pointer = pointer;
     }
 
 }
