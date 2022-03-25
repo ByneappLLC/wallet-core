@@ -64,18 +64,15 @@ class WalletCore {
     _trustWallet = TrustWallet(walletCoreLib);
   }
 
-  Pointer<TWHDWallet>? createHDWallet({
+  void createHDWallet({
     int strength = 128,
     String passphrase = "",
   }) {
     final _passPhrase = _trustWallet.TWStringCreateWithUTF8Bytes(
-        passphrase.toNativeUtf8().cast());
-    _hdWallet = _trustWallet.TWHDWalletCreate(
-      strength,
-      _passPhrase,
+      passphrase.toNativeUtf8().cast<Int8>(),
     );
 
-    return _hdWallet;
+    _hdWallet = _trustWallet.TWHDWalletCreate(strength, _passPhrase);
   }
 
   String mnemonic() {

@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
 
       wallet.createHDWallet();
 
-      //mnemonic = wallet.mnemonic();
+      mnemonic = wallet.mnemonic();
     } catch (e) {
       print(e);
       mnemonic = "Fail to craeted";
