@@ -5,7 +5,7 @@ import 'dart:ffi';
 import 'dart:io';
 
 import 'package:ffi/ffi.dart';
-import 'package:dart/generated_bindings.dart';
+import 'package:wallet_core/generated_bindings.dart';
 
 part 'generated/Account.dart';
 part 'generated/AES.dart';

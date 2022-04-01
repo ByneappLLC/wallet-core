@@ -1,4 +1,4 @@
-name: dart
+name: wallet_core
 description: A new flutter plugin project.
 version: 0.0.1
 homepage:
@@ -25,10 +25,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: io.k9wallet.dart
-        pluginClass: DartPlugin
+        package: com.byneapp.wallet_core
+        pluginClass: WalletCorePlugin
       ios:
-        pluginClass: DartPlugin
+        pluginClass: WalletCorePlugin
 
 ffigen:
   name: TrustWallet

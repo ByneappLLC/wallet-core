@@ -1,21 +1,21 @@
 PODS:
-  - dart (0.0.1):
-    - Flutter
   - Flutter (1.0.0)
+  - wallet_core (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
-  - dart (from `.symlinks/plugins/dart/ios`)
   - Flutter (from `Flutter`)
+  - wallet_core (from `.symlinks/plugins/wallet_core/ios`)
 
 EXTERNAL SOURCES:
-  dart:
-    :path: ".symlinks/plugins/dart/ios"
   Flutter:
     :path: Flutter
+  wallet_core:
+    :path: ".symlinks/plugins/wallet_core/ios"
 
 SPEC CHECKSUMS:
-  dart: ed8616768e0d147ae6c1d4857bbb9e88667320a7
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  wallet_core: 2912017065e4d57ef796acd05bf56afb0a8914c1
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 

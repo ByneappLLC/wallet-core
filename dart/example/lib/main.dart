@@ -1,5 +1,4 @@
-import 'package:dart/generated_bindings.dart';
-import 'package:dart/wallet_core.dart';
+import 'package:wallet_core/wallet_core.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
