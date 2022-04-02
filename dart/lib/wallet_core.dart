@@ -49,9 +49,6 @@ part 'generated/DataVector.dart';
 
 late DynamicLibrary walletCoreLib;
 
-final Pointer<T> Function<T extends NativeType>(String symbolName) _lookup =
-    walletCoreLib.lookup;
-
 class WalletCore {
   late TrustWallet _trustWallet;
   Pointer<TWHDWallet>? _hdWallet;

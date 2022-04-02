@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# This script builds dynamic WalletCore and SwiftProtobuf xcframework for SPM and CocoaPods
+#
+
+set -o pipefail
+set -e
+
+FLUTTER_FOLDER=dart/ios/Frameworks
+BUILD_FOLDER=swift/build
+
+cleanup() {
+    rm -rf ${FLUTTER_FOLDER}/*.xcframework
+    rm -rf ${BUILD_FOLDER}
+}
+
+build() {
+    pushd swift
+    fastlane ios xcframework
+    popd
+}
+
+move() {
+    cp -a ${BUILD_FOLDER}/*.xcframework ${FLUTTER_FOLDER}/
+}
+
+main() {
+   
+    move
+}
+
+main
+
+
