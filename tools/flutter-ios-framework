@@ -25,7 +25,8 @@ move() {
 }
 
 main() {
-   
+    cleanup
+    build
     move
 }
 
