@@ -1,82 +1,40 @@
-library wallet_core;
+library flutter_trust_wallet_core;
 
 import 'dart:ffi';
-
 import 'dart:io';
+import 'dart:typed_data';
 
-import 'package:ffi/ffi.dart';
-import 'package:wallet_core/generated_bindings.dart';
+import 'package:wallet_core/wallet_core_ffi.dart';
 
-part 'generated/Account.dart';
-part 'generated/AES.dart';
-part 'generated/AESPaddingMode.dart';
-part 'generated/AnyAddress.dart';
-part 'generated/Base58.dart';
-part 'generated/BitcoinAddress.dart';
-part 'generated/BitcoinScript.dart';
-part 'generated/BitcoinSigHashType.dart';
-part 'generated/Blockchain.dart';
-part 'generated/CoinType.dart';
-part 'generated/CoinTypeConfiguration.dart';
-part 'generated/Curve.dart';
-part 'generated/EthereumAbi.dart';
-part 'generated/EthereumAbiFunction.dart';
-part 'generated/EthereumAbiValue.dart';
-part 'generated/EthereumChainID.dart';
-part 'generated/FIOAccount.dart';
-part 'generated/GroestlcoinAddress.dart';
-part 'generated/Hash.dart';
-part 'generated/HDVersion.dart';
-part 'generated/HDWallet.dart';
-part 'generated/HRP.dart';
-part 'generated/Mnemonic.dart';
-part 'generated/NEARAccount.dart';
-part 'generated/PrivateKey.dart';
-part 'generated/PublicKey.dart';
-part 'generated/PublicKeyType.dart';
-part 'generated/Purpose.dart';
-part 'generated/RippleXAddress.dart';
-part 'generated/SegwitAddress.dart';
-part 'generated/SolanaAddress.dart';
-part 'generated/SS58AddressType.dart';
-part 'generated/StellarMemoType.dart';
-part 'generated/StellarPassphrase.dart';
-part 'generated/StellarVersionByte.dart';
-part 'generated/StoredKey.dart';
-part 'generated/StoredKeyEncryptionLevel.dart';
-part 'generated/THORChainSwap.dart';
-part 'generated/DataVector.dart';
+import 'extensions.dart';
 
-late DynamicLibrary walletCoreLib;
+part 'core/any_address.dart';
+part 'core/any_signer.dart';
+part 'core/base58.dart';
+part 'core/bitcoin_address.dart';
+part 'core/bitcoin_script.dart';
+part 'core/coin_type_configuration.dart';
+part 'core/ethereum_abi.dart';
+part 'core/ethereum_abi_function.dart';
+part 'core/ethereum_abi_value.dart';
+part 'core/fio_account.dart';
+part 'core/groestlcoin_address.dart';
+part 'core/hash.dart';
+part 'core/hd_version.dart';
+part 'core/hd_wallet.dart';
+part 'core/hrp.dart';
+part 'core/mnemonic.dart';
+part 'core/private_key.dart';
+part 'core/public_key.dart';
+part 'core/ripple_x_address.dart';
+part 'core/segwit_address.dart';
+part 'core/solana_address.dart';
+part 'core/stored_key.dart';
 
 class WalletCore {
-  late TrustWallet _trustWallet;
-  Pointer<TWHDWallet>? _hdWallet;
-
-  WalletCore() {
+  static void init() {
     walletCoreLib = Platform.isAndroid
         ? DynamicLibrary.open("libTrustWalletCore.so")
         : DynamicLibrary.process();
-
-    _trustWallet = TrustWallet(walletCoreLib);
-  }
-
-  void createHDWallet({
-    int strength = 128,
-    String passphrase = "",
-  }) {
-    final _passPhrase = _trustWallet.TWStringCreateWithUTF8Bytes(
-      passphrase.toNativeUtf8().cast<Int8>(),
-    );
-
-    _hdWallet = _trustWallet.TWHDWalletCreate(strength, _passPhrase);
-  }
-
-  String mnemonic() {
-    final w = _trustWallet.TWHDWalletMnemonic(_hdWallet!);
-
-    final s = _trustWallet.TWStringUTF8Bytes(w);
-
-    return s.cast<Utf8>().toDartString();
   }
 }

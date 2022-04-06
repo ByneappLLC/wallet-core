@@ -20,18 +20,16 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    WalletCore.init();
     super.initState();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     String mnemonic = 'none';
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      final wallet = WalletCore();
 
-      wallet.createHDWallet();
+    try {
+
+      final wallet = HDWallet();
 
       mnemonic = wallet.mnemonic();
     } catch (e) {
@@ -39,9 +37,6 @@ class _MyAppState extends State<MyApp> {
       mnemonic = "Fail to craeted";
     }
 
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
     if (!mounted) return;
 
     setState(() {
