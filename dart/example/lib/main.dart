@@ -1,8 +1,7 @@
-import 'package:wallet_core/wallet_core.dart';
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
+import 'package:wallet_core/wallet_core.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +17,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
 
+  String ethAddress = '';
+  String solAddress = '';
+
+  late HDWallet wallet;
+
   @override
   void initState() {
     WalletCore.init();
@@ -28,8 +32,7 @@ class _MyAppState extends State<MyApp> {
     String mnemonic = 'none';
 
     try {
-
-      final wallet = HDWallet();
+      wallet = HDWallet();
 
       mnemonic = wallet.mnemonic();
     } catch (e) {
@@ -59,7 +62,19 @@ class _MyAppState extends State<MyApp> {
                 onPressed: () {
                   initPlatformState();
                 },
-                child: Text("Init"),
+                child: const Text("Init"),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Text('SOL: $ethAddress\n'),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    ethAddress = wallet.getAddressForCoin(501);
+                  });
+                },
+                child: const Text("Init"),
               )
             ],
           ),
