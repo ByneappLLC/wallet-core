@@ -2122,6 +2122,14 @@ class TrustWallet {
 
   set HRP_OSMOSIS(ffi.Pointer<ffi.Int8> value) => _HRP_OSMOSIS.value = value;
 
+  late final ffi.Pointer<ffi.Pointer<ffi.Int8>> _HRP_NATIVEEVMOS =
+      _lookup<ffi.Pointer<ffi.Int8>>('HRP_NATIVEEVMOS');
+
+  ffi.Pointer<ffi.Int8> get HRP_NATIVEEVMOS => _HRP_NATIVEEVMOS.value;
+
+  set HRP_NATIVEEVMOS(ffi.Pointer<ffi.Int8> value) =>
+      _HRP_NATIVEEVMOS.value = value;
+
   ffi.Pointer<ffi.Int8> stringForHRP(
     int hrp,
   ) {
@@ -2959,6 +2967,20 @@ class TrustWallet {
   late final _dart_TWCoinTypeStaticPrefix _TWCoinTypeStaticPrefix =
       _TWCoinTypeStaticPrefix_ptr.asFunction<_dart_TWCoinTypeStaticPrefix>();
 
+  /// ChainID for this coin type.  Caller must free return object.
+  ffi.Pointer<ffi.Void> TWCoinTypeChainId(
+    int coin,
+  ) {
+    return _TWCoinTypeChainId(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeChainId_ptr =
+      _lookup<ffi.NativeFunction<_c_TWCoinTypeChainId>>('TWCoinTypeChainId');
+  late final _dart_TWCoinTypeChainId _TWCoinTypeChainId =
+      _TWCoinTypeChainId_ptr.asFunction<_dart_TWCoinTypeChainId>();
+
   /// SLIP-0044 id for this coin type
   int TWCoinTypeSlip44Id(
     int coin,
@@ -2972,6 +2994,21 @@ class TrustWallet {
       _lookup<ffi.NativeFunction<_c_TWCoinTypeSlip44Id>>('TWCoinTypeSlip44Id');
   late final _dart_TWCoinTypeSlip44Id _TWCoinTypeSlip44Id =
       _TWCoinTypeSlip44Id_ptr.asFunction<_dart_TWCoinTypeSlip44Id>();
+
+  /// public key type for this coin type
+  int TWCoinTypePublicKeyType(
+    int coin,
+  ) {
+    return _TWCoinTypePublicKeyType(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypePublicKeyType_ptr =
+      _lookup<ffi.NativeFunction<_c_TWCoinTypePublicKeyType>>(
+          'TWCoinTypePublicKeyType');
+  late final _dart_TWCoinTypePublicKeyType _TWCoinTypePublicKeyType =
+      _TWCoinTypePublicKeyType_ptr.asFunction<_dart_TWCoinTypePublicKeyType>();
 
   /// Returns stock symbol of coin
   ffi.Pointer<ffi.Void> TWCoinTypeConfigurationGetSymbol(
@@ -3302,7 +3339,7 @@ class TrustWallet {
   late final _dart_TWHDWalletGetDerivedKey _TWHDWalletGetDerivedKey =
       _TWHDWalletGetDerivedKey_ptr.asFunction<_dart_TWHDWalletGetDerivedKey>();
 
-  /// Returns the extended private key.
+  /// Returns the extended private key (for default 0 account).  Returned object needs to be deleted.
   ffi.Pointer<ffi.Void> TWHDWalletGetExtendedPrivateKey(
     ffi.Pointer<TWHDWallet> wallet,
     int purpose,
@@ -3324,7 +3361,7 @@ class TrustWallet {
       _TWHDWalletGetExtendedPrivateKey = _TWHDWalletGetExtendedPrivateKey_ptr
           .asFunction<_dart_TWHDWalletGetExtendedPrivateKey>();
 
-  /// Returns the exteded public key.  Returned object needs to be deleted.
+  /// Returns the exteded public key (for default 0 account).  Returned object needs to be deleted.
   ffi.Pointer<ffi.Void> TWHDWalletGetExtendedPublicKey(
     ffi.Pointer<TWHDWallet> wallet,
     int purpose,
@@ -3345,6 +3382,56 @@ class TrustWallet {
   late final _dart_TWHDWalletGetExtendedPublicKey
       _TWHDWalletGetExtendedPublicKey = _TWHDWalletGetExtendedPublicKey_ptr
           .asFunction<_dart_TWHDWalletGetExtendedPublicKey>();
+
+  /// Returns the extended private key, for custom account.  Returned object needs to be deleted.
+  ffi.Pointer<ffi.Void> TWHDWalletGetExtendedPrivateKeyAccount(
+    ffi.Pointer<TWHDWallet> wallet,
+    int purpose,
+    int coin,
+    int version,
+    int account,
+  ) {
+    return _TWHDWalletGetExtendedPrivateKeyAccount(
+      wallet,
+      purpose,
+      coin,
+      version,
+      account,
+    );
+  }
+
+  late final _TWHDWalletGetExtendedPrivateKeyAccount_ptr =
+      _lookup<ffi.NativeFunction<_c_TWHDWalletGetExtendedPrivateKeyAccount>>(
+          'TWHDWalletGetExtendedPrivateKeyAccount');
+  late final _dart_TWHDWalletGetExtendedPrivateKeyAccount
+      _TWHDWalletGetExtendedPrivateKeyAccount =
+      _TWHDWalletGetExtendedPrivateKeyAccount_ptr.asFunction<
+          _dart_TWHDWalletGetExtendedPrivateKeyAccount>();
+
+  /// Returns the exteded public key, for custom account.  Returned object needs to be deleted.
+  ffi.Pointer<ffi.Void> TWHDWalletGetExtendedPublicKeyAccount(
+    ffi.Pointer<TWHDWallet> wallet,
+    int purpose,
+    int coin,
+    int version,
+    int account,
+  ) {
+    return _TWHDWalletGetExtendedPublicKeyAccount(
+      wallet,
+      purpose,
+      coin,
+      version,
+      account,
+    );
+  }
+
+  late final _TWHDWalletGetExtendedPublicKeyAccount_ptr =
+      _lookup<ffi.NativeFunction<_c_TWHDWalletGetExtendedPublicKeyAccount>>(
+          'TWHDWalletGetExtendedPublicKeyAccount');
+  late final _dart_TWHDWalletGetExtendedPublicKeyAccount
+      _TWHDWalletGetExtendedPublicKeyAccount =
+      _TWHDWalletGetExtendedPublicKeyAccount_ptr.asFunction<
+          _dart_TWHDWalletGetExtendedPublicKeyAccount>();
 
   /// Computes the public key from an exteded public key representation.  Returned object needs to be deleted.
   ffi.Pointer<TWPublicKey> TWHDWalletGetPublicKeyFromExtended(
@@ -3479,9 +3566,11 @@ class TrustWallet {
       _TWTransactionCompilerBuildInput = _TWTransactionCompilerBuildInput_ptr
           .asFunction<_dart_TWTransactionCompilerBuildInput>();
 
-  /// Obtain pre-signing hashes of a transaction. For each hash its corresponding publickKeyHash follows, so return is always even size.
-  /// For chains with one signature only, the result contains 2 elements, but the second may be ignored.
-  ffi.Pointer<TWDataVector> TWTransactionCompilerPreImageHashes(
+  /// Obtain pre-signing hashes of a transaction.
+  /// It will return a proto object named `PreSigningOutput` which will include hash.
+  /// We provide a default `PreSigningOutput` in TransactionCompiler.proto.
+  /// For some special coins, such as bitcoin, we will create a custom `PreSigningOutput` object in its proto file.
+  ffi.Pointer<ffi.Void> TWTransactionCompilerPreImageHashes(
     int coinType,
     ffi.Pointer<ffi.Void> txInputData,
   ) {
@@ -4161,7 +4250,7 @@ class TrustWallet {
   late final _dart_TWAnyAddressIsValid _TWAnyAddressIsValid =
       _TWAnyAddressIsValid_ptr.asFunction<_dart_TWAnyAddressIsValid>();
 
-  /// Creates an address from a string representaion.
+  /// Creates an address from a string representation.
   ffi.Pointer<TWAnyAddress> TWAnyAddressCreateWithString(
     ffi.Pointer<ffi.Void> string,
     int coin,
@@ -4326,6 +4415,20 @@ class TrustWallet {
           'TWBase58DecodeNoCheck');
   late final _dart_TWBase58DecodeNoCheck _TWBase58DecodeNoCheck =
       _TWBase58DecodeNoCheck_ptr.asFunction<_dart_TWBase58DecodeNoCheck>();
+
+  int TWCardanoMinAdaAmount(
+    ffi.Pointer<ffi.Void> tokenBundle,
+  ) {
+    return _TWCardanoMinAdaAmount(
+      tokenBundle,
+    );
+  }
+
+  late final _TWCardanoMinAdaAmount_ptr =
+      _lookup<ffi.NativeFunction<_c_TWCardanoMinAdaAmount>>(
+          'TWCardanoMinAdaAmount');
+  late final _dart_TWCardanoMinAdaAmount _TWCardanoMinAdaAmount =
+      _TWCardanoMinAdaAmount_ptr.asFunction<_dart_TWCardanoMinAdaAmount>();
 
   /// Compares two addresses for equality.
   bool TWRippleXAddressEqual(
@@ -4798,35 +4901,6 @@ class TrustWallet {
   late final _dart_TWHashGroestl512 _TWHashGroestl512 =
       _TWHashGroestl512_ptr.asFunction<_dart_TWHashGroestl512>();
 
-  ffi.Pointer<ffi.Void> TWHashXXHash64(
-    ffi.Pointer<ffi.Void> data,
-    int seed,
-  ) {
-    return _TWHashXXHash64(
-      data,
-      seed,
-    );
-  }
-
-  late final _TWHashXXHash64_ptr =
-      _lookup<ffi.NativeFunction<_c_TWHashXXHash64>>('TWHashXXHash64');
-  late final _dart_TWHashXXHash64 _TWHashXXHash64 =
-      _TWHashXXHash64_ptr.asFunction<_dart_TWHashXXHash64>();
-
-  ffi.Pointer<ffi.Void> TWHashTwoXXHash64Concat(
-    ffi.Pointer<ffi.Void> data,
-  ) {
-    return _TWHashTwoXXHash64Concat(
-      data,
-    );
-  }
-
-  late final _TWHashTwoXXHash64Concat_ptr =
-      _lookup<ffi.NativeFunction<_c_TWHashTwoXXHash64Concat>>(
-          'TWHashTwoXXHash64Concat');
-  late final _dart_TWHashTwoXXHash64Concat _TWHashTwoXXHash64Concat =
-      _TWHashTwoXXHash64Concat_ptr.asFunction<_dart_TWHashTwoXXHash64Concat>();
-
   ffi.Pointer<ffi.Void> TWHashSHA256SHA256(
     ffi.Pointer<ffi.Void> data,
   ) {
@@ -4983,7 +5057,7 @@ class TrustWallet {
   late final _dart_TWStoredKeyImportJSON _TWStoredKeyImportJSON =
       _TWStoredKeyImportJSON_ptr.asFunction<_dart_TWStoredKeyImportJSON>();
 
-  /// Creates a new key, with given encrpytion strength level.  Returned object needs to be deleted.
+  /// Creates a new key, with given encryption strength level.  Returned object needs to be deleted.
   ffi.Pointer<TWStoredKey> TWStoredKeyCreateLevel(
     ffi.Pointer<ffi.Void> name,
     ffi.Pointer<ffi.Void> password,
@@ -5031,7 +5105,7 @@ class TrustWallet {
   late final _dart_TWStoredKeyDelete _TWStoredKeyDelete =
       _TWStoredKeyDelete_ptr.asFunction<_dart_TWStoredKeyDelete>();
 
-  /// Stored key uniqie identifier.  Returned object needs to be deleted.
+  /// Stored key unique identifier.  Returned object needs to be deleted.
   ffi.Pointer<ffi.Void> TWStoredKeyIdentifier(
     ffi.Pointer<TWStoredKey> key,
   ) {
@@ -5127,6 +5201,83 @@ class TrustWallet {
       _TWStoredKeyAccountForCoin_ptr.asFunction<
           _dart_TWStoredKeyAccountForCoin>();
 
+  /// Returns the account for a specific coin + derivation, creating it if necessary.  Returned object needs to be deleted.
+  ffi.Pointer<TWAccount> TWStoredKeyAccountForCoinDerivation(
+    ffi.Pointer<TWStoredKey> key,
+    int coin,
+    int derivation,
+    ffi.Pointer<TWHDWallet> wallet,
+  ) {
+    return _TWStoredKeyAccountForCoinDerivation(
+      key,
+      coin,
+      derivation,
+      wallet,
+    );
+  }
+
+  late final _TWStoredKeyAccountForCoinDerivation_ptr =
+      _lookup<ffi.NativeFunction<_c_TWStoredKeyAccountForCoinDerivation>>(
+          'TWStoredKeyAccountForCoinDerivation');
+  late final _dart_TWStoredKeyAccountForCoinDerivation
+      _TWStoredKeyAccountForCoinDerivation =
+      _TWStoredKeyAccountForCoinDerivation_ptr.asFunction<
+          _dart_TWStoredKeyAccountForCoinDerivation>();
+
+  /// Adds a new account, using given derivation (usually TWDerivationDefault) and derivation path (usually matches path from derivation, but custom possible).
+  void TWStoredKeyAddAccountDerivation(
+    ffi.Pointer<TWStoredKey> key,
+    ffi.Pointer<ffi.Void> address,
+    int coin,
+    int derivation,
+    ffi.Pointer<ffi.Void> derivationPath,
+    ffi.Pointer<ffi.Void> publicKey,
+    ffi.Pointer<ffi.Void> extendedPublicKey,
+  ) {
+    return _TWStoredKeyAddAccountDerivation(
+      key,
+      address,
+      coin,
+      derivation,
+      derivationPath,
+      publicKey,
+      extendedPublicKey,
+    );
+  }
+
+  late final _TWStoredKeyAddAccountDerivation_ptr =
+      _lookup<ffi.NativeFunction<_c_TWStoredKeyAddAccountDerivation>>(
+          'TWStoredKeyAddAccountDerivation');
+  late final _dart_TWStoredKeyAddAccountDerivation
+      _TWStoredKeyAddAccountDerivation = _TWStoredKeyAddAccountDerivation_ptr
+          .asFunction<_dart_TWStoredKeyAddAccountDerivation>();
+
+  /// [Deprecated] Use TWStoredKeyAddAccountDerivation (with TWDerivationDefault) instead.
+  /// Adds a new account, using given derivation path.
+  void TWStoredKeyAddAccount(
+    ffi.Pointer<TWStoredKey> key,
+    ffi.Pointer<ffi.Void> address,
+    int coin,
+    ffi.Pointer<ffi.Void> derivationPath,
+    ffi.Pointer<ffi.Void> publicKey,
+    ffi.Pointer<ffi.Void> extendedPublicKey,
+  ) {
+    return _TWStoredKeyAddAccount(
+      key,
+      address,
+      coin,
+      derivationPath,
+      publicKey,
+      extendedPublicKey,
+    );
+  }
+
+  late final _TWStoredKeyAddAccount_ptr =
+      _lookup<ffi.NativeFunction<_c_TWStoredKeyAddAccount>>(
+          'TWStoredKeyAddAccount');
+  late final _dart_TWStoredKeyAddAccount _TWStoredKeyAddAccount =
+      _TWStoredKeyAddAccount_ptr.asFunction<_dart_TWStoredKeyAddAccount>();
+
   /// Remove the account for a specific coin
   void TWStoredKeyRemoveAccountForCoin(
     ffi.Pointer<TWStoredKey> key,
@@ -5145,28 +5296,47 @@ class TrustWallet {
       _TWStoredKeyRemoveAccountForCoin = _TWStoredKeyRemoveAccountForCoin_ptr
           .asFunction<_dart_TWStoredKeyRemoveAccountForCoin>();
 
-  /// Adds a new account.
-  void TWStoredKeyAddAccount(
+  /// Remove the account for a specific coin with the given derivation.
+  void TWStoredKeyRemoveAccountForCoinDerivation(
     ffi.Pointer<TWStoredKey> key,
-    ffi.Pointer<ffi.Void> address,
     int coin,
-    ffi.Pointer<ffi.Void> derivationPath,
-    ffi.Pointer<ffi.Void> extetndedPublicKey,
+    int derivation,
   ) {
-    return _TWStoredKeyAddAccount(
+    return _TWStoredKeyRemoveAccountForCoinDerivation(
       key,
-      address,
       coin,
-      derivationPath,
-      extetndedPublicKey,
+      derivation,
     );
   }
 
-  late final _TWStoredKeyAddAccount_ptr =
-      _lookup<ffi.NativeFunction<_c_TWStoredKeyAddAccount>>(
-          'TWStoredKeyAddAccount');
-  late final _dart_TWStoredKeyAddAccount _TWStoredKeyAddAccount =
-      _TWStoredKeyAddAccount_ptr.asFunction<_dart_TWStoredKeyAddAccount>();
+  late final _TWStoredKeyRemoveAccountForCoinDerivation_ptr =
+      _lookup<ffi.NativeFunction<_c_TWStoredKeyRemoveAccountForCoinDerivation>>(
+          'TWStoredKeyRemoveAccountForCoinDerivation');
+  late final _dart_TWStoredKeyRemoveAccountForCoinDerivation
+      _TWStoredKeyRemoveAccountForCoinDerivation =
+      _TWStoredKeyRemoveAccountForCoinDerivation_ptr.asFunction<
+          _dart_TWStoredKeyRemoveAccountForCoinDerivation>();
+
+  /// Remove the account for a specific coin with the given derivation path.
+  void TWStoredKeyRemoveAccountForCoinDerivationPath(
+    ffi.Pointer<TWStoredKey> key,
+    int coin,
+    ffi.Pointer<ffi.Void> derivationPath,
+  ) {
+    return _TWStoredKeyRemoveAccountForCoinDerivationPath(
+      key,
+      coin,
+      derivationPath,
+    );
+  }
+
+  late final _TWStoredKeyRemoveAccountForCoinDerivationPath_ptr = _lookup<
+          ffi.NativeFunction<_c_TWStoredKeyRemoveAccountForCoinDerivationPath>>(
+      'TWStoredKeyRemoveAccountForCoinDerivationPath');
+  late final _dart_TWStoredKeyRemoveAccountForCoinDerivationPath
+      _TWStoredKeyRemoveAccountForCoinDerivationPath =
+      _TWStoredKeyRemoveAccountForCoinDerivationPath_ptr.asFunction<
+          _dart_TWStoredKeyRemoveAccountForCoinDerivationPath>();
 
   /// Saves the key to a file.
   bool TWStoredKeyStore(
@@ -5240,7 +5410,7 @@ class TrustWallet {
   late final _dart_TWStoredKeyPrivateKey _TWStoredKeyPrivateKey =
       _TWStoredKeyPrivateKey_ptr.asFunction<_dart_TWStoredKeyPrivateKey>();
 
-  /// Dercrypts and returns the HD Wallet for mnemonic phrase keys.  Returned object needs to be deleted.
+  /// Decrypts and returns the HD Wallet for mnemonic phrase keys.  Returned object needs to be deleted.
   ffi.Pointer<TWHDWallet> TWStoredKeyWallet(
     ffi.Pointer<TWStoredKey> key,
     ffi.Pointer<ffi.Void> password,
@@ -6958,13 +7128,17 @@ class TrustWallet {
   ffi.Pointer<TWAccount> TWAccountCreate(
     ffi.Pointer<ffi.Void> address,
     int coin,
+    int derivation,
     ffi.Pointer<ffi.Void> derivationPath,
+    ffi.Pointer<ffi.Void> publicKey,
     ffi.Pointer<ffi.Void> extendedPublicKey,
   ) {
     return _TWAccountCreate(
       address,
       coin,
+      derivation,
       derivationPath,
+      publicKey,
       extendedPublicKey,
     );
   }
@@ -7000,6 +7174,20 @@ class TrustWallet {
   late final _dart_TWAccountAddress _TWAccountAddress =
       _TWAccountAddress_ptr.asFunction<_dart_TWAccountAddress>();
 
+  int TWAccountDerivation(
+    ffi.Pointer<TWAccount> account,
+  ) {
+    return _TWAccountDerivation(
+      account,
+    );
+  }
+
+  late final _TWAccountDerivation_ptr =
+      _lookup<ffi.NativeFunction<_c_TWAccountDerivation>>(
+          'TWAccountDerivation');
+  late final _dart_TWAccountDerivation _TWAccountDerivation =
+      _TWAccountDerivation_ptr.asFunction<_dart_TWAccountDerivation>();
+
   ffi.Pointer<ffi.Void> TWAccountDerivationPath(
     ffi.Pointer<TWAccount> account,
   ) {
@@ -7013,6 +7201,19 @@ class TrustWallet {
           'TWAccountDerivationPath');
   late final _dart_TWAccountDerivationPath _TWAccountDerivationPath =
       _TWAccountDerivationPath_ptr.asFunction<_dart_TWAccountDerivationPath>();
+
+  ffi.Pointer<ffi.Void> TWAccountPublicKey(
+    ffi.Pointer<TWAccount> account,
+  ) {
+    return _TWAccountPublicKey(
+      account,
+    );
+  }
+
+  late final _TWAccountPublicKey_ptr =
+      _lookup<ffi.NativeFunction<_c_TWAccountPublicKey>>('TWAccountPublicKey');
+  late final _dart_TWAccountPublicKey _TWAccountPublicKey =
+      _TWAccountPublicKey_ptr.asFunction<_dart_TWAccountPublicKey>();
 
   ffi.Pointer<ffi.Void> TWAccountExtendedPublicKey(
     ffi.Pointer<TWAccount> account,
@@ -8150,6 +8351,12 @@ abstract class TWBlockchain {
   static const int TWBlockchainFilecoin = 32;
   static const int TWBlockchainElrondNetwork = 33;
   static const int TWBlockchainOasisNetwork = 34;
+  static const int TWBlockchainDecred = 35;
+  static const int TWBlockchainZcash = 36;
+  static const int TWBlockchainGroestlcoin = 37;
+  static const int TWBlockchainThorchain = 38;
+  static const int TWBlockchainRonin = 39;
+  static const int TWBlockchainKusama = 40;
 }
 
 /// Elliptic cruves
@@ -8214,6 +8421,7 @@ abstract class TWHRP {
   static const int TWHRPCardano = 23;
   static const int TWHRPQtum = 24;
   static const int TWHRPOsmosis = 25;
+  static const int TWHRPNativeEvmos = 26;
 }
 
 /// Public key types
@@ -8314,6 +8522,15 @@ abstract class TWCoinType {
   static const int TWCoinTypeECash = 899;
   static const int TWCoinTypeCronosChain = 10000025;
   static const int TWCoinTypeSmartBitcoinCash = 10000145;
+  static const int TWCoinTypeKuCoinCommunityChain = 10000321;
+  static const int TWCoinTypeBoba = 10000288;
+  static const int TWCoinTypeMetis = 1001088;
+  static const int TWCoinTypeAurora = 1323161554;
+  static const int TWCoinTypeEvmos = 10009001;
+  static const int TWCoinTypeNativeEvmos = 20009001;
+  static const int TWCoinTypeMoonriver = 10001285;
+  static const int TWCoinTypeMoonbeam = 10001284;
+  static const int TWCoinTypeKlaytn = 10008217;
 }
 
 class TWCoinTypeConfiguration extends ffi.Struct {
@@ -8322,6 +8539,16 @@ class TWCoinTypeConfiguration extends ffi.Struct {
 }
 
 class TWHDWallet extends ffi.Opaque {}
+
+/// Non-default coin address derivation names (default, unnamed derivations are not included).
+abstract class TWDerivation {
+  static const int TWDerivationDefault = 0;
+  static const int TWDerivationCustom = 1;
+  static const int TWDerivationBitcoinSegwit = 2;
+  static const int TWDerivationBitcoinLegacy = 3;
+  static const int TWDerivationLitecoinLegacy = 4;
+  static const int TWDerivationSolanaSolana = 5;
+}
 
 class TWDataVector extends ffi.Opaque {}
 
@@ -8362,6 +8589,8 @@ class TWAnyAddress extends ffi.Opaque {}
 class TWTHORChainSwap extends ffi.Opaque {}
 
 class TWBase58 extends ffi.Opaque {}
+
+class TWCardano extends ffi.Opaque {}
 
 /// Substrate based chains Address Type
 ///
@@ -8432,6 +8661,7 @@ abstract class TWAESPaddingMode {
   static const int TWAESPaddingModePKCS7 = 1;
 }
 
+/// AES encryption/decryption methods.
 class TWAES extends ffi.Struct {
   @ffi.Uint8()
   external int unused;
@@ -8440,29 +8670,38 @@ class TWAES extends ffi.Struct {
 /// Represents a NEAR Account name
 class TWNEARAccount extends ffi.Opaque {}
 
-/// Chain identifier for Ethereum-based blockchains.
+/// Chain identifiers for Ethereum-based blockchains, for convenience. Recommended to use the dynamic CoinType.ChainId() instead.
+/// See also TWChainId.
 abstract class TWEthereumChainID {
   static const int TWEthereumChainIDEthereum = 1;
-  static const int TWEthereumChainIDGo = 60;
-  static const int TWEthereumChainIDPOA = 99;
+  static const int TWEthereumChainIDClassic = 61;
+  static const int TWEthereumChainIDPoa = 99;
+  static const int TWEthereumChainIDVechain = 74;
   static const int TWEthereumChainIDCallisto = 820;
-  static const int TWEthereumChainIDEthereumClassic = 61;
-  static const int TWEthereumChainIDVeChain = 74;
-  static const int TWEthereumChainIDThunderToken = 108;
-  static const int TWEthereumChainIDTomoChain = 88;
-  static const int TWEthereumChainIDBinanceSmartChain = 56;
+  static const int TWEthereumChainIDTomochain = 88;
   static const int TWEthereumChainIDPolygon = 137;
-  static const int TWEthereumChainIDWanchain = 888;
-  static const int TWEthereumChainIDOptimism = 10;
-  static const int TWEthereumChainIDArbitrum = 42161;
-  static const int TWEthereumChainIDHeco = 128;
-  static const int TWEthereumChainIDAvalanche = 43114;
-  static const int TWEthereumChainIDXDai = 100;
-  static const int TWEthereumChainIDFantom = 250;
+  static const int TWEthereumChainIDThundertoken = 108;
+  static const int TWEthereumChainIDGochain = 60;
   static const int TWEthereumChainIDCelo = 42220;
-  static const int TWEthereumChainIDRonin = 2020;
+  static const int TWEthereumChainIDWanchain = 888;
   static const int TWEthereumChainIDCronos = 25;
-  static const int TWEthereumChainIDSmartBitcoinCash = 10000;
+  static const int TWEthereumChainIDOptimism = 10;
+  static const int TWEthereumChainIDXdai = 100;
+  static const int TWEthereumChainIDSmartbch = 10000;
+  static const int TWEthereumChainIDFantom = 250;
+  static const int TWEthereumChainIDBoba = 288;
+  static const int TWEthereumChainIDKcc = 321;
+  static const int TWEthereumChainIDHeco = 128;
+  static const int TWEthereumChainIDMetis = 1088;
+  static const int TWEthereumChainIDMoonbeam = 1284;
+  static const int TWEthereumChainIDMoonriver = 1285;
+  static const int TWEthereumChainIDRonin = 2020;
+  static const int TWEthereumChainIDKlaytn = 8217;
+  static const int TWEthereumChainIDAvalanchec = 43114;
+  static const int TWEthereumChainIDEvmos = 9001;
+  static const int TWEthereumChainIDArbitrum = 42161;
+  static const int TWEthereumChainIDSmartchain = 56;
+  static const int TWEthereumChainIDAurora = 1313161554;
 }
 
 class TWSolanaAddress extends ffi.Opaque {}
@@ -11353,11 +11592,27 @@ typedef _dart_TWCoinTypeStaticPrefix = int Function(
   int coin,
 );
 
+typedef _c_TWCoinTypeChainId = ffi.Pointer<ffi.Void> Function(
+  ffi.Int32 coin,
+);
+
+typedef _dart_TWCoinTypeChainId = ffi.Pointer<ffi.Void> Function(
+  int coin,
+);
+
 typedef _c_TWCoinTypeSlip44Id = ffi.Uint32 Function(
   ffi.Int32 coin,
 );
 
 typedef _dart_TWCoinTypeSlip44Id = int Function(
+  int coin,
+);
+
+typedef _c_TWCoinTypePublicKeyType = ffi.Int32 Function(
+  ffi.Int32 coin,
+);
+
+typedef _dart_TWCoinTypePublicKeyType = int Function(
   int coin,
 );
 
@@ -11578,6 +11833,42 @@ typedef _dart_TWHDWalletGetExtendedPublicKey = ffi.Pointer<ffi.Void> Function(
   int version,
 );
 
+typedef _c_TWHDWalletGetExtendedPrivateKeyAccount = ffi.Pointer<ffi.Void>
+    Function(
+  ffi.Pointer<TWHDWallet> wallet,
+  ffi.Int32 purpose,
+  ffi.Int32 coin,
+  ffi.Int32 version,
+  ffi.Uint32 account,
+);
+
+typedef _dart_TWHDWalletGetExtendedPrivateKeyAccount = ffi.Pointer<ffi.Void>
+    Function(
+  ffi.Pointer<TWHDWallet> wallet,
+  int purpose,
+  int coin,
+  int version,
+  int account,
+);
+
+typedef _c_TWHDWalletGetExtendedPublicKeyAccount = ffi.Pointer<ffi.Void>
+    Function(
+  ffi.Pointer<TWHDWallet> wallet,
+  ffi.Int32 purpose,
+  ffi.Int32 coin,
+  ffi.Int32 version,
+  ffi.Uint32 account,
+);
+
+typedef _dart_TWHDWalletGetExtendedPublicKeyAccount = ffi.Pointer<ffi.Void>
+    Function(
+  ffi.Pointer<TWHDWallet> wallet,
+  int purpose,
+  int coin,
+  int version,
+  int account,
+);
+
 typedef _c_TWHDWalletGetPublicKeyFromExtended = ffi.Pointer<TWPublicKey>
     Function(
   ffi.Pointer<ffi.Void> extended,
@@ -11660,13 +11951,12 @@ typedef _dart_TWTransactionCompilerBuildInput = ffi.Pointer<ffi.Void> Function(
   ffi.Pointer<ffi.Void> chainId,
 );
 
-typedef _c_TWTransactionCompilerPreImageHashes = ffi.Pointer<TWDataVector>
-    Function(
+typedef _c_TWTransactionCompilerPreImageHashes = ffi.Pointer<ffi.Void> Function(
   ffi.Int32 coinType,
   ffi.Pointer<ffi.Void> txInputData,
 );
 
-typedef _dart_TWTransactionCompilerPreImageHashes = ffi.Pointer<TWDataVector>
+typedef _dart_TWTransactionCompilerPreImageHashes = ffi.Pointer<ffi.Void>
     Function(
   int coinType,
   ffi.Pointer<ffi.Void> txInputData,
@@ -12127,6 +12417,14 @@ typedef _dart_TWBase58DecodeNoCheck = ffi.Pointer<ffi.Void> Function(
   ffi.Pointer<ffi.Void> string,
 );
 
+typedef _c_TWCardanoMinAdaAmount = ffi.Uint64 Function(
+  ffi.Pointer<ffi.Void> tokenBundle,
+);
+
+typedef _dart_TWCardanoMinAdaAmount = int Function(
+  ffi.Pointer<ffi.Void> tokenBundle,
+);
+
 typedef _c_TWRippleXAddressEqual = ffi.Uint8 Function(
   ffi.Pointer<TWRippleXAddress> lhs,
   ffi.Pointer<TWRippleXAddress> rhs,
@@ -12353,24 +12651,6 @@ typedef _dart_TWHashGroestl512 = ffi.Pointer<ffi.Void> Function(
   ffi.Pointer<ffi.Void> data,
 );
 
-typedef _c_TWHashXXHash64 = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> data,
-  ffi.Uint64 seed,
-);
-
-typedef _dart_TWHashXXHash64 = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> data,
-  int seed,
-);
-
-typedef _c_TWHashTwoXXHash64Concat = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> data,
-);
-
-typedef _dart_TWHashTwoXXHash64Concat = ffi.Pointer<ffi.Void> Function(
-  ffi.Pointer<ffi.Void> data,
-);
-
 typedef _c_TWHashSHA256SHA256 = ffi.Pointer<ffi.Void> Function(
   ffi.Pointer<ffi.Void> data,
 );
@@ -12547,6 +12827,60 @@ typedef _dart_TWStoredKeyAccountForCoin = ffi.Pointer<TWAccount> Function(
   ffi.Pointer<TWHDWallet> wallet,
 );
 
+typedef _c_TWStoredKeyAccountForCoinDerivation = ffi.Pointer<TWAccount>
+    Function(
+  ffi.Pointer<TWStoredKey> key,
+  ffi.Int32 coin,
+  ffi.Int32 derivation,
+  ffi.Pointer<TWHDWallet> wallet,
+);
+
+typedef _dart_TWStoredKeyAccountForCoinDerivation = ffi.Pointer<TWAccount>
+    Function(
+  ffi.Pointer<TWStoredKey> key,
+  int coin,
+  int derivation,
+  ffi.Pointer<TWHDWallet> wallet,
+);
+
+typedef _c_TWStoredKeyAddAccountDerivation = ffi.Void Function(
+  ffi.Pointer<TWStoredKey> key,
+  ffi.Pointer<ffi.Void> address,
+  ffi.Int32 coin,
+  ffi.Int32 derivation,
+  ffi.Pointer<ffi.Void> derivationPath,
+  ffi.Pointer<ffi.Void> publicKey,
+  ffi.Pointer<ffi.Void> extendedPublicKey,
+);
+
+typedef _dart_TWStoredKeyAddAccountDerivation = void Function(
+  ffi.Pointer<TWStoredKey> key,
+  ffi.Pointer<ffi.Void> address,
+  int coin,
+  int derivation,
+  ffi.Pointer<ffi.Void> derivationPath,
+  ffi.Pointer<ffi.Void> publicKey,
+  ffi.Pointer<ffi.Void> extendedPublicKey,
+);
+
+typedef _c_TWStoredKeyAddAccount = ffi.Void Function(
+  ffi.Pointer<TWStoredKey> key,
+  ffi.Pointer<ffi.Void> address,
+  ffi.Int32 coin,
+  ffi.Pointer<ffi.Void> derivationPath,
+  ffi.Pointer<ffi.Void> publicKey,
+  ffi.Pointer<ffi.Void> extendedPublicKey,
+);
+
+typedef _dart_TWStoredKeyAddAccount = void Function(
+  ffi.Pointer<TWStoredKey> key,
+  ffi.Pointer<ffi.Void> address,
+  int coin,
+  ffi.Pointer<ffi.Void> derivationPath,
+  ffi.Pointer<ffi.Void> publicKey,
+  ffi.Pointer<ffi.Void> extendedPublicKey,
+);
+
 typedef _c_TWStoredKeyRemoveAccountForCoin = ffi.Void Function(
   ffi.Pointer<TWStoredKey> key,
   ffi.Int32 coin,
@@ -12557,20 +12891,28 @@ typedef _dart_TWStoredKeyRemoveAccountForCoin = void Function(
   int coin,
 );
 
-typedef _c_TWStoredKeyAddAccount = ffi.Void Function(
+typedef _c_TWStoredKeyRemoveAccountForCoinDerivation = ffi.Void Function(
   ffi.Pointer<TWStoredKey> key,
-  ffi.Pointer<ffi.Void> address,
   ffi.Int32 coin,
-  ffi.Pointer<ffi.Void> derivationPath,
-  ffi.Pointer<ffi.Void> extetndedPublicKey,
+  ffi.Int32 derivation,
 );
 
-typedef _dart_TWStoredKeyAddAccount = void Function(
+typedef _dart_TWStoredKeyRemoveAccountForCoinDerivation = void Function(
   ffi.Pointer<TWStoredKey> key,
-  ffi.Pointer<ffi.Void> address,
+  int coin,
+  int derivation,
+);
+
+typedef _c_TWStoredKeyRemoveAccountForCoinDerivationPath = ffi.Void Function(
+  ffi.Pointer<TWStoredKey> key,
+  ffi.Int32 coin,
+  ffi.Pointer<ffi.Void> derivationPath,
+);
+
+typedef _dart_TWStoredKeyRemoveAccountForCoinDerivationPath = void Function(
+  ffi.Pointer<TWStoredKey> key,
   int coin,
   ffi.Pointer<ffi.Void> derivationPath,
-  ffi.Pointer<ffi.Void> extetndedPublicKey,
 );
 
 typedef _c_TWStoredKeyStore = ffi.Uint8 Function(
@@ -13600,14 +13942,18 @@ typedef _dart_TWNEARAccountDescription = ffi.Pointer<ffi.Void> Function(
 typedef _c_TWAccountCreate = ffi.Pointer<TWAccount> Function(
   ffi.Pointer<ffi.Void> address,
   ffi.Int32 coin,
+  ffi.Int32 derivation,
   ffi.Pointer<ffi.Void> derivationPath,
+  ffi.Pointer<ffi.Void> publicKey,
   ffi.Pointer<ffi.Void> extendedPublicKey,
 );
 
 typedef _dart_TWAccountCreate = ffi.Pointer<TWAccount> Function(
   ffi.Pointer<ffi.Void> address,
   int coin,
+  int derivation,
   ffi.Pointer<ffi.Void> derivationPath,
+  ffi.Pointer<ffi.Void> publicKey,
   ffi.Pointer<ffi.Void> extendedPublicKey,
 );
 
@@ -13627,11 +13973,27 @@ typedef _dart_TWAccountAddress = ffi.Pointer<ffi.Void> Function(
   ffi.Pointer<TWAccount> account,
 );
 
+typedef _c_TWAccountDerivation = ffi.Int32 Function(
+  ffi.Pointer<TWAccount> account,
+);
+
+typedef _dart_TWAccountDerivation = int Function(
+  ffi.Pointer<TWAccount> account,
+);
+
 typedef _c_TWAccountDerivationPath = ffi.Pointer<ffi.Void> Function(
   ffi.Pointer<TWAccount> account,
 );
 
 typedef _dart_TWAccountDerivationPath = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<TWAccount> account,
+);
+
+typedef _c_TWAccountPublicKey = ffi.Pointer<ffi.Void> Function(
+  ffi.Pointer<TWAccount> account,
+);
+
+typedef _dart_TWAccountPublicKey = ffi.Pointer<ffi.Void> Function(
   ffi.Pointer<TWAccount> account,
 );
 
