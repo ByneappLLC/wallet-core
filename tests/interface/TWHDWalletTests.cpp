@@ -286,6 +286,17 @@ TEST(HDWallet, DeriveAvalancheCChain) {
     assertHexEqual(keyData, expectedETH);
 }
 
+TEST(HDWallet, DeriveCardano) {
+    auto wallet = WRAP(TWHDWallet, TWHDWalletCreateWithMnemonic(words.get(), passphrase.get()));
+    auto privateKey = WRAP(TWPrivateKey, TWHDWalletGetKeyForCoin(wallet.get(), TWCoinTypeCardano));
+    auto privateKeyData = WRAPD(TWPrivateKeyData(privateKey.get()));
+    EXPECT_EQ(TWDataSize(privateKeyData.get()), 192);
+    auto address = WRAPS(TWCoinTypeDeriveAddress(TWCoinTypeCardano, privateKey.get()));
+
+    assertHexEqual(privateKeyData, "f8a3b8ad30e62c369b939336c2035aba26d1ffad135e6f346f2a370517a14952e73d20aeadf906bc8b531900fb6c3ed4a05b16973c10ae24650b68b26fae4ee5d97418ba7f3b2707fae963041ff5f174195d1578da09478ad2d17a1ecc00cad478a8ca3be214870accd41f008d70e3b4b59b5981ca933d6d3f389ad317a14952166d8fd329ae3fab4712da739efc2ded9b3eef2b1a8e225dd3dddeb4f065a729b297d9fa76b8852eef235c25aac8f0ff6209ab7251f2a84c83b3b5f1161f7c59");
+    assertStringsEqual(address, "addr1q9zz5nj4rqdvteauvdtc834f2vtzyrdrrdmnwdyp4s6huuz5fp33p9cq4xwpqtgguaxknzurmglv58yn9wrv6angpvvq9u36ya");
+}
+
 TEST(HDWallet, ExtendedKeys) {
     auto words = STRING("abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about");
     auto wallet = WRAP(TWHDWallet, TWHDWalletCreateWithMnemonic(words.get(), STRING("").get()));
@@ -310,6 +321,21 @@ TEST(HDWallet, ExtendedKeys) {
     auto emptyPub = WRAPS(TWHDWalletGetExtendedPublicKey(wallet.get(), TWPurposeBIP44, TWCoinTypeEthereum, TWHDVersionNone));
     assertStringsEqual(emptyPrv, "");
     assertStringsEqual(emptyPub, "");
+}
+
+TEST(HDWallet, ExtendedKeysCustomAccount) {
+    auto words = STRING("abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about");
+    auto wallet = WRAP(TWHDWallet, TWHDWalletCreateWithMnemonic(words.get(), STRING("").get()));
+
+    auto zprv0 = WRAPS(TWHDWalletGetExtendedPrivateKeyAccount(wallet.get(), TWPurposeBIP84, TWCoinTypeBitcoin, TWHDVersionZPRV, 0));
+    assertStringsEqual(zprv0, "zprvAdG4iTXWBoARxkkzNpNh8r6Qag3irQB8PzEMkAFeTRXxHpbF9z4QgEvBRmfvqWvGp42t42nvgGpNgYSJA9iefm1yYNZKEm7z6qUWCroSQnE");
+    auto zprv1 = WRAPS(TWHDWalletGetExtendedPrivateKeyAccount(wallet.get(), TWPurposeBIP84, TWCoinTypeBitcoin, TWHDVersionZPRV, 1));
+    assertStringsEqual(zprv1, "zprvAdG4iTXWBoAS2cCGuaGevCvH54GCunrvLJb2hoWCSuE3D9LS42XVg3c6sPm64w6VMq3w18vJf8nF3cBA2kUMkyWHsq6enWVXivzw42UrVHG");
+
+    auto zpub0 = WRAPS(TWHDWalletGetExtendedPublicKeyAccount(wallet.get(), TWPurposeBIP84, TWCoinTypeBitcoin, TWHDVersionZPUB, 0));
+    assertStringsEqual(zpub0, "zpub6rFR7y4Q2AijBEqTUquhVz398htDFrtymD9xYYfG1m4wAcvPhXNfE3EfH1r1ADqtfSdVCToUG868RvUUkgDKf31mGDtKsAYz2oz2AGutZYs");
+    auto zpub1 = WRAPS(TWHDWalletGetExtendedPublicKeyAccount(wallet.get(), TWPurposeBIP84, TWCoinTypeBitcoin, TWHDVersionZPUB, 1));
+    assertStringsEqual(zpub1, "zpub6rFR7y4Q2AijF6Gk1bofHLs1d66hKFamhXWdWBup1Em25wfabZqkDqvaieV63fDQFaYmaatCG7jVNUpUiM2hAMo6SAVHcrUpSnHDpNzucB7");
 }
 
 TEST(HDWallet, PublicKeyFromX) {
