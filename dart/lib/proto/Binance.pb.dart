@@ -10,6 +10,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'Common.pbenum.dart' as $0;
+
 class Transaction extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Transaction', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
     ..p<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msgs', $pb.PbFieldType.PY)
@@ -2526,16 +2528,26 @@ class SigningInput extends $pb.GeneratedMessage {
 class SigningOutput extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningOutput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encoded', $pb.PbFieldType.OY)
+    ..e<$0.SigningError>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: $0.SigningError.OK, valueOf: $0.SigningError.valueOf, enumValues: $0.SigningError.values)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorMessage')
     ..hasRequiredFields = false
   ;
 
   SigningOutput._() : super();
   factory SigningOutput({
     $core.List<$core.int>? encoded,
+    $0.SigningError? error,
+    $core.String? errorMessage,
   }) {
     final _result = create();
     if (encoded != null) {
       _result.encoded = encoded;
+    }
+    if (error != null) {
+      _result.error = error;
+    }
+    if (errorMessage != null) {
+      _result.errorMessage = errorMessage;
     }
     return _result;
   }
@@ -2568,5 +2580,23 @@ class SigningOutput extends $pb.GeneratedMessage {
   $core.bool hasEncoded() => $_has(0);
   @$pb.TagNumber(1)
   void clearEncoded() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $0.SigningError get error => $_getN(1);
+  @$pb.TagNumber(2)
+  set error($0.SigningError v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get errorMessage => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set errorMessage($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasErrorMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearErrorMessage() => clearField(3);
 }
 
