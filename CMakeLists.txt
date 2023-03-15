@@ -8,6 +8,8 @@ cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
 
 project(TrustWalletCore)
 
+set(CMAKE_CXX_VISIBILITY_PRESET default)
+
 if (NOT ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang"))
     message(FATAL_ERROR "You should use clang compiler")
 endif ()
@@ -51,19 +53,19 @@ include(cmake/Protobuf.cmake)
 # Source files
 if (${ANDROID})
     message("Configuring for JNI")
-    file(GLOB_RECURSE sources src/*.c src/*.cc src/*.cpp src/*.h)
-    if (${KOTLIN})
-        file(GLOB_RECURSE specific_sources
-                jni/kotlin/*.h
-                jni/kotlin/*.c
-                kotlin/wallet-core-kotlin/src/androidMain/cpp/generated/*.h
-                kotlin/wallet-core-kotlin/src/androidMain/cpp/generated/*.c
-                )
-    else ()
-        file(GLOB_RECURSE specific_sources jni/android/*.h jni/android/*.c)
-    endif ()
-    set(sources ${core_sources} ${specific_sources})
-    add_library(TrustWalletCore SHARED ${sources} ${PROTO_SRCS} ${PROTO_HDRS})
+    file(GLOB_RECURSE core_sources src/*.c src/*.cc src/*.cpp src/*.h)
+    # if (${KOTLIN})
+    #     file(GLOB_RECURSE specific_sources
+    #             jni/kotlin/*.h
+    #             jni/kotlin/*.c
+    #             kotlin/wallet-core-kotlin/src/androidMain/cpp/generated/*.h
+    #             kotlin/wallet-core-kotlin/src/androidMain/cpp/generated/*.c
+    #             )
+    # else ()
+    #     file(GLOB_RECURSE specific_sources jni/android/*.h jni/android/*.c)
+    # endif ()
+    # set(sources ${core_sources} ${specific_sources})
+    add_library(TrustWalletCore SHARED ${core_sources} ${PROTO_SRCS} ${PROTO_HDRS})
     find_library(log-lib log)
     if (${CMAKE_ANDROID_ARCH_ABI} STREQUAL "arm64-v8a")
         set(WALLET_CORE_BINDGEN ${WALLET_CORE_RS_TARGET_DIR}/aarch64-linux-android/release/${WALLET_CORE_RS_LIB})
