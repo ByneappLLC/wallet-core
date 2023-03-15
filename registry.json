@@ -18,6 +18,12 @@
         "path": "m/44'/0'/0'/0/0",
         "xpub": "xpub",
         "xprv": "xprv"
+      },
+      {
+        "name": "testnet",
+        "path": "m/84'/1'/0'/0/0",
+        "xpub": "zpub",
+        "xprv": "zprv"
       }
     ],
     "curve": "secp256k1",
@@ -394,12 +400,71 @@
     }
   },
   {
+    "id": "aptos",
+    "name": "Aptos",
+    "displayName": "Aptos",
+    "coinId": 637,
+    "symbol": "APT",
+    "decimals": 8,
+    "chainId": "1",
+    "blockchain": "Aptos",
+    "derivation": [
+      {
+        "path": "m/44'/637'/0'/0'/0'"
+      }
+    ],
+    "curve": "ed25519",
+    "publicKeyType": "ed25519",
+    "explorer": {
+      "url": "https://explorer.aptoslabs.com",
+      "txPath": "/txn/",
+      "accountPath": "/account/",
+      "sampleTx": "0xedc88058e27f6c065fd6607e262cb2a83a65f74301df90c61923014c59f9d465",
+      "sampleAccount": "0x60ad80e8cdadb81399e8a738014bc9ec865cef842f7c2cf7d84fbf7e40d065"
+    },
+    "info": {
+      "url": "https://aptoslabs.com/",
+      "source": "https://github.com/aptos-labs/aptos-core",
+      "rpc": "https://fullnode.mainnet.aptoslabs.com/v1",
+      "documentation": "https://fullnode.mainnet.aptoslabs.com/v1/spec#/"
+    }
+  },
+  {
+    "id": "sui",
+    "name": "Sui",
+    "coinId": 784,
+    "symbol": "SUI",
+    "decimals": 9,
+    "blockchain": "Sui",
+    "derivation": [
+      {
+        "path": "m/44'/784'/0'/0'/0'"
+      }
+    ],
+    "curve": "ed25519",
+    "publicKeyType": "ed25519",
+    "explorer": {
+      "url": "https://explorer.sui.io/",
+      "txPath": "/transaction/",
+      "accountPath": "/address/",
+      "sampleTx": "SWRW1RoMHxnD9NeobgBoC4cXGwp2Hc511CnfWUoTBmo",
+      "sampleAccount": "0x62107e1afefccc7b2267ab74e332c146f5c2ca15"
+    },
+    "info": {
+      "url": "https://sui.io/",
+      "source": "https://github.com/MystenLabs/sui",
+      "rpc": "https://fullnode.testnet.sui.io",
+      "documentation": "https://docs.sui.io/"
+    }
+  },
+  {
     "id": "cosmos",
     "name": "Cosmos",
     "displayName": "Cosmos Hub",
     "coinId": 118,
     "symbol": "ATOM",
     "decimals": 6,
+    "chainId": "cosmoshub-4",
     "blockchain": "Cosmos",
     "derivation": [
       {
@@ -723,6 +788,32 @@
     }
   },
   {
+    "id": "wax",
+    "name": "WAX",
+    "coinId": 14001,
+    "symbol": "WAXP",
+    "decimals": 4,
+    "blockchain": "EOS",
+    "derivation": [
+      {
+        "path": "m/44'/194'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1",
+    "explorer": {
+      "url": "https://wax.bloks.io",
+      "txPath": "/transaction/",
+      "accountPath": "/account/"
+    },
+    "info": {
+      "url": "http://wax.io",
+      "source": "https://github.com/worldwide-asset-exchange/wax-blockchain",
+      "rpc": "https://wax.blacklusion.io",
+      "documentation": "https://https://developer.wax.io"
+    }
+  },
+  {
     "id": "tron",
     "name": "Tron",
     "coinId": 195,
@@ -857,6 +948,33 @@
     }
   },
   {
+    "id": "nervos",
+    "name": "Nervos",
+    "coinId": 309,
+    "symbol": "CKB",
+    "decimals": 8,
+    "blockchain": "Nervos",
+    "derivation": [
+      {
+        "path": "m/44'/309'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1",
+    "hrp": "ckb",
+    "explorer": {
+      "url": "https://explorer.nervos.org",
+      "txPath": "/transaction/",
+      "accountPath": "/address/"
+    },
+    "info": {
+      "url": "https://nervos.org",
+      "source": "https://github.com/nervosnetwork/ckb",
+      "rpc": "https://mainnet.ckb.dev/rpc",
+      "documentation": "https://github.com/nervosnetwork/rfcs"
+    }
+  },
+  {
     "id": "zilliqa",
     "name": "Zilliqa",
     "coinId": 313,
@@ -891,6 +1009,7 @@
     "symbol": "LUNC",
     "decimals": 6,
     "blockchain": "Cosmos",
+    "chainId": "columbus-5",
     "derivation": [
       {
         "path": "m/44'/330'/0'/0/0"
@@ -901,17 +1020,46 @@
     "hrp": "terra",
     "addressHasher": "sha256ripemd",
     "explorer": {
-      "url": "https://finder.terra.money/tx",
+      "url": "https://finder.terra.money/classic",
       "txPath": "/tx/",
       "accountPath": "/address/"
     },
     "info": {
       "url": "https://terra.money",
       "source": "https://github.com/terra-project/core",
-      "rpc": "https://classic.fcd.terra.dev",
+      "rpc": "https://columbus-fcd.terra.dev",
       "documentation": "https://docs.terra.money"
+    }
+  },
+  {
+    "id": "terrav2",
+    "name": "TerraV2",
+    "displayName": "Terra",
+    "coinId": 10000330,
+    "symbol": "LUNA",
+    "decimals": 6,
+    "blockchain": "Cosmos",
+    "derivation": [
+      {
+        "path": "m/44'/330'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1",
+    "hrp": "terra",
+    "chainId": "phoenix-1",
+    "addressHasher": "sha256ripemd",
+    "explorer": {
+      "url": "https://finder.terra.money/mainnet",
+      "txPath": "/tx/",
+      "accountPath": "/address/"
     },
-    "deprecated": true
+    "info": {
+      "url": "https://terra.money",
+      "source": "https://github.com/terra-project/core",
+      "rpc": "https://phoenix-lcd.terra.dev",
+      "documentation": "https://docs.terra.money"
+    }
   },
   {
     "id": "polkadot",
@@ -928,6 +1076,7 @@
     "curve": "ed25519",
     "publicKeyType": "ed25519",
     "addressHasher": "keccak256",
+    "ss58Prefix": 0,
     "explorer": {
       "url": "https://polkadot.subscan.io",
       "txPath": "/extrinsic/",
@@ -938,6 +1087,34 @@
       "source": "https://github.com/paritytech/polkadot",
       "rpc": "",
       "documentation": "https://polkadot.js.org/api/substrate/rpc.html"
+    }
+  },
+  {
+    "id": "everscale",
+    "name": "Everscale",
+    "coinId": 396,
+    "symbol": "EVER",
+    "decimals": 9,
+    "blockchain": "Everscale",
+    "derivation": [
+      {
+        "path": "m/44'/396'/0'/0/0"
+      }
+    ],
+    "curve": "ed25519",
+    "publicKeyType": "ed25519",
+    "explorer": {
+      "url": "https://everscan.io",
+      "txPath": "/transactions/",
+      "accountPath": "/accounts/",
+      "sampleTx": "781238b2b0d15cd4cd2e2a0a142753750cd5e1b2c8b506fcede75a90e02f1268",
+      "sampleAccount": "0:d2bf59964a05dee84a0dd1ddc0ad83ba44d49719cf843d689dc8b726d0fb59d8"
+    },
+    "info": {
+      "url": "https://everscale.network/",
+      "source": "https://github.com/tonlabs/evernode-ds",
+      "rpc": "https://evercloud.dev",
+      "documentation": "https://docs.everos.dev/evernode-platform/products/evercloud/get-started"
     }
   },
   {
@@ -1007,6 +1184,7 @@
     "curve": "ed25519",
     "publicKeyType": "ed25519",
     "addressHasher": "keccak256",
+    "ss58Prefix": 2,
     "explorer": {
       "url": "https://kusama.subscan.io",
       "txPath": "/extrinsic/",
@@ -1054,6 +1232,7 @@
     "symbol": "KAVA",
     "decimals": 6,
     "blockchain": "Cosmos",
+    "chainId": "kava_2222-10",
     "derivation": [
       {
         "path": "m/44'/459'/0'/0/0"
@@ -1142,6 +1321,7 @@
     "coinId": 494,
     "decimals": 6,
     "blockchain": "Cosmos",
+    "chainId": "laozi-mainnet",
     "derivation": [
       {
         "path": "m/44'/494'/0'/0/0"
@@ -1225,11 +1405,11 @@
   },
   {
     "id": "elrond",
-    "name": "Elrond",
+    "name": "MultiversX",
     "coinId": 508,
     "symbol": "eGLD",
     "decimals": 18,
-    "blockchain": "ElrondNetwork",
+    "blockchain": "MultiversX",
     "derivation": [
       {
         "path": "m/44'/508'/0'/0'/0'"
@@ -1239,15 +1419,15 @@
     "publicKeyType": "ed25519",
     "hrp": "erd",
     "explorer": {
-      "url": "https://explorer.elrond.com",
+      "url": "https://explorer.multiversx.com",
       "txPath": "/transactions/",
-      "accountPath": "/address/"
+      "accountPath": "/accounts/"
     },
     "info": {
-      "url": "https://elrond.com/",
-      "source": "https://github.com/ElrondNetwork/elrond-go",
-      "rpc": "https://api.elrond.com",
-      "documentation": "https://docs.elrond.com"
+      "url": "https://multiversx.com/",
+      "source": "https://github.com/multiversx/mx-chain-go",
+      "rpc": "https://api.multiversx.com",
+      "documentation": "https://docs.multiversx.com"
     }
   },
   {
@@ -1278,7 +1458,7 @@
       "url": "https://binance.org",
       "source": "https://github.com/binance-chain/node-binary",
       "rpc": "https://dex.binance.org",
-      "documentation": "https://docs.binance.org/api-reference/dex-api/paths.html"
+      "documentation": "https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/dex-api/paths"
     }
   },
   {
@@ -1394,7 +1574,7 @@
   },
   {
     "id": "thundertoken",
-    "name": "Thunder Token",
+    "name": "ThunderCore",
     "coinId": 1001,
     "symbol": "TT",
     "decimals": 18,
@@ -1540,8 +1720,8 @@
         "path": "m/1852'/1815'/0'/0/0"
       }
     ],
-    "curve": "ed25519Extended",
-    "publicKeyType": "ed25519Extended",
+    "curve": "ed25519ExtendedCardano",
+    "publicKeyType": "ed25519Cardano",
     "hrp": "addr",
     "explorer": {
       "url": "https://cardanoscan.io",
@@ -1817,7 +1997,8 @@
       "rpc": "https://data-seed-prebsc-1-s1.binance.org:8545",
       "documentation": "https://eth.wiki/json-rpc/API"
     },
-    "deprecated": true
+    "deprecated": true,
+    "testFolderName": "Binance"
   },
   {
     "id": "smartchain",
@@ -1849,7 +2030,8 @@
       "source": "https://github.com/binance-chain/bsc",
       "rpc": "https://bsc-dataseed1.binance.org",
       "documentation": "https://eth.wiki/json-rpc/API"
-    }
+    },
+    "testFolderName": "Binance"
   },
   {
     "id": "polygon",
@@ -1877,7 +2059,7 @@
     "info": {
       "url": "https://polygon.technology",
       "source": "https://github.com/maticnetwork/contracts",
-      "rpc": "https://rpc-mainnet.matic.network",
+      "rpc": "https://polygon-rpc.com",
       "documentation": "https://eth.wiki/json-rpc/API"
     }
   },
@@ -1914,7 +2096,7 @@
   {
     "id": "optimism",
     "name": "Optimism",
-    "displayName": "Optimistic Ethereum",
+    "displayName": "Optimism Ethereum",
     "coinId": 10000070,
     "slip44": 60,
     "symbol": "ETH",
@@ -1939,6 +2121,66 @@
       "source": "https://github.com/ethereum-optimism/optimism",
       "rpc": "https://mainnet.optimism.io",
       "documentation": "https://eth.wiki/json-rpc/API"
+    }
+  },
+  {
+    "id": "polygonzkevm",
+    "name": "Polygon zkEVM",
+    "displayName": "Polygon zkEVM",
+    "coinId": 10001422,
+    "slip44": 60,
+    "symbol": "ETH",
+    "decimals": 18,
+    "blockchain": "Ethereum",
+    "derivation": [
+      {
+        "path": "m/44'/60'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1Extended",
+    "chainId": "1422",
+    "addressHasher": "keccak256",
+    "explorer": {
+      "url": "https://explorer.public.zkevm-test.net",
+      "txPath": "/tx/",
+      "accountPath": "/address/"
+    },
+    "info": {
+      "url": "https://www.polygon.technology/",
+      "source": "https://github.com/0xpolygonhermez",
+      "rpc": "https://rpc.public.zkevm-test.net",
+      "documentation": "https://wiki.polygon.technology/docs/zkEVM/introduction/"
+    }
+  },
+  {
+    "id": "zksync",
+    "name": "Zksync",
+    "displayName": "zkSync Era",
+    "coinId": 10000324,
+    "slip44": 60,
+    "symbol": "ETH",
+    "decimals": 18,
+    "blockchain": "Ethereum",
+    "derivation": [
+      {
+        "path": "m/44'/60'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1Extended",
+    "chainId": "324",
+    "addressHasher": "keccak256",
+    "explorer": {
+      "url": "https://explorer.zksync.io",
+      "txPath": "/tx/",
+      "accountPath": "/address/"
+    },
+    "info": {
+      "url": "https://portal.zksync.io/",
+      "source": "https://github.com/matter-labs/zksync",
+      "rpc": "https://zksync2-mainnet.zksync.io",
+      "documentation": "https://era.zksync.io/docs"
     }
   },
   {
@@ -1998,7 +2240,8 @@
       "source": "https://github.com/HuobiGroup/huobi-eco-chain",
       "rpc": "https://http-mainnet-node.huobichain.com",
       "documentation": "https://eth.wiki/json-rpc/API"
-    }
+    },
+    "testFolderName": "ECO"
   },
   {
     "id": "avalanchec",
@@ -2017,7 +2260,7 @@
     "chainId": "43114",
     "addressHasher": "keccak256",
     "explorer": {
-      "url": "https://cchain.explorer.avax.network",
+      "url": "https://snowtrace.io",
       "txPath": "/tx/",
       "accountPath": "/address/",
       "sampleTx": "0x9243890b844219accefd8798271052f5a056453ec18984a56e81c92921330d54",
@@ -2028,7 +2271,8 @@
       "client": "https://github.com/ava-labs/avalanchego",
       "clientPublic": "https://api.avax.network/ext/bc/C/rpc",
       "clientDocs": "https://docs.avax.network/"
-    }
+    },
+    "testFolderName": "Avalanche"
   },
   {
     "id": "xdai",
@@ -2185,6 +2429,38 @@
     }
   },
   {
+    "id": "secret",
+    "name": "Secret",
+    "displayName": "Secret",
+    "coinId": 529,
+    "symbol": "SCRT",
+    "decimals": 6,
+    "blockchain": "Cosmos",
+    "derivation": [
+      {
+        "path": "m/44'/529'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1",
+    "hrp": "secret",
+    "chainId": "secret-4",
+    "addressHasher": "sha256ripemd",
+    "explorer": {
+      "url": "https://mintscan.io/secret",
+      "txPath": "/txs/",
+      "accountPath": "/account/",
+      "sampleTx": "026B4886B1D9CE836A99755DDE99D4F8A7748D27B1CE9D298A763B1CFFF62C00",
+      "sampleAccount": "secret167m3s89ddurjpyr82vsluvvj0t8ylzn95trrqy"
+    },
+    "info": {
+      "url": "https://scrt.network/",
+      "source": "https://github.com/scrtlabs/SecretNetwork",
+      "rpc": "https://scrt-rpc.blockpane.com/",
+      "documentation": "https://docs.scrt.network/"
+    }
+  },
+  {
     "id": "osmosis",
     "name": "Osmosis",
     "displayName": "Osmosis",
@@ -2275,6 +2551,35 @@
       "client": "https://github.com/crypto-org-chain/cronos",
       "clientPublic": "https://evm-cronos.crypto.org",
       "clientDocs": "https://eth.wiki/json-rpc/API"
+    },
+    "testFolderName": "Cronos"
+  },
+  {
+    "id": "kavaevm",
+    "name": "KavaEvm",
+    "coinId": 10002222,
+    "symbol": "KAVA",
+    "decimals": 18,
+    "blockchain": "Ethereum",
+    "derivation": [
+      {
+        "path": "m/44'/60'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1Extended",
+    "chainId": "2222",
+    "addressHasher": "keccak256",
+    "explorer": {
+      "url": "https://explorer.kava.io",
+      "txPath": "/tx/",
+      "accountPath": "/address/"
+    },
+    "info": {
+      "url": "https://www.kava.io/",
+      "client": "https://github.com/Kava-Labs/kava",
+      "documentation": "https://docs.kava.io/docs/ethereum/overview/",
+      "rpc": "https://evm.kava.io"
     }
   },
   {
@@ -2305,7 +2610,8 @@
       "source": "https://github.com/smartbch/smartbch",
       "rpc": "https://smartbch.fountainhead.cash/mainnet",
       "documentation": "https://github.com/smartbch/docs/blob/main/developers-guide/jsonrpc.md"
-    }
+    },
+    "testFolderName": "Bitcoin"
   },
   {
     "id": "kcc",
@@ -2335,7 +2641,8 @@
       "source": "https://github.com/kcc-community/kcc",
       "rpc": "https://rpc-mainnet.kcc.network",
       "documentation": "https://docs.kcc.io/#/en-us/"
-    }
+    },
+    "testFolderName": "KuCoinCommunityChain"
   },
   {
     "id": "boba",
@@ -2465,6 +2772,7 @@
     "symbol": "EVMOS",
     "decimals": 18,
     "blockchain": "Cosmos",
+    "chainId": "evmos_9001-2",
     "derivation": [
       {
         "path": "m/44'/60'/0'/0/0"
@@ -2569,6 +2877,181 @@
       "url": "https://klaytn.foundation",
       "rpc": "https://public-node-api.klaytnapi.com/v1/cypress",
       "documentation": "https://docs.klaytn.foundation"
+    }
+  },
+  {
+    "id": "meter",
+    "name": "Meter",
+    "coinId": 18000,
+    "chainId": "82",
+    "symbol": "MTR",
+    "decimals": 18,
+    "blockchain": "Ethereum",
+    "derivation": [
+      {
+        "path": "m/44'/60'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1Extended",
+    "explorer": {
+      "url": "https://scan.meter.io",
+      "txPath": "/tx/",
+      "accountPath": "/address/",
+      "sampleTx": "0x8ea268d5dbb40217c763b800a75fc063cf28b56f40f2bc69dc043f5c4bbdc144",
+      "sampleAccount": "0xe5a273954d24eddf9ae9ea4cef2347d584cfa3dd"
+    },
+    "info": {
+      "url": "https://meter.io/",
+      "source": "https://github.com/meterio/meter-pov",
+      "rpc": "https://rpc.meter.io",
+      "documentation": "https://docs.meter.io/"
+    }
+  },
+  {
+    "id": "okc",
+    "name": "OKX Chain",
+    "coinId": 996,
+    "chainId": "66",
+    "symbol": "OKT",
+    "decimals": 18,
+    "blockchain": "Ethereum",
+    "derivation": [
+      {
+        "path": "m/44'/60'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1Extended",
+    "addressHasher": "keccak256",
+    "explorer": {
+      "url": "https://www.oklink.com/en/okc",
+      "txPath": "/tx/",
+      "accountPath": "/address/",
+      "sampleTx": "0x46C3A947E8248570FBD28E4FE456CC8F80DFD90716533878FB67857B95FA3D37",
+      "sampleAccount": "0x074faafd0b20fad2efa115b8ed7e75993e580b85"
+    },
+    "info": {
+      "url": "https://www.okx.com/okc",
+      "source": "https://github.com/okex/exchain",
+      "rpc": "https://exchainrpc.okex.org",
+      "documentation": "https://okc-docs.readthedocs.io/en/latest"
+    }
+  },
+  {
+    "id": "hedera",
+    "name": "Hedera",
+    "coinId": 3030,
+    "symbol": "HBAR",
+    "decimals": 8,
+    "blockchain": "Hedera",
+    "derivation": [
+      {
+        "path": "m/44'/3030'/0'/0'/0"
+      }
+    ],
+    "curve": "ed25519",
+    "publicKeyType": "ed25519",
+    "explorer": {
+      "url": "https://hashscan.io/mainnet",
+      "txPath": "/transaction/",
+      "accountPath": "/account/",
+      "sampleTx": "0.0.19790-1666769504-858851231",
+      "sampleAccount": "0.0.19790"
+    },
+    "info": {
+      "url": "https://hedera.com/",
+      "source": "https://github.com/hashgraph",
+      "documentation": "https://docs.hedera.com"
+    }
+  },
+  {
+    "id": "agoric",
+    "name": "Agoric",
+    "coinId": 564,
+    "symbol": "BLD",
+    "decimals": 6,
+    "blockchain": "Cosmos",
+    "derivation": [
+      {
+        "path": "m/44'/564'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1",
+    "hrp": "agoric",
+    "chainId": "agoric-3",
+    "addressHasher": "sha256ripemd",
+    "explorer": {
+      "url": "https://atomscan.com/agoric",
+      "txPath": "/transactions/",
+      "accountPath": "/accounts/",
+      "sampleTx": "576224B1A0F3D56BA23C5350C2A0E3CEA86F40005B828793E5ACBC2F4813152E",
+      "sampleAccount": "agoric1cqvwa8jr6pmt45jndanc8lqmdsxjkhw0yertc0"
+    },
+    "info": {
+      "url": "https://agoric.com",
+      "source": "https://github.com/Agoric/agoric-sdk",
+      "rpc": "https://agoric-rpc.polkachu.com",
+      "documentation": "https://docs.agoric.com"
+    }
+  },
+  {
+    "id": "nativeinjective",
+    "name": "NativeInjective",
+    "displayName": "Native Injective",
+    "coinId": 10000060,
+    "symbol": "INJ",
+    "decimals": 18,
+    "blockchain": "Cosmos",
+    "derivation": [
+      {
+        "path": "m/44'/60'/0'/0/0"
+      }
+    ],
+    "curve": "secp256k1",
+    "publicKeyType": "secp256k1Extended",
+    "hrp": "inj",
+    "addressHasher": "keccak256",
+    "chainId": "injective-1",
+    "explorer": {
+      "url": "https://www.mintscan.io/injective",
+      "txPath": "/txs/",
+      "accountPath": "/account/",
+      "sampleTx": "C5F6A4FF9DF1AE9FF543D2CEBD8E3E9B04290B2445F9D91D7707EDBF4B7EE16B",
+      "sampleAccount": "inj1xmpkmxr4as00em23tc2zgmuyy2gr4h3wgcl6vd"
+    },
+    "info": {
+      "url": "https://injective.com",
+      "documentation": "https://docs.injective.network"
+    }
+  },
+  {
+    "id": "ton",
+    "name": "TON",
+    "coinId": 607,
+    "symbol": "TON",
+    "decimals": 9,
+    "blockchain": "The Open Network",
+    "derivation": [
+      {
+        "path": "m/44'/607'/0'"
+      }
+    ],
+    "curve": "ed25519",
+    "publicKeyType": "ed25519",
+    "explorer": {
+      "url": "https://tonscan.org",
+      "txPath": "/tx/",
+      "accountPath": "/address/",
+      "sampleTx": "fJXfn0EVhV09HFuEgUHu4Cchb24nUQtIMwSzmzk2tLs=",
+      "sampleAccount": "EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N"
+    },
+    "info": {
+      "url": "https://ton.org",
+      "source": "https://github.com/ton-blockchain",
+      "rpc": "https://toncenter.com/api/v2/jsonRPC",
+      "documentation": "https://ton.org/docs"
     }
   }
 ]

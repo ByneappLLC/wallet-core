@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -39,6 +39,12 @@ TWString *_Nonnull TWCoinTypeDerivationPath(enum TWCoinType coin) {
     return TWStringCreateWithUTF8Bytes(string.c_str());
 }
 
+TWString* TWCoinTypeDerivationPathWithDerivation(enum TWCoinType coin, enum TWDerivation derivation) {
+    const auto path = TW::derivationPath(coin, derivation);
+    const auto string = path.string();
+    return TWStringCreateWithUTF8Bytes(string.c_str());
+}
+
 TWString *_Nonnull TWCoinTypeDeriveAddress(enum TWCoinType coin, struct TWPrivateKey *_Nonnull privateKey) {
     const auto string = TW::deriveAddress(coin, privateKey->impl);
     return TWStringCreateWithUTF8Bytes(string.c_str());
@@ -75,4 +81,8 @@ uint32_t TWCoinTypeSlip44Id(enum TWCoinType coin) {
 
 enum TWPublicKeyType TWCoinTypePublicKeyType(enum TWCoinType coin) {
     return TW::publicKeyType(coin);
+}
+
+uint32_t TWCoinTypeSS58Prefix(enum TWCoinType coin) {
+    return TW::ss58Prefix(coin);
 }

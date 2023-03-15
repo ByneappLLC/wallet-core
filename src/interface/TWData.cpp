@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -71,7 +71,7 @@ void TWDataReplaceBytes(TWData *_Nonnull data, size_t start, size_t size, const 
 
 void TWDataAppendBytes(TWData *_Nonnull data, const uint8_t *_Nonnull bytes, size_t size) {
     auto* v = const_cast<Data*>(reinterpret_cast<const Data*>(data));
-    for (auto i = 0; i < size; i += 1)
+    for (auto i = 0ul; i < size; i += 1)
         v->push_back(bytes[i]);
 }
 

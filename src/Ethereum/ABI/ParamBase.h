@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -26,7 +26,7 @@ public:
     // EIP712-style hash of the value (used for signing); default implementation
     virtual Data hashStruct() const;
     // Helper for EIP712 encoding; provide full type of all used types (recursively).  Default is empty implementation.
-    virtual std::string getExtraTypes(std::vector<std::string>& ignoreList) const { return ""; }
+    virtual std::string getExtraTypes([[maybe_unused]] std::vector<std::string>& ignoreList) const { return ""; }
 };
 
 /// Collection of parameters base class

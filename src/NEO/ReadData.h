@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -9,7 +9,7 @@
 #include <cctype>
 #include <limits>
 
-#include "../Data.h"
+#include "Data.h"
 #include "../BinaryCoding.h"
 
 namespace TW {
@@ -27,7 +27,7 @@ template<class T>
 static std::vector<T> concat(const std::vector<T>& v1, const std::vector<T>& v2) {
     std::vector<T> v(v1);
     v.insert(v.end(), v2.begin(), v2.end());
-    return std::move(v);
+    return v;
 }
 
 } // namespace TW

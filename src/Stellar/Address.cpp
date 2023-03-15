@@ -1,13 +1,13 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
 
 #include "Address.h"
+#include "Crc.h"
 #include "../Base32.h"
 #include "../HexCoding.h"
-#include "Crc.h"
 
 #include <TrezorCrypto/memzero.h>
 #include <TrustWalletCore/TWStellarVersionByte.h>
@@ -15,7 +15,7 @@
 #include <array>
 #include <cassert>
 
-using namespace TW::Stellar;
+namespace TW::Stellar {
 
 bool Address::isValid(const std::string& string) {
     bool valid = false;
@@ -82,3 +82,5 @@ std::string Address::string() const {
     auto out = Base32::encode(bytesAsData);
     return out;
 }
+
+} // namespace TW::Stellar

@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -33,7 +33,7 @@ public:
 
     bool operator==(const Transaction &other) const;
 
-    virtual int deserializeExclusiveData(const Data& data, int initial_pos = 0) { return initial_pos; }
+    virtual int deserializeExclusiveData([[maybe_unused]] const Data& data, int initial_pos = 0) { return initial_pos; }
     virtual Data serializeExclusiveData() const { return Data(); }
 
     Data getHash() const;

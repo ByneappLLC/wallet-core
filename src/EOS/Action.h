@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -11,8 +11,6 @@
 
 #include <nlohmann/json.hpp>
 #include <string>
-
-using Data = TW::Data;
 
 namespace TW::EOS {
 

@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -40,14 +40,14 @@ Data Signer::signData(const PrivateKey& privKey, const Data& data) {
     return signature;
 }
 
-std::string Signer::signatureToBsase58(const Data& sig) {
+std::string Signer::signatureToBase58(const Data& sig) {
     Data sigWithSuffix(sig);
     append(sigWithSuffix, TW::data(SignatureSuffix));
     // take hash, ripemd, first 4 bytes 
     Data hash = Hash::ripemd(sigWithSuffix);
     Data sigWithChecksum(sig);
     append(sigWithChecksum, TW::data(hash.data(), 4));
-    string s = SignaturePrefix + Base58::bitcoin.encode(sigWithChecksum);
+    string s = SignaturePrefix + Base58::encode(sigWithChecksum);
     return s;
 }
 
@@ -56,7 +56,7 @@ bool Signer::verify(const PublicKey& pubKey, const Data& data, const Data& signa
 }
 
 // canonical check for FIO, both R and S lenght is 32
-int Signer::isCanonical(uint8_t by, uint8_t sig[64]) {
+int Signer::isCanonical([[maybe_unused]] uint8_t by, uint8_t sig[64]) {
     return !(sig[0] & 0x80)
         && !(sig[0] == 0 && !(sig[1] & 0x80))
         && !(sig[32] & 0x80)

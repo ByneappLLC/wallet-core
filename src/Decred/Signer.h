@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -41,7 +41,7 @@ class Signer {
     Bitcoin::TransactionPlan txPlan;
 
     /// Transaction being signed.
-    Transaction transaction;
+    Transaction _transaction;
 
   private:
     /// List of signed inputs.
@@ -59,7 +59,7 @@ class Signer {
         } else {
           txPlan = TransactionBuilder::plan(input);
         }
-        transaction = TransactionBuilder::build(txPlan, input.to_address(), input.change_address());
+        _transaction = TransactionBuilder::build(txPlan, input.to_address(), input.change_address());
     }
 
     /// Signs the transaction.

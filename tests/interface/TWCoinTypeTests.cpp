@@ -1,10 +1,10 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
 
-#include "TWTestUtilities.h"
+#include "TestUtilities.h"
 
 #include <TrustWalletCore/TWCoinType.h>
 
@@ -28,7 +28,7 @@ TEST(TWCoinType, TWPurpose) {
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeBandChain));
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeBluzelle));
     ASSERT_EQ(TWPurposeBIP1852, TWCoinTypePurpose(TWCoinTypeCardano));
-    ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeElrond));
+    ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeMultiversX));
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeOasis));
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeTHORChain));
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeCryptoOrg));
@@ -55,7 +55,7 @@ TEST(TWCoinType, TWPurpose) {
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeStellar));
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeTezos));
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeTheta));
-    ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeThunderToken));
+    ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeThunderCore));
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeTomoChain));
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeTron));
     ASSERT_EQ(TWPurposeBIP44, TWCoinTypePurpose(TWCoinTypeVeChain));
@@ -99,8 +99,8 @@ TEST(TWCoinType, TWPublicKeyType) {
     ASSERT_EQ(TWPublicKeyTypeSECP256k1, TWCoinTypePublicKeyType(TWCoinTypeKava));
     ASSERT_EQ(TWPublicKeyTypeSECP256k1, TWCoinTypePublicKeyType(TWCoinTypeBandChain));
     ASSERT_EQ(TWPublicKeyTypeSECP256k1, TWCoinTypePublicKeyType(TWCoinTypeBluzelle));
-    ASSERT_EQ(TWPublicKeyTypeED25519Extended, TWCoinTypePublicKeyType(TWCoinTypeCardano));
-    ASSERT_EQ(TWPublicKeyTypeED25519, TWCoinTypePublicKeyType(TWCoinTypeElrond));
+    ASSERT_EQ(TWPublicKeyTypeED25519Cardano, TWCoinTypePublicKeyType(TWCoinTypeCardano));
+    ASSERT_EQ(TWPublicKeyTypeED25519, TWCoinTypePublicKeyType(TWCoinTypeMultiversX));
     ASSERT_EQ(TWPublicKeyTypeED25519, TWCoinTypePublicKeyType(TWCoinTypeOasis));
     ASSERT_EQ(TWPublicKeyTypeSECP256k1, TWCoinTypePublicKeyType(TWCoinTypeTHORChain));
     ASSERT_EQ(TWPublicKeyTypeSECP256k1, TWCoinTypePublicKeyType(TWCoinTypeCryptoOrg));
@@ -127,7 +127,7 @@ TEST(TWCoinType, TWPublicKeyType) {
     ASSERT_EQ(TWPublicKeyTypeED25519, TWCoinTypePublicKeyType(TWCoinTypeStellar));
     ASSERT_EQ(TWPublicKeyTypeED25519, TWCoinTypePublicKeyType(TWCoinTypeTezos));
     ASSERT_EQ(TWPublicKeyTypeSECP256k1Extended, TWCoinTypePublicKeyType(TWCoinTypeTheta));
-    ASSERT_EQ(TWPublicKeyTypeSECP256k1Extended, TWCoinTypePublicKeyType(TWCoinTypeThunderToken));
+    ASSERT_EQ(TWPublicKeyTypeSECP256k1Extended, TWCoinTypePublicKeyType(TWCoinTypeThunderCore));
     ASSERT_EQ(TWPublicKeyTypeSECP256k1Extended, TWCoinTypePublicKeyType(TWCoinTypeTomoChain));
     ASSERT_EQ(TWPublicKeyTypeSECP256k1Extended, TWCoinTypePublicKeyType(TWCoinTypeTron));
     ASSERT_EQ(TWPublicKeyTypeSECP256k1Extended, TWCoinTypePublicKeyType(TWCoinTypeVeChain));
@@ -138,4 +138,25 @@ TEST(TWCoinType, TWPublicKeyType) {
     ASSERT_EQ(TWPublicKeyTypeSECP256k1, TWCoinTypePublicKeyType(TWCoinTypeRavencoin));
     ASSERT_EQ(TWPublicKeyTypeCURVE25519, TWCoinTypePublicKeyType(TWCoinTypeWaves));
     ASSERT_EQ(TWPublicKeyTypeNIST256p1, TWCoinTypePublicKeyType(TWCoinTypeNEO));
+}
+
+TEST(TWCoinType, TWCoinTypeDerivationPath) {
+    auto res = TWCoinTypeDerivationPath(TWCoinTypeBitcoin);
+    auto result = *reinterpret_cast<const std::string *>(res);
+    ASSERT_EQ(result, "m/84'/0'/0'/0/0");
+    TWStringDelete(res);
+}
+
+TEST(TWCoinType, TWCoinTypeDerivationPathWithDerivation) {
+    auto res = TWCoinTypeDerivationPathWithDerivation(TWCoinTypeBitcoin, TWDerivationBitcoinLegacy);
+    auto result = *reinterpret_cast<const std::string *>(res);
+    ASSERT_EQ(result, "m/44'/0'/0'/0/0");
+    TWStringDelete(res);
+}
+
+TEST(TWCoinType, TWCoinTypeDerivationPathWithDerivationSolana) {
+    auto res = TWCoinTypeDerivationPathWithDerivation(TWCoinTypeSolana, TWDerivationSolanaSolana);
+    auto result = *reinterpret_cast<const std::string *>(res);
+    ASSERT_EQ(result, "m/44'/501'/0'/0'");
+    TWStringDelete(res);
 }

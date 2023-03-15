@@ -14,7 +14,7 @@ class CoinTypeTests: XCTestCase {
         XCTAssertEqual(CoinType.litecoin.rawValue, 2)
         XCTAssertEqual(CoinType.tron.rawValue, 195)
         XCTAssertEqual(CoinType.ethereum.rawValue, 60)
-        XCTAssertEqual(CoinType.thunderToken.rawValue, 1001)
+        XCTAssertEqual(CoinType.thunderCore.rawValue, 1001)
         XCTAssertEqual(CoinType.wanchain.rawValue, 5718350)
         XCTAssertEqual(CoinType.callisto.rawValue, 820)
         XCTAssertEqual(CoinType.ethereumClassic.rawValue, 61)
@@ -29,5 +29,11 @@ class CoinTypeTests: XCTestCase {
         XCTAssertEqual(CoinType.nebulas.rawValue, 2718)
         XCTAssertEqual(CoinType.avalancheCChain.rawValue, 10009000)
         XCTAssertEqual(CoinType.xdai.rawValue, 10000100)
+    }
+    
+    func testCoinDerivation() {
+        XCTAssertEqual(CoinType.bitcoin.derivationPath(), "m/84'/0'/0'/0/0")
+        XCTAssertEqual(CoinType.bitcoin.derivationPathWithDerivation(derivation: Derivation.bitcoinLegacy), "m/44'/0'/0'/0/0")
+        XCTAssertEqual(CoinType.solana.derivationPathWithDerivation(derivation: Derivation.solanaSolana), "m/44'/501'/0'/0'")
     }
 }

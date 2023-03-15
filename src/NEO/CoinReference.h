@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -7,7 +7,7 @@
 #pragma once
 
 #include "../uint256.h"
-#include "../Data.h"
+#include "Data.h"
 #include "../Hash.h"
 #include "../BinaryCoding.h"
 #include "ISerializable.h"
@@ -19,6 +19,7 @@ class CoinReference : public Serializable {
   public:
     /// Number of bytes for prevIndex.
     static const size_t prevIndexSize = 2;
+    static const size_t prevHashSize = 32;
 
     uint256_t prevHash;
     uint16_t prevIndex = 0;
@@ -35,7 +36,7 @@ class CoinReference : public Serializable {
     }
 
     Data serialize() const override {
-        auto resp = store(prevHash);
+        auto resp = store(prevHash, prevHashSize);
         encode16LE(prevIndex, resp);
         return resp;
     }
@@ -46,4 +47,4 @@ class CoinReference : public Serializable {
     }
 };
 
-}
+} // namespace TW::NEO

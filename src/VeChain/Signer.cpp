@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -9,7 +9,8 @@
 #include "../Hash.h"
 
 using namespace TW;
-using namespace TW::VeChain;
+
+namespace TW::VeChain {
 
 Proto::SigningOutput Signer::sign(const Proto::SigningInput& input) noexcept {
     auto key = PrivateKey(Data(input.private_key().begin(), input.private_key().end()));
@@ -41,3 +42,5 @@ Data Signer::sign(const PrivateKey& privateKey, Transaction& transaction) noexce
     auto signature = privateKey.sign(hash, TWCurveSECP256k1);
     return Data(signature.begin(), signature.end());
 }
+
+} // namespace TW::VeChain
