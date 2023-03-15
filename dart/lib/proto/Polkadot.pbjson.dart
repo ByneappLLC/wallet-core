@@ -8,17 +8,6 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-@$core.Deprecated('Use networkDescriptor instead')
-const Network$json = const {
-  '1': 'Network',
-  '2': const [
-    const {'1': 'POLKADOT', '2': 0},
-    const {'1': 'KUSAMA', '2': 2},
-  ],
-};
-
-/// Descriptor for `Network`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List networkDescriptor = $convert.base64Decode('CgdOZXR3b3JrEgwKCFBPTEtBRE9UEAASCgoGS1VTQU1BEAI=');
 @$core.Deprecated('Use rewardDestinationDescriptor instead')
 const RewardDestination$json = const {
   '1': 'RewardDestination',
@@ -164,7 +153,7 @@ const SigningInput$json = const {
     const {'1': 'tip', '3': 6, '4': 1, '5': 12, '10': 'tip'},
     const {'1': 'era', '3': 7, '4': 1, '5': 11, '6': '.TW.Polkadot.Proto.Era', '10': 'era'},
     const {'1': 'private_key', '3': 8, '4': 1, '5': 12, '10': 'privateKey'},
-    const {'1': 'network', '3': 9, '4': 1, '5': 14, '6': '.TW.Polkadot.Proto.Network', '10': 'network'},
+    const {'1': 'network', '3': 9, '4': 1, '5': 13, '10': 'network'},
     const {'1': 'balance_call', '3': 10, '4': 1, '5': 11, '6': '.TW.Polkadot.Proto.Balance', '9': 0, '10': 'balanceCall'},
     const {'1': 'staking_call', '3': 11, '4': 1, '5': 11, '6': '.TW.Polkadot.Proto.Staking', '9': 0, '10': 'stakingCall'},
   ],
@@ -174,7 +163,7 @@ const SigningInput$json = const {
 };
 
 /// Descriptor for `SigningInput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSHQoKYmxvY2tfaGFzaBgBIAEoDFIJYmxvY2tIYXNoEiEKDGdlbmVzaXNfaGFzaBgCIAEoDFILZ2VuZXNpc0hhc2gSFAoFbm9uY2UYAyABKARSBW5vbmNlEiEKDHNwZWNfdmVyc2lvbhgEIAEoDVILc3BlY1ZlcnNpb24SLwoTdHJhbnNhY3Rpb25fdmVyc2lvbhgFIAEoDVISdHJhbnNhY3Rpb25WZXJzaW9uEhAKA3RpcBgGIAEoDFIDdGlwEigKA2VyYRgHIAEoCzIWLlRXLlBvbGthZG90LlByb3RvLkVyYVIDZXJhEh8KC3ByaXZhdGVfa2V5GAggASgMUgpwcml2YXRlS2V5EjQKB25ldHdvcmsYCSABKA4yGi5UVy5Qb2xrYWRvdC5Qcm90by5OZXR3b3JrUgduZXR3b3JrEj8KDGJhbGFuY2VfY2FsbBgKIAEoCzIaLlRXLlBvbGthZG90LlByb3RvLkJhbGFuY2VIAFILYmFsYW5jZUNhbGwSPwoMc3Rha2luZ19jYWxsGAsgASgLMhouVFcuUG9sa2Fkb3QuUHJvdG8uU3Rha2luZ0gAUgtzdGFraW5nQ2FsbEIPCg1tZXNzYWdlX29uZW9m');
+final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSHQoKYmxvY2tfaGFzaBgBIAEoDFIJYmxvY2tIYXNoEiEKDGdlbmVzaXNfaGFzaBgCIAEoDFILZ2VuZXNpc0hhc2gSFAoFbm9uY2UYAyABKARSBW5vbmNlEiEKDHNwZWNfdmVyc2lvbhgEIAEoDVILc3BlY1ZlcnNpb24SLwoTdHJhbnNhY3Rpb25fdmVyc2lvbhgFIAEoDVISdHJhbnNhY3Rpb25WZXJzaW9uEhAKA3RpcBgGIAEoDFIDdGlwEigKA2VyYRgHIAEoCzIWLlRXLlBvbGthZG90LlByb3RvLkVyYVIDZXJhEh8KC3ByaXZhdGVfa2V5GAggASgMUgpwcml2YXRlS2V5EhgKB25ldHdvcmsYCSABKA1SB25ldHdvcmsSPwoMYmFsYW5jZV9jYWxsGAogASgLMhouVFcuUG9sa2Fkb3QuUHJvdG8uQmFsYW5jZUgAUgtiYWxhbmNlQ2FsbBI/CgxzdGFraW5nX2NhbGwYCyABKAsyGi5UVy5Qb2xrYWRvdC5Qcm90by5TdGFraW5nSABSC3N0YWtpbmdDYWxsQg8KDW1lc3NhZ2Vfb25lb2Y=');
 @$core.Deprecated('Use signingOutputDescriptor instead')
 const SigningOutput$json = const {
   '1': 'SigningOutput',

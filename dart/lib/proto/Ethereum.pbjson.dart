@@ -14,11 +14,12 @@ const TransactionMode$json = const {
   '2': const [
     const {'1': 'Legacy', '2': 0},
     const {'1': 'Enveloped', '2': 1},
+    const {'1': 'UserOp', '2': 2},
   ],
 };
 
 /// Descriptor for `TransactionMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List transactionModeDescriptor = $convert.base64Decode('Cg9UcmFuc2FjdGlvbk1vZGUSCgoGTGVnYWN5EAASDQoJRW52ZWxvcGVkEAE=');
+final $typed_data.Uint8List transactionModeDescriptor = $convert.base64Decode('Cg9UcmFuc2FjdGlvbk1vZGUSCgoGTGVnYWN5EAASDQoJRW52ZWxvcGVkEAESCgoGVXNlck9wEAI=');
 @$core.Deprecated('Use transactionDescriptor instead')
 const Transaction$json = const {
   '1': 'Transaction',
@@ -96,6 +97,23 @@ const Transaction_ContractGeneric$json = const {
 
 /// Descriptor for `Transaction`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List transactionDescriptor = $convert.base64Decode('CgtUcmFuc2FjdGlvbhJFCgh0cmFuc2ZlchgBIAEoCzInLlRXLkV0aGVyZXVtLlByb3RvLlRyYW5zYWN0aW9uLlRyYW5zZmVySABSCHRyYW5zZmVyElUKDmVyYzIwX3RyYW5zZmVyGAIgASgLMiwuVFcuRXRoZXJldW0uUHJvdG8uVHJhbnNhY3Rpb24uRVJDMjBUcmFuc2ZlckgAUg1lcmMyMFRyYW5zZmVyElIKDWVyYzIwX2FwcHJvdmUYAyABKAsyKy5UVy5FdGhlcmV1bS5Qcm90by5UcmFuc2FjdGlvbi5FUkMyMEFwcHJvdmVIAFIMZXJjMjBBcHByb3ZlElgKD2VyYzcyMV90cmFuc2ZlchgEIAEoCzItLlRXLkV0aGVyZXVtLlByb3RvLlRyYW5zYWN0aW9uLkVSQzcyMVRyYW5zZmVySABSDmVyYzcyMVRyYW5zZmVyElsKEGVyYzExNTVfdHJhbnNmZXIYBSABKAsyLi5UVy5FdGhlcmV1bS5Qcm90by5UcmFuc2FjdGlvbi5FUkMxMTU1VHJhbnNmZXJIAFIPZXJjMTE1NVRyYW5zZmVyElsKEGNvbnRyYWN0X2dlbmVyaWMYBiABKAsyLi5UVy5FdGhlcmV1bS5Qcm90by5UcmFuc2FjdGlvbi5Db250cmFjdEdlbmVyaWNIAFIPY29udHJhY3RHZW5lcmljGjYKCFRyYW5zZmVyEhYKBmFtb3VudBgBIAEoDFIGYW1vdW50EhIKBGRhdGEYAiABKAxSBGRhdGEaNwoNRVJDMjBUcmFuc2ZlchIOCgJ0bxgBIAEoCVICdG8SFgoGYW1vdW50GAIgASgMUgZhbW91bnQaQAoMRVJDMjBBcHByb3ZlEhgKB3NwZW5kZXIYASABKAlSB3NwZW5kZXISFgoGYW1vdW50GAIgASgMUgZhbW91bnQaTwoORVJDNzIxVHJhbnNmZXISEgoEZnJvbRgBIAEoCVIEZnJvbRIOCgJ0bxgCIAEoCVICdG8SGQoIdG9rZW5faWQYAyABKAxSB3Rva2VuSWQaegoPRVJDMTE1NVRyYW5zZmVyEhIKBGZyb20YASABKAlSBGZyb20SDgoCdG8YAiABKAlSAnRvEhkKCHRva2VuX2lkGAMgASgMUgd0b2tlbklkEhQKBXZhbHVlGAQgASgMUgV2YWx1ZRISCgRkYXRhGAUgASgMUgRkYXRhGj0KD0NvbnRyYWN0R2VuZXJpYxIWCgZhbW91bnQYASABKAxSBmFtb3VudBISCgRkYXRhGAIgASgMUgRkYXRhQhMKEXRyYW5zYWN0aW9uX29uZW9m');
+@$core.Deprecated('Use userOperationDescriptor instead')
+const UserOperation$json = const {
+  '1': 'UserOperation',
+  '2': const [
+    const {'1': 'entry_point', '3': 1, '4': 1, '5': 9, '10': 'entryPoint'},
+    const {'1': 'account_factory', '3': 2, '4': 1, '5': 9, '10': 'accountFactory'},
+    const {'1': 'account_logic', '3': 3, '4': 1, '5': 9, '10': 'accountLogic'},
+    const {'1': 'owner', '3': 4, '4': 1, '5': 9, '10': 'owner'},
+    const {'1': 'is_account_deployed', '3': 5, '4': 1, '5': 8, '10': 'isAccountDeployed'},
+    const {'1': 'pre_verification_gas', '3': 6, '4': 1, '5': 12, '10': 'preVerificationGas'},
+    const {'1': 'verification_gas_limit', '3': 7, '4': 1, '5': 12, '10': 'verificationGasLimit'},
+    const {'1': 'paymaster_and_data', '3': 8, '4': 1, '5': 12, '10': 'paymasterAndData'},
+  ],
+};
+
+/// Descriptor for `UserOperation`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userOperationDescriptor = $convert.base64Decode('Cg1Vc2VyT3BlcmF0aW9uEh8KC2VudHJ5X3BvaW50GAEgASgJUgplbnRyeVBvaW50EicKD2FjY291bnRfZmFjdG9yeRgCIAEoCVIOYWNjb3VudEZhY3RvcnkSIwoNYWNjb3VudF9sb2dpYxgDIAEoCVIMYWNjb3VudExvZ2ljEhQKBW93bmVyGAQgASgJUgVvd25lchIuChNpc19hY2NvdW50X2RlcGxveWVkGAUgASgIUhFpc0FjY291bnREZXBsb3llZBIwChRwcmVfdmVyaWZpY2F0aW9uX2dhcxgGIAEoDFIScHJlVmVyaWZpY2F0aW9uR2FzEjQKFnZlcmlmaWNhdGlvbl9nYXNfbGltaXQYByABKAxSFHZlcmlmaWNhdGlvbkdhc0xpbWl0EiwKEnBheW1hc3Rlcl9hbmRfZGF0YRgIIAEoDFIQcGF5bWFzdGVyQW5kRGF0YQ==');
 @$core.Deprecated('Use signingInputDescriptor instead')
 const SigningInput$json = const {
   '1': 'SigningInput',
@@ -110,11 +128,12 @@ const SigningInput$json = const {
     const {'1': 'to_address', '3': 8, '4': 1, '5': 9, '10': 'toAddress'},
     const {'1': 'private_key', '3': 9, '4': 1, '5': 12, '10': 'privateKey'},
     const {'1': 'transaction', '3': 10, '4': 1, '5': 11, '6': '.TW.Ethereum.Proto.Transaction', '10': 'transaction'},
+    const {'1': 'user_operation', '3': 11, '4': 1, '5': 11, '6': '.TW.Ethereum.Proto.UserOperation', '10': 'userOperation'},
   ],
 };
 
 /// Descriptor for `SigningInput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSGQoIY2hhaW5faWQYASABKAxSB2NoYWluSWQSFAoFbm9uY2UYAiABKAxSBW5vbmNlEjsKB3R4X21vZGUYAyABKA4yIi5UVy5FdGhlcmV1bS5Qcm90by5UcmFuc2FjdGlvbk1vZGVSBnR4TW9kZRIbCglnYXNfcHJpY2UYBCABKAxSCGdhc1ByaWNlEhsKCWdhc19saW1pdBgFIAEoDFIIZ2FzTGltaXQSOAoZbWF4X2luY2x1c2lvbl9mZWVfcGVyX2dhcxgGIAEoDFIVbWF4SW5jbHVzaW9uRmVlUGVyR2FzEiUKD21heF9mZWVfcGVyX2dhcxgHIAEoDFIMbWF4RmVlUGVyR2FzEh0KCnRvX2FkZHJlc3MYCCABKAlSCXRvQWRkcmVzcxIfCgtwcml2YXRlX2tleRgJIAEoDFIKcHJpdmF0ZUtleRJACgt0cmFuc2FjdGlvbhgKIAEoCzIeLlRXLkV0aGVyZXVtLlByb3RvLlRyYW5zYWN0aW9uUgt0cmFuc2FjdGlvbg==');
+final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSGQoIY2hhaW5faWQYASABKAxSB2NoYWluSWQSFAoFbm9uY2UYAiABKAxSBW5vbmNlEjsKB3R4X21vZGUYAyABKA4yIi5UVy5FdGhlcmV1bS5Qcm90by5UcmFuc2FjdGlvbk1vZGVSBnR4TW9kZRIbCglnYXNfcHJpY2UYBCABKAxSCGdhc1ByaWNlEhsKCWdhc19saW1pdBgFIAEoDFIIZ2FzTGltaXQSOAoZbWF4X2luY2x1c2lvbl9mZWVfcGVyX2dhcxgGIAEoDFIVbWF4SW5jbHVzaW9uRmVlUGVyR2FzEiUKD21heF9mZWVfcGVyX2dhcxgHIAEoDFIMbWF4RmVlUGVyR2FzEh0KCnRvX2FkZHJlc3MYCCABKAlSCXRvQWRkcmVzcxIfCgtwcml2YXRlX2tleRgJIAEoDFIKcHJpdmF0ZUtleRJACgt0cmFuc2FjdGlvbhgKIAEoCzIeLlRXLkV0aGVyZXVtLlByb3RvLlRyYW5zYWN0aW9uUgt0cmFuc2FjdGlvbhJHCg51c2VyX29wZXJhdGlvbhgLIAEoCzIgLlRXLkV0aGVyZXVtLlByb3RvLlVzZXJPcGVyYXRpb25SDXVzZXJPcGVyYXRpb24=');
 @$core.Deprecated('Use signingOutputDescriptor instead')
 const SigningOutput$json = const {
   '1': 'SigningOutput',

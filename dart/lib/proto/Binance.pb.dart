@@ -103,35 +103,6 @@ class Transaction extends $pb.GeneratedMessage {
   void clearData() => clearField(5);
 }
 
-class Signature_PubKey extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Signature.PubKey', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  Signature_PubKey._() : super();
-  factory Signature_PubKey() => create();
-  factory Signature_PubKey.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Signature_PubKey.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  Signature_PubKey clone() => Signature_PubKey()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  Signature_PubKey copyWith(void Function(Signature_PubKey) updates) => super.copyWith((message) => updates(message as Signature_PubKey)) as Signature_PubKey; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static Signature_PubKey create() => Signature_PubKey._();
-  Signature_PubKey createEmptyInstance() => create();
-  static $pb.PbList<Signature_PubKey> createRepeated() => $pb.PbList<Signature_PubKey>();
-  @$core.pragma('dart2js:noInline')
-  static Signature_PubKey getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Signature_PubKey>(create);
-  static Signature_PubKey? _defaultInstance;
-}
-
 class Signature extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Signature', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pubKey', $pb.PbFieldType.OY)

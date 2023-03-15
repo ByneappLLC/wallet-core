@@ -136,15 +136,16 @@ const SigningInput$json = const {
   '2': const [
     const {'1': 'private_key', '3': 1, '4': 1, '5': 12, '10': 'privateKey'},
     const {'1': 'recent_blockhash', '3': 2, '4': 1, '5': 9, '10': 'recentBlockhash'},
-    const {'1': 'transfer_transaction', '3': 3, '4': 1, '5': 11, '6': '.TW.Solana.Proto.Transfer', '9': 0, '10': 'transferTransaction'},
-    const {'1': 'delegate_stake_transaction', '3': 4, '4': 1, '5': 11, '6': '.TW.Solana.Proto.DelegateStake', '9': 0, '10': 'delegateStakeTransaction'},
-    const {'1': 'deactivate_stake_transaction', '3': 5, '4': 1, '5': 11, '6': '.TW.Solana.Proto.DeactivateStake', '9': 0, '10': 'deactivateStakeTransaction'},
-    const {'1': 'deactivate_all_stake_transaction', '3': 6, '4': 1, '5': 11, '6': '.TW.Solana.Proto.DeactivateAllStake', '9': 0, '10': 'deactivateAllStakeTransaction'},
-    const {'1': 'withdraw_transaction', '3': 7, '4': 1, '5': 11, '6': '.TW.Solana.Proto.WithdrawStake', '9': 0, '10': 'withdrawTransaction'},
-    const {'1': 'withdraw_all_transaction', '3': 8, '4': 1, '5': 11, '6': '.TW.Solana.Proto.WithdrawAllStake', '9': 0, '10': 'withdrawAllTransaction'},
-    const {'1': 'create_token_account_transaction', '3': 9, '4': 1, '5': 11, '6': '.TW.Solana.Proto.CreateTokenAccount', '9': 0, '10': 'createTokenAccountTransaction'},
-    const {'1': 'token_transfer_transaction', '3': 10, '4': 1, '5': 11, '6': '.TW.Solana.Proto.TokenTransfer', '9': 0, '10': 'tokenTransferTransaction'},
-    const {'1': 'create_and_transfer_token_transaction', '3': 11, '4': 1, '5': 11, '6': '.TW.Solana.Proto.CreateAndTransferToken', '9': 0, '10': 'createAndTransferTokenTransaction'},
+    const {'1': 'v0_msg', '3': 3, '4': 1, '5': 8, '10': 'v0Msg'},
+    const {'1': 'transfer_transaction', '3': 4, '4': 1, '5': 11, '6': '.TW.Solana.Proto.Transfer', '9': 0, '10': 'transferTransaction'},
+    const {'1': 'delegate_stake_transaction', '3': 5, '4': 1, '5': 11, '6': '.TW.Solana.Proto.DelegateStake', '9': 0, '10': 'delegateStakeTransaction'},
+    const {'1': 'deactivate_stake_transaction', '3': 6, '4': 1, '5': 11, '6': '.TW.Solana.Proto.DeactivateStake', '9': 0, '10': 'deactivateStakeTransaction'},
+    const {'1': 'deactivate_all_stake_transaction', '3': 7, '4': 1, '5': 11, '6': '.TW.Solana.Proto.DeactivateAllStake', '9': 0, '10': 'deactivateAllStakeTransaction'},
+    const {'1': 'withdraw_transaction', '3': 8, '4': 1, '5': 11, '6': '.TW.Solana.Proto.WithdrawStake', '9': 0, '10': 'withdrawTransaction'},
+    const {'1': 'withdraw_all_transaction', '3': 9, '4': 1, '5': 11, '6': '.TW.Solana.Proto.WithdrawAllStake', '9': 0, '10': 'withdrawAllTransaction'},
+    const {'1': 'create_token_account_transaction', '3': 10, '4': 1, '5': 11, '6': '.TW.Solana.Proto.CreateTokenAccount', '9': 0, '10': 'createTokenAccountTransaction'},
+    const {'1': 'token_transfer_transaction', '3': 11, '4': 1, '5': 11, '6': '.TW.Solana.Proto.TokenTransfer', '9': 0, '10': 'tokenTransferTransaction'},
+    const {'1': 'create_and_transfer_token_transaction', '3': 12, '4': 1, '5': 11, '6': '.TW.Solana.Proto.CreateAndTransferToken', '9': 0, '10': 'createAndTransferTokenTransaction'},
   ],
   '8': const [
     const {'1': 'transaction_type'},
@@ -152,14 +153,15 @@ const SigningInput$json = const {
 };
 
 /// Descriptor for `SigningInput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSHwoLcHJpdmF0ZV9rZXkYASABKAxSCnByaXZhdGVLZXkSKQoQcmVjZW50X2Jsb2NraGFzaBgCIAEoCVIPcmVjZW50QmxvY2toYXNoEk4KFHRyYW5zZmVyX3RyYW5zYWN0aW9uGAMgASgLMhkuVFcuU29sYW5hLlByb3RvLlRyYW5zZmVySABSE3RyYW5zZmVyVHJhbnNhY3Rpb24SXgoaZGVsZWdhdGVfc3Rha2VfdHJhbnNhY3Rpb24YBCABKAsyHi5UVy5Tb2xhbmEuUHJvdG8uRGVsZWdhdGVTdGFrZUgAUhhkZWxlZ2F0ZVN0YWtlVHJhbnNhY3Rpb24SZAocZGVhY3RpdmF0ZV9zdGFrZV90cmFuc2FjdGlvbhgFIAEoCzIgLlRXLlNvbGFuYS5Qcm90by5EZWFjdGl2YXRlU3Rha2VIAFIaZGVhY3RpdmF0ZVN0YWtlVHJhbnNhY3Rpb24SbgogZGVhY3RpdmF0ZV9hbGxfc3Rha2VfdHJhbnNhY3Rpb24YBiABKAsyIy5UVy5Tb2xhbmEuUHJvdG8uRGVhY3RpdmF0ZUFsbFN0YWtlSABSHWRlYWN0aXZhdGVBbGxTdGFrZVRyYW5zYWN0aW9uElMKFHdpdGhkcmF3X3RyYW5zYWN0aW9uGAcgASgLMh4uVFcuU29sYW5hLlByb3RvLldpdGhkcmF3U3Rha2VIAFITd2l0aGRyYXdUcmFuc2FjdGlvbhJdChh3aXRoZHJhd19hbGxfdHJhbnNhY3Rpb24YCCABKAsyIS5UVy5Tb2xhbmEuUHJvdG8uV2l0aGRyYXdBbGxTdGFrZUgAUhZ3aXRoZHJhd0FsbFRyYW5zYWN0aW9uEm4KIGNyZWF0ZV90b2tlbl9hY2NvdW50X3RyYW5zYWN0aW9uGAkgASgLMiMuVFcuU29sYW5hLlByb3RvLkNyZWF0ZVRva2VuQWNjb3VudEgAUh1jcmVhdGVUb2tlbkFjY291bnRUcmFuc2FjdGlvbhJeChp0b2tlbl90cmFuc2Zlcl90cmFuc2FjdGlvbhgKIAEoCzIeLlRXLlNvbGFuYS5Qcm90by5Ub2tlblRyYW5zZmVySABSGHRva2VuVHJhbnNmZXJUcmFuc2FjdGlvbhJ7CiVjcmVhdGVfYW5kX3RyYW5zZmVyX3Rva2VuX3RyYW5zYWN0aW9uGAsgASgLMicuVFcuU29sYW5hLlByb3RvLkNyZWF0ZUFuZFRyYW5zZmVyVG9rZW5IAFIhY3JlYXRlQW5kVHJhbnNmZXJUb2tlblRyYW5zYWN0aW9uQhIKEHRyYW5zYWN0aW9uX3R5cGU=');
+final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSHwoLcHJpdmF0ZV9rZXkYASABKAxSCnByaXZhdGVLZXkSKQoQcmVjZW50X2Jsb2NraGFzaBgCIAEoCVIPcmVjZW50QmxvY2toYXNoEhUKBnYwX21zZxgDIAEoCFIFdjBNc2cSTgoUdHJhbnNmZXJfdHJhbnNhY3Rpb24YBCABKAsyGS5UVy5Tb2xhbmEuUHJvdG8uVHJhbnNmZXJIAFITdHJhbnNmZXJUcmFuc2FjdGlvbhJeChpkZWxlZ2F0ZV9zdGFrZV90cmFuc2FjdGlvbhgFIAEoCzIeLlRXLlNvbGFuYS5Qcm90by5EZWxlZ2F0ZVN0YWtlSABSGGRlbGVnYXRlU3Rha2VUcmFuc2FjdGlvbhJkChxkZWFjdGl2YXRlX3N0YWtlX3RyYW5zYWN0aW9uGAYgASgLMiAuVFcuU29sYW5hLlByb3RvLkRlYWN0aXZhdGVTdGFrZUgAUhpkZWFjdGl2YXRlU3Rha2VUcmFuc2FjdGlvbhJuCiBkZWFjdGl2YXRlX2FsbF9zdGFrZV90cmFuc2FjdGlvbhgHIAEoCzIjLlRXLlNvbGFuYS5Qcm90by5EZWFjdGl2YXRlQWxsU3Rha2VIAFIdZGVhY3RpdmF0ZUFsbFN0YWtlVHJhbnNhY3Rpb24SUwoUd2l0aGRyYXdfdHJhbnNhY3Rpb24YCCABKAsyHi5UVy5Tb2xhbmEuUHJvdG8uV2l0aGRyYXdTdGFrZUgAUhN3aXRoZHJhd1RyYW5zYWN0aW9uEl0KGHdpdGhkcmF3X2FsbF90cmFuc2FjdGlvbhgJIAEoCzIhLlRXLlNvbGFuYS5Qcm90by5XaXRoZHJhd0FsbFN0YWtlSABSFndpdGhkcmF3QWxsVHJhbnNhY3Rpb24SbgogY3JlYXRlX3Rva2VuX2FjY291bnRfdHJhbnNhY3Rpb24YCiABKAsyIy5UVy5Tb2xhbmEuUHJvdG8uQ3JlYXRlVG9rZW5BY2NvdW50SABSHWNyZWF0ZVRva2VuQWNjb3VudFRyYW5zYWN0aW9uEl4KGnRva2VuX3RyYW5zZmVyX3RyYW5zYWN0aW9uGAsgASgLMh4uVFcuU29sYW5hLlByb3RvLlRva2VuVHJhbnNmZXJIAFIYdG9rZW5UcmFuc2ZlclRyYW5zYWN0aW9uEnsKJWNyZWF0ZV9hbmRfdHJhbnNmZXJfdG9rZW5fdHJhbnNhY3Rpb24YDCABKAsyJy5UVy5Tb2xhbmEuUHJvdG8uQ3JlYXRlQW5kVHJhbnNmZXJUb2tlbkgAUiFjcmVhdGVBbmRUcmFuc2ZlclRva2VuVHJhbnNhY3Rpb25CEgoQdHJhbnNhY3Rpb25fdHlwZQ==');
 @$core.Deprecated('Use signingOutputDescriptor instead')
 const SigningOutput$json = const {
   '1': 'SigningOutput',
   '2': const [
     const {'1': 'encoded', '3': 1, '4': 1, '5': 9, '10': 'encoded'},
+    const {'1': 'unsigned_tx', '3': 2, '4': 1, '5': 9, '10': 'unsignedTx'},
   ],
 };
 
 /// Descriptor for `SigningOutput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode('Cg1TaWduaW5nT3V0cHV0EhgKB2VuY29kZWQYASABKAlSB2VuY29kZWQ=');
+final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode('Cg1TaWduaW5nT3V0cHV0EhgKB2VuY29kZWQYASABKAlSB2VuY29kZWQSHwoLdW5zaWduZWRfdHgYAiABKAlSCnVuc2lnbmVkVHg=');

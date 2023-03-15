@@ -25,11 +25,12 @@ const FunctionCallPermission$json = const {
   '2': const [
     const {'1': 'allowance', '3': 1, '4': 1, '5': 12, '10': 'allowance'},
     const {'1': 'receiver_id', '3': 2, '4': 1, '5': 9, '10': 'receiverId'},
+    const {'1': 'method_names', '3': 3, '4': 3, '5': 9, '10': 'methodNames'},
   ],
 };
 
 /// Descriptor for `FunctionCallPermission`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List functionCallPermissionDescriptor = $convert.base64Decode('ChZGdW5jdGlvbkNhbGxQZXJtaXNzaW9uEhwKCWFsbG93YW5jZRgBIAEoDFIJYWxsb3dhbmNlEh8KC3JlY2VpdmVyX2lkGAIgASgJUgpyZWNlaXZlcklk');
+final $typed_data.Uint8List functionCallPermissionDescriptor = $convert.base64Decode('ChZGdW5jdGlvbkNhbGxQZXJtaXNzaW9uEhwKCWFsbG93YW5jZRgBIAEoDFIJYWxsb3dhbmNlEh8KC3JlY2VpdmVyX2lkGAIgASgJUgpyZWNlaXZlcklkEiEKDG1ldGhvZF9uYW1lcxgDIAMoCVILbWV0aG9kTmFtZXM=');
 @$core.Deprecated('Use fullAccessPermissionDescriptor instead')
 const FullAccessPermission$json = const {
   '1': 'FullAccessPermission',
@@ -97,12 +98,12 @@ const Stake$json = const {
   '1': 'Stake',
   '2': const [
     const {'1': 'stake', '3': 1, '4': 1, '5': 12, '10': 'stake'},
-    const {'1': 'public_key', '3': 2, '4': 1, '5': 9, '10': 'publicKey'},
+    const {'1': 'public_key', '3': 2, '4': 1, '5': 11, '6': '.TW.NEAR.Proto.PublicKey', '10': 'publicKey'},
   ],
 };
 
 /// Descriptor for `Stake`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List stakeDescriptor = $convert.base64Decode('CgVTdGFrZRIUCgVzdGFrZRgBIAEoDFIFc3Rha2USHQoKcHVibGljX2tleRgCIAEoCVIJcHVibGljS2V5');
+final $typed_data.Uint8List stakeDescriptor = $convert.base64Decode('CgVTdGFrZRIUCgVzdGFrZRgBIAEoDFIFc3Rha2USNwoKcHVibGljX2tleRgCIAEoCzIYLlRXLk5FQVIuUHJvdG8uUHVibGljS2V5UglwdWJsaWNLZXk=');
 @$core.Deprecated('Use addKeyDescriptor instead')
 const AddKey$json = const {
   '1': 'AddKey',

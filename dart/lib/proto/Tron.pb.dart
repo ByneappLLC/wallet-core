@@ -366,6 +366,395 @@ class FreezeBalanceContract extends $pb.GeneratedMessage {
   void clearReceiverAddress() => clearField(15);
 }
 
+class FreezeBalanceV2Contract extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FreezeBalanceV2Contract', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Tron.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerAddress')
+    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'frozenBalance')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resource')
+    ..hasRequiredFields = false
+  ;
+
+  FreezeBalanceV2Contract._() : super();
+  factory FreezeBalanceV2Contract({
+    $core.String? ownerAddress,
+    $fixnum.Int64? frozenBalance,
+    $core.String? resource,
+  }) {
+    final _result = create();
+    if (ownerAddress != null) {
+      _result.ownerAddress = ownerAddress;
+    }
+    if (frozenBalance != null) {
+      _result.frozenBalance = frozenBalance;
+    }
+    if (resource != null) {
+      _result.resource = resource;
+    }
+    return _result;
+  }
+  factory FreezeBalanceV2Contract.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory FreezeBalanceV2Contract.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  FreezeBalanceV2Contract clone() => FreezeBalanceV2Contract()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  FreezeBalanceV2Contract copyWith(void Function(FreezeBalanceV2Contract) updates) => super.copyWith((message) => updates(message as FreezeBalanceV2Contract)) as FreezeBalanceV2Contract; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static FreezeBalanceV2Contract create() => FreezeBalanceV2Contract._();
+  FreezeBalanceV2Contract createEmptyInstance() => create();
+  static $pb.PbList<FreezeBalanceV2Contract> createRepeated() => $pb.PbList<FreezeBalanceV2Contract>();
+  @$core.pragma('dart2js:noInline')
+  static FreezeBalanceV2Contract getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FreezeBalanceV2Contract>(create);
+  static FreezeBalanceV2Contract? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ownerAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ownerAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOwnerAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOwnerAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get frozenBalance => $_getI64(1);
+  @$pb.TagNumber(2)
+  set frozenBalance($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasFrozenBalance() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearFrozenBalance() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resource => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resource($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasResource() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResource() => clearField(3);
+}
+
+class UnfreezeBalanceV2Contract extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UnfreezeBalanceV2Contract', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Tron.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerAddress')
+    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unfreezeBalance')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resource')
+    ..hasRequiredFields = false
+  ;
+
+  UnfreezeBalanceV2Contract._() : super();
+  factory UnfreezeBalanceV2Contract({
+    $core.String? ownerAddress,
+    $fixnum.Int64? unfreezeBalance,
+    $core.String? resource,
+  }) {
+    final _result = create();
+    if (ownerAddress != null) {
+      _result.ownerAddress = ownerAddress;
+    }
+    if (unfreezeBalance != null) {
+      _result.unfreezeBalance = unfreezeBalance;
+    }
+    if (resource != null) {
+      _result.resource = resource;
+    }
+    return _result;
+  }
+  factory UnfreezeBalanceV2Contract.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnfreezeBalanceV2Contract.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UnfreezeBalanceV2Contract clone() => UnfreezeBalanceV2Contract()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnfreezeBalanceV2Contract copyWith(void Function(UnfreezeBalanceV2Contract) updates) => super.copyWith((message) => updates(message as UnfreezeBalanceV2Contract)) as UnfreezeBalanceV2Contract; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UnfreezeBalanceV2Contract create() => UnfreezeBalanceV2Contract._();
+  UnfreezeBalanceV2Contract createEmptyInstance() => create();
+  static $pb.PbList<UnfreezeBalanceV2Contract> createRepeated() => $pb.PbList<UnfreezeBalanceV2Contract>();
+  @$core.pragma('dart2js:noInline')
+  static UnfreezeBalanceV2Contract getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnfreezeBalanceV2Contract>(create);
+  static UnfreezeBalanceV2Contract? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ownerAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ownerAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOwnerAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOwnerAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get unfreezeBalance => $_getI64(1);
+  @$pb.TagNumber(2)
+  set unfreezeBalance($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUnfreezeBalance() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUnfreezeBalance() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get resource => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set resource($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasResource() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearResource() => clearField(3);
+}
+
+class WithdrawExpireUnfreezeContract extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'WithdrawExpireUnfreezeContract', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Tron.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerAddress')
+    ..hasRequiredFields = false
+  ;
+
+  WithdrawExpireUnfreezeContract._() : super();
+  factory WithdrawExpireUnfreezeContract({
+    $core.String? ownerAddress,
+  }) {
+    final _result = create();
+    if (ownerAddress != null) {
+      _result.ownerAddress = ownerAddress;
+    }
+    return _result;
+  }
+  factory WithdrawExpireUnfreezeContract.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory WithdrawExpireUnfreezeContract.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  WithdrawExpireUnfreezeContract clone() => WithdrawExpireUnfreezeContract()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  WithdrawExpireUnfreezeContract copyWith(void Function(WithdrawExpireUnfreezeContract) updates) => super.copyWith((message) => updates(message as WithdrawExpireUnfreezeContract)) as WithdrawExpireUnfreezeContract; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static WithdrawExpireUnfreezeContract create() => WithdrawExpireUnfreezeContract._();
+  WithdrawExpireUnfreezeContract createEmptyInstance() => create();
+  static $pb.PbList<WithdrawExpireUnfreezeContract> createRepeated() => $pb.PbList<WithdrawExpireUnfreezeContract>();
+  @$core.pragma('dart2js:noInline')
+  static WithdrawExpireUnfreezeContract getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<WithdrawExpireUnfreezeContract>(create);
+  static WithdrawExpireUnfreezeContract? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ownerAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ownerAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOwnerAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOwnerAddress() => clearField(1);
+}
+
+class DelegateResourceContract extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DelegateResourceContract', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Tron.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerAddress')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resource')
+    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balance')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'receiverAddress')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lock')
+    ..hasRequiredFields = false
+  ;
+
+  DelegateResourceContract._() : super();
+  factory DelegateResourceContract({
+    $core.String? ownerAddress,
+    $core.String? resource,
+    $fixnum.Int64? balance,
+    $core.String? receiverAddress,
+    $core.bool? lock,
+  }) {
+    final _result = create();
+    if (ownerAddress != null) {
+      _result.ownerAddress = ownerAddress;
+    }
+    if (resource != null) {
+      _result.resource = resource;
+    }
+    if (balance != null) {
+      _result.balance = balance;
+    }
+    if (receiverAddress != null) {
+      _result.receiverAddress = receiverAddress;
+    }
+    if (lock != null) {
+      _result.lock = lock;
+    }
+    return _result;
+  }
+  factory DelegateResourceContract.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory DelegateResourceContract.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  DelegateResourceContract clone() => DelegateResourceContract()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  DelegateResourceContract copyWith(void Function(DelegateResourceContract) updates) => super.copyWith((message) => updates(message as DelegateResourceContract)) as DelegateResourceContract; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static DelegateResourceContract create() => DelegateResourceContract._();
+  DelegateResourceContract createEmptyInstance() => create();
+  static $pb.PbList<DelegateResourceContract> createRepeated() => $pb.PbList<DelegateResourceContract>();
+  @$core.pragma('dart2js:noInline')
+  static DelegateResourceContract getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DelegateResourceContract>(create);
+  static DelegateResourceContract? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ownerAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ownerAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOwnerAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOwnerAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get resource => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resource($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResource() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResource() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get balance => $_getI64(2);
+  @$pb.TagNumber(3)
+  set balance($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBalance() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBalance() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get receiverAddress => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set receiverAddress($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasReceiverAddress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReceiverAddress() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get lock => $_getBF(4);
+  @$pb.TagNumber(5)
+  set lock($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLock() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLock() => clearField(5);
+}
+
+class UnDelegateResourceContract extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UnDelegateResourceContract', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Tron.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerAddress')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'resource')
+    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balance')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'receiverAddress')
+    ..hasRequiredFields = false
+  ;
+
+  UnDelegateResourceContract._() : super();
+  factory UnDelegateResourceContract({
+    $core.String? ownerAddress,
+    $core.String? resource,
+    $fixnum.Int64? balance,
+    $core.String? receiverAddress,
+  }) {
+    final _result = create();
+    if (ownerAddress != null) {
+      _result.ownerAddress = ownerAddress;
+    }
+    if (resource != null) {
+      _result.resource = resource;
+    }
+    if (balance != null) {
+      _result.balance = balance;
+    }
+    if (receiverAddress != null) {
+      _result.receiverAddress = receiverAddress;
+    }
+    return _result;
+  }
+  factory UnDelegateResourceContract.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UnDelegateResourceContract.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UnDelegateResourceContract clone() => UnDelegateResourceContract()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UnDelegateResourceContract copyWith(void Function(UnDelegateResourceContract) updates) => super.copyWith((message) => updates(message as UnDelegateResourceContract)) as UnDelegateResourceContract; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UnDelegateResourceContract create() => UnDelegateResourceContract._();
+  UnDelegateResourceContract createEmptyInstance() => create();
+  static $pb.PbList<UnDelegateResourceContract> createRepeated() => $pb.PbList<UnDelegateResourceContract>();
+  @$core.pragma('dart2js:noInline')
+  static UnDelegateResourceContract getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UnDelegateResourceContract>(create);
+  static UnDelegateResourceContract? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get ownerAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set ownerAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasOwnerAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearOwnerAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get resource => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set resource($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasResource() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearResource() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $fixnum.Int64 get balance => $_getI64(2);
+  @$pb.TagNumber(3)
+  set balance($fixnum.Int64 v) { $_setInt64(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasBalance() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearBalance() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get receiverAddress => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set receiverAddress($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasReceiverAddress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearReceiverAddress() => clearField(4);
+}
+
 class UnfreezeBalanceContract extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UnfreezeBalanceContract', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Tron.Proto'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ownerAddress')
@@ -993,6 +1382,11 @@ enum Transaction_ContractOneof {
   voteWitness, 
   triggerSmartContract, 
   transferTrc20Contract, 
+  freezeBalanceV2, 
+  unfreezeBalanceV2, 
+  withdrawExpireUnfreeze, 
+  delegateResource, 
+  undelegateResource, 
   notSet
 }
 
@@ -1008,10 +1402,15 @@ class Transaction extends $pb.GeneratedMessage {
     17 : Transaction_ContractOneof.voteWitness,
     18 : Transaction_ContractOneof.triggerSmartContract,
     19 : Transaction_ContractOneof.transferTrc20Contract,
+    20 : Transaction_ContractOneof.freezeBalanceV2,
+    21 : Transaction_ContractOneof.unfreezeBalanceV2,
+    23 : Transaction_ContractOneof.withdrawExpireUnfreeze,
+    24 : Transaction_ContractOneof.delegateResource,
+    25 : Transaction_ContractOneof.undelegateResource,
     0 : Transaction_ContractOneof.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Transaction', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Tron.Proto'), createEmptyInstance: create)
-    ..oo(0, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+    ..oo(0, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25])
     ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timestamp')
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiration')
     ..aOM<BlockHeader>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blockHeader', subBuilder: BlockHeader.create)
@@ -1026,6 +1425,11 @@ class Transaction extends $pb.GeneratedMessage {
     ..aOM<VoteWitnessContract>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'voteWitness', subBuilder: VoteWitnessContract.create)
     ..aOM<TriggerSmartContract>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'triggerSmartContract', subBuilder: TriggerSmartContract.create)
     ..aOM<TransferTRC20Contract>(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transferTrc20Contract', subBuilder: TransferTRC20Contract.create)
+    ..aOM<FreezeBalanceV2Contract>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'freezeBalanceV2', subBuilder: FreezeBalanceV2Contract.create)
+    ..aOM<UnfreezeBalanceV2Contract>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unfreezeBalanceV2', subBuilder: UnfreezeBalanceV2Contract.create)
+    ..aOM<WithdrawExpireUnfreezeContract>(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withdrawExpireUnfreeze', subBuilder: WithdrawExpireUnfreezeContract.create)
+    ..aOM<DelegateResourceContract>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegateResource', subBuilder: DelegateResourceContract.create)
+    ..aOM<UnDelegateResourceContract>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'undelegateResource', subBuilder: UnDelegateResourceContract.create)
     ..hasRequiredFields = false
   ;
 
@@ -1045,6 +1449,11 @@ class Transaction extends $pb.GeneratedMessage {
     VoteWitnessContract? voteWitness,
     TriggerSmartContract? triggerSmartContract,
     TransferTRC20Contract? transferTrc20Contract,
+    FreezeBalanceV2Contract? freezeBalanceV2,
+    UnfreezeBalanceV2Contract? unfreezeBalanceV2,
+    WithdrawExpireUnfreezeContract? withdrawExpireUnfreeze,
+    DelegateResourceContract? delegateResource,
+    UnDelegateResourceContract? undelegateResource,
   }) {
     final _result = create();
     if (timestamp != null) {
@@ -1088,6 +1497,21 @@ class Transaction extends $pb.GeneratedMessage {
     }
     if (transferTrc20Contract != null) {
       _result.transferTrc20Contract = transferTrc20Contract;
+    }
+    if (freezeBalanceV2 != null) {
+      _result.freezeBalanceV2 = freezeBalanceV2;
+    }
+    if (unfreezeBalanceV2 != null) {
+      _result.unfreezeBalanceV2 = unfreezeBalanceV2;
+    }
+    if (withdrawExpireUnfreeze != null) {
+      _result.withdrawExpireUnfreeze = withdrawExpireUnfreeze;
+    }
+    if (delegateResource != null) {
+      _result.delegateResource = delegateResource;
+    }
+    if (undelegateResource != null) {
+      _result.undelegateResource = undelegateResource;
     }
     return _result;
   }
@@ -1262,6 +1686,61 @@ class Transaction extends $pb.GeneratedMessage {
   void clearTransferTrc20Contract() => clearField(19);
   @$pb.TagNumber(19)
   TransferTRC20Contract ensureTransferTrc20Contract() => $_ensure(13);
+
+  @$pb.TagNumber(20)
+  FreezeBalanceV2Contract get freezeBalanceV2 => $_getN(14);
+  @$pb.TagNumber(20)
+  set freezeBalanceV2(FreezeBalanceV2Contract v) { setField(20, v); }
+  @$pb.TagNumber(20)
+  $core.bool hasFreezeBalanceV2() => $_has(14);
+  @$pb.TagNumber(20)
+  void clearFreezeBalanceV2() => clearField(20);
+  @$pb.TagNumber(20)
+  FreezeBalanceV2Contract ensureFreezeBalanceV2() => $_ensure(14);
+
+  @$pb.TagNumber(21)
+  UnfreezeBalanceV2Contract get unfreezeBalanceV2 => $_getN(15);
+  @$pb.TagNumber(21)
+  set unfreezeBalanceV2(UnfreezeBalanceV2Contract v) { setField(21, v); }
+  @$pb.TagNumber(21)
+  $core.bool hasUnfreezeBalanceV2() => $_has(15);
+  @$pb.TagNumber(21)
+  void clearUnfreezeBalanceV2() => clearField(21);
+  @$pb.TagNumber(21)
+  UnfreezeBalanceV2Contract ensureUnfreezeBalanceV2() => $_ensure(15);
+
+  @$pb.TagNumber(23)
+  WithdrawExpireUnfreezeContract get withdrawExpireUnfreeze => $_getN(16);
+  @$pb.TagNumber(23)
+  set withdrawExpireUnfreeze(WithdrawExpireUnfreezeContract v) { setField(23, v); }
+  @$pb.TagNumber(23)
+  $core.bool hasWithdrawExpireUnfreeze() => $_has(16);
+  @$pb.TagNumber(23)
+  void clearWithdrawExpireUnfreeze() => clearField(23);
+  @$pb.TagNumber(23)
+  WithdrawExpireUnfreezeContract ensureWithdrawExpireUnfreeze() => $_ensure(16);
+
+  @$pb.TagNumber(24)
+  DelegateResourceContract get delegateResource => $_getN(17);
+  @$pb.TagNumber(24)
+  set delegateResource(DelegateResourceContract v) { setField(24, v); }
+  @$pb.TagNumber(24)
+  $core.bool hasDelegateResource() => $_has(17);
+  @$pb.TagNumber(24)
+  void clearDelegateResource() => clearField(24);
+  @$pb.TagNumber(24)
+  DelegateResourceContract ensureDelegateResource() => $_ensure(17);
+
+  @$pb.TagNumber(25)
+  UnDelegateResourceContract get undelegateResource => $_getN(18);
+  @$pb.TagNumber(25)
+  set undelegateResource(UnDelegateResourceContract v) { setField(25, v); }
+  @$pb.TagNumber(25)
+  $core.bool hasUndelegateResource() => $_has(18);
+  @$pb.TagNumber(25)
+  void clearUndelegateResource() => clearField(25);
+  @$pb.TagNumber(25)
+  UnDelegateResourceContract ensureUndelegateResource() => $_ensure(18);
 }
 
 class SigningInput extends $pb.GeneratedMessage {

@@ -824,7 +824,7 @@ class SigningInput extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tip', $pb.PbFieldType.OY)
     ..aOM<Era>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'era', subBuilder: Era.create)
     ..a<$core.List<$core.int>>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..e<Network>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'network', $pb.PbFieldType.OE, defaultOrMaker: Network.POLKADOT, valueOf: Network.valueOf, enumValues: Network.values)
+    ..a<$core.int>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'network', $pb.PbFieldType.OU3)
     ..aOM<Balance>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balanceCall', subBuilder: Balance.create)
     ..aOM<Staking>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stakingCall', subBuilder: Staking.create)
     ..hasRequiredFields = false
@@ -840,7 +840,7 @@ class SigningInput extends $pb.GeneratedMessage {
     $core.List<$core.int>? tip,
     Era? era,
     $core.List<$core.int>? privateKey,
-    Network? network,
+    $core.int? network,
     Balance? balanceCall,
     Staking? stakingCall,
   }) {
@@ -979,9 +979,9 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearPrivateKey() => clearField(8);
 
   @$pb.TagNumber(9)
-  Network get network => $_getN(8);
+  $core.int get network => $_getIZ(8);
   @$pb.TagNumber(9)
-  set network(Network v) { setField(9, v); }
+  set network($core.int v) { $_setUnsignedInt32(8, v); }
   @$pb.TagNumber(9)
   $core.bool hasNetwork() => $_has(8);
   @$pb.TagNumber(9)

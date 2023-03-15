@@ -60,6 +60,67 @@ const FreezeBalanceContract$json = const {
 
 /// Descriptor for `FreezeBalanceContract`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List freezeBalanceContractDescriptor = $convert.base64Decode('ChVGcmVlemVCYWxhbmNlQ29udHJhY3QSIwoNb3duZXJfYWRkcmVzcxgBIAEoCVIMb3duZXJBZGRyZXNzEiUKDmZyb3plbl9iYWxhbmNlGAIgASgDUg1mcm96ZW5CYWxhbmNlEicKD2Zyb3plbl9kdXJhdGlvbhgDIAEoA1IOZnJvemVuRHVyYXRpb24SGgoIcmVzb3VyY2UYCiABKAlSCHJlc291cmNlEikKEHJlY2VpdmVyX2FkZHJlc3MYDyABKAlSD3JlY2VpdmVyQWRkcmVzcw==');
+@$core.Deprecated('Use freezeBalanceV2ContractDescriptor instead')
+const FreezeBalanceV2Contract$json = const {
+  '1': 'FreezeBalanceV2Contract',
+  '2': const [
+    const {'1': 'owner_address', '3': 1, '4': 1, '5': 9, '10': 'ownerAddress'},
+    const {'1': 'frozen_balance', '3': 2, '4': 1, '5': 3, '10': 'frozenBalance'},
+    const {'1': 'resource', '3': 3, '4': 1, '5': 9, '10': 'resource'},
+  ],
+};
+
+/// Descriptor for `FreezeBalanceV2Contract`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List freezeBalanceV2ContractDescriptor = $convert.base64Decode('ChdGcmVlemVCYWxhbmNlVjJDb250cmFjdBIjCg1vd25lcl9hZGRyZXNzGAEgASgJUgxvd25lckFkZHJlc3MSJQoOZnJvemVuX2JhbGFuY2UYAiABKANSDWZyb3plbkJhbGFuY2USGgoIcmVzb3VyY2UYAyABKAlSCHJlc291cmNl');
+@$core.Deprecated('Use unfreezeBalanceV2ContractDescriptor instead')
+const UnfreezeBalanceV2Contract$json = const {
+  '1': 'UnfreezeBalanceV2Contract',
+  '2': const [
+    const {'1': 'owner_address', '3': 1, '4': 1, '5': 9, '10': 'ownerAddress'},
+    const {'1': 'unfreeze_balance', '3': 2, '4': 1, '5': 3, '10': 'unfreezeBalance'},
+    const {'1': 'resource', '3': 3, '4': 1, '5': 9, '10': 'resource'},
+  ],
+};
+
+/// Descriptor for `UnfreezeBalanceV2Contract`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unfreezeBalanceV2ContractDescriptor = $convert.base64Decode('ChlVbmZyZWV6ZUJhbGFuY2VWMkNvbnRyYWN0EiMKDW93bmVyX2FkZHJlc3MYASABKAlSDG93bmVyQWRkcmVzcxIpChB1bmZyZWV6ZV9iYWxhbmNlGAIgASgDUg91bmZyZWV6ZUJhbGFuY2USGgoIcmVzb3VyY2UYAyABKAlSCHJlc291cmNl');
+@$core.Deprecated('Use withdrawExpireUnfreezeContractDescriptor instead')
+const WithdrawExpireUnfreezeContract$json = const {
+  '1': 'WithdrawExpireUnfreezeContract',
+  '2': const [
+    const {'1': 'owner_address', '3': 1, '4': 1, '5': 9, '10': 'ownerAddress'},
+  ],
+};
+
+/// Descriptor for `WithdrawExpireUnfreezeContract`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List withdrawExpireUnfreezeContractDescriptor = $convert.base64Decode('Ch5XaXRoZHJhd0V4cGlyZVVuZnJlZXplQ29udHJhY3QSIwoNb3duZXJfYWRkcmVzcxgBIAEoCVIMb3duZXJBZGRyZXNz');
+@$core.Deprecated('Use delegateResourceContractDescriptor instead')
+const DelegateResourceContract$json = const {
+  '1': 'DelegateResourceContract',
+  '2': const [
+    const {'1': 'owner_address', '3': 1, '4': 1, '5': 9, '10': 'ownerAddress'},
+    const {'1': 'resource', '3': 2, '4': 1, '5': 9, '10': 'resource'},
+    const {'1': 'balance', '3': 3, '4': 1, '5': 3, '10': 'balance'},
+    const {'1': 'receiver_address', '3': 4, '4': 1, '5': 9, '10': 'receiverAddress'},
+    const {'1': 'lock', '3': 5, '4': 1, '5': 8, '10': 'lock'},
+  ],
+};
+
+/// Descriptor for `DelegateResourceContract`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List delegateResourceContractDescriptor = $convert.base64Decode('ChhEZWxlZ2F0ZVJlc291cmNlQ29udHJhY3QSIwoNb3duZXJfYWRkcmVzcxgBIAEoCVIMb3duZXJBZGRyZXNzEhoKCHJlc291cmNlGAIgASgJUghyZXNvdXJjZRIYCgdiYWxhbmNlGAMgASgDUgdiYWxhbmNlEikKEHJlY2VpdmVyX2FkZHJlc3MYBCABKAlSD3JlY2VpdmVyQWRkcmVzcxISCgRsb2NrGAUgASgIUgRsb2Nr');
+@$core.Deprecated('Use unDelegateResourceContractDescriptor instead')
+const UnDelegateResourceContract$json = const {
+  '1': 'UnDelegateResourceContract',
+  '2': const [
+    const {'1': 'owner_address', '3': 1, '4': 1, '5': 9, '10': 'ownerAddress'},
+    const {'1': 'resource', '3': 2, '4': 1, '5': 9, '10': 'resource'},
+    const {'1': 'balance', '3': 3, '4': 1, '5': 3, '10': 'balance'},
+    const {'1': 'receiver_address', '3': 4, '4': 1, '5': 9, '10': 'receiverAddress'},
+  ],
+};
+
+/// Descriptor for `UnDelegateResourceContract`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List unDelegateResourceContractDescriptor = $convert.base64Decode('ChpVbkRlbGVnYXRlUmVzb3VyY2VDb250cmFjdBIjCg1vd25lcl9hZGRyZXNzGAEgASgJUgxvd25lckFkZHJlc3MSGgoIcmVzb3VyY2UYAiABKAlSCHJlc291cmNlEhgKB2JhbGFuY2UYAyABKANSB2JhbGFuY2USKQoQcmVjZWl2ZXJfYWRkcmVzcxgEIAEoCVIPcmVjZWl2ZXJBZGRyZXNz');
 @$core.Deprecated('Use unfreezeBalanceContractDescriptor instead')
 const UnfreezeBalanceContract$json = const {
   '1': 'UnfreezeBalanceContract',
@@ -175,6 +236,11 @@ const Transaction$json = const {
     const {'1': 'vote_witness', '3': 17, '4': 1, '5': 11, '6': '.TW.Tron.Proto.VoteWitnessContract', '9': 0, '10': 'voteWitness'},
     const {'1': 'trigger_smart_contract', '3': 18, '4': 1, '5': 11, '6': '.TW.Tron.Proto.TriggerSmartContract', '9': 0, '10': 'triggerSmartContract'},
     const {'1': 'transfer_trc20_contract', '3': 19, '4': 1, '5': 11, '6': '.TW.Tron.Proto.TransferTRC20Contract', '9': 0, '10': 'transferTrc20Contract'},
+    const {'1': 'freeze_balance_v2', '3': 20, '4': 1, '5': 11, '6': '.TW.Tron.Proto.FreezeBalanceV2Contract', '9': 0, '10': 'freezeBalanceV2'},
+    const {'1': 'unfreeze_balance_v2', '3': 21, '4': 1, '5': 11, '6': '.TW.Tron.Proto.UnfreezeBalanceV2Contract', '9': 0, '10': 'unfreezeBalanceV2'},
+    const {'1': 'withdraw_expire_unfreeze', '3': 23, '4': 1, '5': 11, '6': '.TW.Tron.Proto.WithdrawExpireUnfreezeContract', '9': 0, '10': 'withdrawExpireUnfreeze'},
+    const {'1': 'delegate_resource', '3': 24, '4': 1, '5': 11, '6': '.TW.Tron.Proto.DelegateResourceContract', '9': 0, '10': 'delegateResource'},
+    const {'1': 'undelegate_resource', '3': 25, '4': 1, '5': 11, '6': '.TW.Tron.Proto.UnDelegateResourceContract', '9': 0, '10': 'undelegateResource'},
   ],
   '8': const [
     const {'1': 'contract_oneof'},
@@ -182,7 +248,7 @@ const Transaction$json = const {
 };
 
 /// Descriptor for `Transaction`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List transactionDescriptor = $convert.base64Decode('CgtUcmFuc2FjdGlvbhIcCgl0aW1lc3RhbXAYASABKANSCXRpbWVzdGFtcBIeCgpleHBpcmF0aW9uGAIgASgDUgpleHBpcmF0aW9uEj0KDGJsb2NrX2hlYWRlchgDIAEoCzIaLlRXLlRyb24uUHJvdG8uQmxvY2tIZWFkZXJSC2Jsb2NrSGVhZGVyEhsKCWZlZV9saW1pdBgEIAEoA1IIZmVlTGltaXQSPQoIdHJhbnNmZXIYCiABKAsyHy5UVy5Ucm9uLlByb3RvLlRyYW5zZmVyQ29udHJhY3RIAFIIdHJhbnNmZXISTQoOdHJhbnNmZXJfYXNzZXQYCyABKAsyJC5UVy5Ucm9uLlByb3RvLlRyYW5zZmVyQXNzZXRDb250cmFjdEgAUg10cmFuc2ZlckFzc2V0Ek0KDmZyZWV6ZV9iYWxhbmNlGAwgASgLMiQuVFcuVHJvbi5Qcm90by5GcmVlemVCYWxhbmNlQ29udHJhY3RIAFINZnJlZXplQmFsYW5jZRJTChB1bmZyZWV6ZV9iYWxhbmNlGA0gASgLMiYuVFcuVHJvbi5Qcm90by5VbmZyZWV6ZUJhbGFuY2VDb250cmFjdEgAUg91bmZyZWV6ZUJhbGFuY2USTQoOdW5mcmVlemVfYXNzZXQYDiABKAsyJC5UVy5Ucm9uLlByb3RvLlVuZnJlZXplQXNzZXRDb250cmFjdEgAUg11bmZyZWV6ZUFzc2V0ElMKEHdpdGhkcmF3X2JhbGFuY2UYDyABKAsyJi5UVy5Ucm9uLlByb3RvLldpdGhkcmF3QmFsYW5jZUNvbnRyYWN0SABSD3dpdGhkcmF3QmFsYW5jZRJBCgp2b3RlX2Fzc2V0GBAgASgLMiAuVFcuVHJvbi5Qcm90by5Wb3RlQXNzZXRDb250cmFjdEgAUgl2b3RlQXNzZXQSRwoMdm90ZV93aXRuZXNzGBEgASgLMiIuVFcuVHJvbi5Qcm90by5Wb3RlV2l0bmVzc0NvbnRyYWN0SABSC3ZvdGVXaXRuZXNzElsKFnRyaWdnZXJfc21hcnRfY29udHJhY3QYEiABKAsyIy5UVy5Ucm9uLlByb3RvLlRyaWdnZXJTbWFydENvbnRyYWN0SABSFHRyaWdnZXJTbWFydENvbnRyYWN0El4KF3RyYW5zZmVyX3RyYzIwX2NvbnRyYWN0GBMgASgLMiQuVFcuVHJvbi5Qcm90by5UcmFuc2ZlclRSQzIwQ29udHJhY3RIAFIVdHJhbnNmZXJUcmMyMENvbnRyYWN0QhAKDmNvbnRyYWN0X29uZW9m');
+final $typed_data.Uint8List transactionDescriptor = $convert.base64Decode('CgtUcmFuc2FjdGlvbhIcCgl0aW1lc3RhbXAYASABKANSCXRpbWVzdGFtcBIeCgpleHBpcmF0aW9uGAIgASgDUgpleHBpcmF0aW9uEj0KDGJsb2NrX2hlYWRlchgDIAEoCzIaLlRXLlRyb24uUHJvdG8uQmxvY2tIZWFkZXJSC2Jsb2NrSGVhZGVyEhsKCWZlZV9saW1pdBgEIAEoA1IIZmVlTGltaXQSPQoIdHJhbnNmZXIYCiABKAsyHy5UVy5Ucm9uLlByb3RvLlRyYW5zZmVyQ29udHJhY3RIAFIIdHJhbnNmZXISTQoOdHJhbnNmZXJfYXNzZXQYCyABKAsyJC5UVy5Ucm9uLlByb3RvLlRyYW5zZmVyQXNzZXRDb250cmFjdEgAUg10cmFuc2ZlckFzc2V0Ek0KDmZyZWV6ZV9iYWxhbmNlGAwgASgLMiQuVFcuVHJvbi5Qcm90by5GcmVlemVCYWxhbmNlQ29udHJhY3RIAFINZnJlZXplQmFsYW5jZRJTChB1bmZyZWV6ZV9iYWxhbmNlGA0gASgLMiYuVFcuVHJvbi5Qcm90by5VbmZyZWV6ZUJhbGFuY2VDb250cmFjdEgAUg91bmZyZWV6ZUJhbGFuY2USTQoOdW5mcmVlemVfYXNzZXQYDiABKAsyJC5UVy5Ucm9uLlByb3RvLlVuZnJlZXplQXNzZXRDb250cmFjdEgAUg11bmZyZWV6ZUFzc2V0ElMKEHdpdGhkcmF3X2JhbGFuY2UYDyABKAsyJi5UVy5Ucm9uLlByb3RvLldpdGhkcmF3QmFsYW5jZUNvbnRyYWN0SABSD3dpdGhkcmF3QmFsYW5jZRJBCgp2b3RlX2Fzc2V0GBAgASgLMiAuVFcuVHJvbi5Qcm90by5Wb3RlQXNzZXRDb250cmFjdEgAUgl2b3RlQXNzZXQSRwoMdm90ZV93aXRuZXNzGBEgASgLMiIuVFcuVHJvbi5Qcm90by5Wb3RlV2l0bmVzc0NvbnRyYWN0SABSC3ZvdGVXaXRuZXNzElsKFnRyaWdnZXJfc21hcnRfY29udHJhY3QYEiABKAsyIy5UVy5Ucm9uLlByb3RvLlRyaWdnZXJTbWFydENvbnRyYWN0SABSFHRyaWdnZXJTbWFydENvbnRyYWN0El4KF3RyYW5zZmVyX3RyYzIwX2NvbnRyYWN0GBMgASgLMiQuVFcuVHJvbi5Qcm90by5UcmFuc2ZlclRSQzIwQ29udHJhY3RIAFIVdHJhbnNmZXJUcmMyMENvbnRyYWN0ElQKEWZyZWV6ZV9iYWxhbmNlX3YyGBQgASgLMiYuVFcuVHJvbi5Qcm90by5GcmVlemVCYWxhbmNlVjJDb250cmFjdEgAUg9mcmVlemVCYWxhbmNlVjISWgoTdW5mcmVlemVfYmFsYW5jZV92MhgVIAEoCzIoLlRXLlRyb24uUHJvdG8uVW5mcmVlemVCYWxhbmNlVjJDb250cmFjdEgAUhF1bmZyZWV6ZUJhbGFuY2VWMhJpChh3aXRoZHJhd19leHBpcmVfdW5mcmVlemUYFyABKAsyLS5UVy5Ucm9uLlByb3RvLldpdGhkcmF3RXhwaXJlVW5mcmVlemVDb250cmFjdEgAUhZ3aXRoZHJhd0V4cGlyZVVuZnJlZXplElYKEWRlbGVnYXRlX3Jlc291cmNlGBggASgLMicuVFcuVHJvbi5Qcm90by5EZWxlZ2F0ZVJlc291cmNlQ29udHJhY3RIAFIQZGVsZWdhdGVSZXNvdXJjZRJcChN1bmRlbGVnYXRlX3Jlc291cmNlGBkgASgLMikuVFcuVHJvbi5Qcm90by5VbkRlbGVnYXRlUmVzb3VyY2VDb250cmFjdEgAUhJ1bmRlbGVnYXRlUmVzb3VyY2VCEAoOY29udHJhY3Rfb25lb2Y=');
 @$core.Deprecated('Use signingInputDescriptor instead')
 const SigningInput$json = const {
   '1': 'SigningInput',

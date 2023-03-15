@@ -773,30 +773,31 @@ enum SigningInput_TransactionType {
 
 class SigningInput extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, SigningInput_TransactionType> _SigningInput_TransactionTypeByTag = {
-    3 : SigningInput_TransactionType.transferTransaction,
-    4 : SigningInput_TransactionType.delegateStakeTransaction,
-    5 : SigningInput_TransactionType.deactivateStakeTransaction,
-    6 : SigningInput_TransactionType.deactivateAllStakeTransaction,
-    7 : SigningInput_TransactionType.withdrawTransaction,
-    8 : SigningInput_TransactionType.withdrawAllTransaction,
-    9 : SigningInput_TransactionType.createTokenAccountTransaction,
-    10 : SigningInput_TransactionType.tokenTransferTransaction,
-    11 : SigningInput_TransactionType.createAndTransferTokenTransaction,
+    4 : SigningInput_TransactionType.transferTransaction,
+    5 : SigningInput_TransactionType.delegateStakeTransaction,
+    6 : SigningInput_TransactionType.deactivateStakeTransaction,
+    7 : SigningInput_TransactionType.deactivateAllStakeTransaction,
+    8 : SigningInput_TransactionType.withdrawTransaction,
+    9 : SigningInput_TransactionType.withdrawAllTransaction,
+    10 : SigningInput_TransactionType.createTokenAccountTransaction,
+    11 : SigningInput_TransactionType.tokenTransferTransaction,
+    12 : SigningInput_TransactionType.createAndTransferTokenTransaction,
     0 : SigningInput_TransactionType.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Solana.Proto'), createEmptyInstance: create)
-    ..oo(0, [3, 4, 5, 6, 7, 8, 9, 10, 11])
+    ..oo(0, [4, 5, 6, 7, 8, 9, 10, 11, 12])
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recentBlockhash')
-    ..aOM<Transfer>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transferTransaction', subBuilder: Transfer.create)
-    ..aOM<DelegateStake>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegateStakeTransaction', subBuilder: DelegateStake.create)
-    ..aOM<DeactivateStake>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deactivateStakeTransaction', subBuilder: DeactivateStake.create)
-    ..aOM<DeactivateAllStake>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deactivateAllStakeTransaction', subBuilder: DeactivateAllStake.create)
-    ..aOM<WithdrawStake>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withdrawTransaction', subBuilder: WithdrawStake.create)
-    ..aOM<WithdrawAllStake>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withdrawAllTransaction', subBuilder: WithdrawAllStake.create)
-    ..aOM<CreateTokenAccount>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTokenAccountTransaction', subBuilder: CreateTokenAccount.create)
-    ..aOM<TokenTransfer>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenTransferTransaction', subBuilder: TokenTransfer.create)
-    ..aOM<CreateAndTransferToken>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createAndTransferTokenTransaction', subBuilder: CreateAndTransferToken.create)
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'v0Msg')
+    ..aOM<Transfer>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transferTransaction', subBuilder: Transfer.create)
+    ..aOM<DelegateStake>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegateStakeTransaction', subBuilder: DelegateStake.create)
+    ..aOM<DeactivateStake>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deactivateStakeTransaction', subBuilder: DeactivateStake.create)
+    ..aOM<DeactivateAllStake>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deactivateAllStakeTransaction', subBuilder: DeactivateAllStake.create)
+    ..aOM<WithdrawStake>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withdrawTransaction', subBuilder: WithdrawStake.create)
+    ..aOM<WithdrawAllStake>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'withdrawAllTransaction', subBuilder: WithdrawAllStake.create)
+    ..aOM<CreateTokenAccount>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createTokenAccountTransaction', subBuilder: CreateTokenAccount.create)
+    ..aOM<TokenTransfer>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenTransferTransaction', subBuilder: TokenTransfer.create)
+    ..aOM<CreateAndTransferToken>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createAndTransferTokenTransaction', subBuilder: CreateAndTransferToken.create)
     ..hasRequiredFields = false
   ;
 
@@ -804,6 +805,7 @@ class SigningInput extends $pb.GeneratedMessage {
   factory SigningInput({
     $core.List<$core.int>? privateKey,
     $core.String? recentBlockhash,
+    $core.bool? v0Msg,
     Transfer? transferTransaction,
     DelegateStake? delegateStakeTransaction,
     DeactivateStake? deactivateStakeTransaction,
@@ -820,6 +822,9 @@ class SigningInput extends $pb.GeneratedMessage {
     }
     if (recentBlockhash != null) {
       _result.recentBlockhash = recentBlockhash;
+    }
+    if (v0Msg != null) {
+      _result.v0Msg = v0Msg;
     }
     if (transferTransaction != null) {
       _result.transferTransaction = transferTransaction;
@@ -893,118 +898,132 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearRecentBlockhash() => clearField(2);
 
   @$pb.TagNumber(3)
-  Transfer get transferTransaction => $_getN(2);
+  $core.bool get v0Msg => $_getBF(2);
   @$pb.TagNumber(3)
-  set transferTransaction(Transfer v) { setField(3, v); }
+  set v0Msg($core.bool v) { $_setBool(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasTransferTransaction() => $_has(2);
+  $core.bool hasV0Msg() => $_has(2);
   @$pb.TagNumber(3)
-  void clearTransferTransaction() => clearField(3);
-  @$pb.TagNumber(3)
-  Transfer ensureTransferTransaction() => $_ensure(2);
+  void clearV0Msg() => clearField(3);
 
   @$pb.TagNumber(4)
-  DelegateStake get delegateStakeTransaction => $_getN(3);
+  Transfer get transferTransaction => $_getN(3);
   @$pb.TagNumber(4)
-  set delegateStakeTransaction(DelegateStake v) { setField(4, v); }
+  set transferTransaction(Transfer v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasDelegateStakeTransaction() => $_has(3);
+  $core.bool hasTransferTransaction() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDelegateStakeTransaction() => clearField(4);
+  void clearTransferTransaction() => clearField(4);
   @$pb.TagNumber(4)
-  DelegateStake ensureDelegateStakeTransaction() => $_ensure(3);
+  Transfer ensureTransferTransaction() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  DeactivateStake get deactivateStakeTransaction => $_getN(4);
+  DelegateStake get delegateStakeTransaction => $_getN(4);
   @$pb.TagNumber(5)
-  set deactivateStakeTransaction(DeactivateStake v) { setField(5, v); }
+  set delegateStakeTransaction(DelegateStake v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasDeactivateStakeTransaction() => $_has(4);
+  $core.bool hasDelegateStakeTransaction() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDeactivateStakeTransaction() => clearField(5);
+  void clearDelegateStakeTransaction() => clearField(5);
   @$pb.TagNumber(5)
-  DeactivateStake ensureDeactivateStakeTransaction() => $_ensure(4);
+  DelegateStake ensureDelegateStakeTransaction() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  DeactivateAllStake get deactivateAllStakeTransaction => $_getN(5);
+  DeactivateStake get deactivateStakeTransaction => $_getN(5);
   @$pb.TagNumber(6)
-  set deactivateAllStakeTransaction(DeactivateAllStake v) { setField(6, v); }
+  set deactivateStakeTransaction(DeactivateStake v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasDeactivateAllStakeTransaction() => $_has(5);
+  $core.bool hasDeactivateStakeTransaction() => $_has(5);
   @$pb.TagNumber(6)
-  void clearDeactivateAllStakeTransaction() => clearField(6);
+  void clearDeactivateStakeTransaction() => clearField(6);
   @$pb.TagNumber(6)
-  DeactivateAllStake ensureDeactivateAllStakeTransaction() => $_ensure(5);
+  DeactivateStake ensureDeactivateStakeTransaction() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  WithdrawStake get withdrawTransaction => $_getN(6);
+  DeactivateAllStake get deactivateAllStakeTransaction => $_getN(6);
   @$pb.TagNumber(7)
-  set withdrawTransaction(WithdrawStake v) { setField(7, v); }
+  set deactivateAllStakeTransaction(DeactivateAllStake v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasWithdrawTransaction() => $_has(6);
+  $core.bool hasDeactivateAllStakeTransaction() => $_has(6);
   @$pb.TagNumber(7)
-  void clearWithdrawTransaction() => clearField(7);
+  void clearDeactivateAllStakeTransaction() => clearField(7);
   @$pb.TagNumber(7)
-  WithdrawStake ensureWithdrawTransaction() => $_ensure(6);
+  DeactivateAllStake ensureDeactivateAllStakeTransaction() => $_ensure(6);
 
   @$pb.TagNumber(8)
-  WithdrawAllStake get withdrawAllTransaction => $_getN(7);
+  WithdrawStake get withdrawTransaction => $_getN(7);
   @$pb.TagNumber(8)
-  set withdrawAllTransaction(WithdrawAllStake v) { setField(8, v); }
+  set withdrawTransaction(WithdrawStake v) { setField(8, v); }
   @$pb.TagNumber(8)
-  $core.bool hasWithdrawAllTransaction() => $_has(7);
+  $core.bool hasWithdrawTransaction() => $_has(7);
   @$pb.TagNumber(8)
-  void clearWithdrawAllTransaction() => clearField(8);
+  void clearWithdrawTransaction() => clearField(8);
   @$pb.TagNumber(8)
-  WithdrawAllStake ensureWithdrawAllTransaction() => $_ensure(7);
+  WithdrawStake ensureWithdrawTransaction() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  CreateTokenAccount get createTokenAccountTransaction => $_getN(8);
+  WithdrawAllStake get withdrawAllTransaction => $_getN(8);
   @$pb.TagNumber(9)
-  set createTokenAccountTransaction(CreateTokenAccount v) { setField(9, v); }
+  set withdrawAllTransaction(WithdrawAllStake v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasCreateTokenAccountTransaction() => $_has(8);
+  $core.bool hasWithdrawAllTransaction() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCreateTokenAccountTransaction() => clearField(9);
+  void clearWithdrawAllTransaction() => clearField(9);
   @$pb.TagNumber(9)
-  CreateTokenAccount ensureCreateTokenAccountTransaction() => $_ensure(8);
+  WithdrawAllStake ensureWithdrawAllTransaction() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  TokenTransfer get tokenTransferTransaction => $_getN(9);
+  CreateTokenAccount get createTokenAccountTransaction => $_getN(9);
   @$pb.TagNumber(10)
-  set tokenTransferTransaction(TokenTransfer v) { setField(10, v); }
+  set createTokenAccountTransaction(CreateTokenAccount v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasTokenTransferTransaction() => $_has(9);
+  $core.bool hasCreateTokenAccountTransaction() => $_has(9);
   @$pb.TagNumber(10)
-  void clearTokenTransferTransaction() => clearField(10);
+  void clearCreateTokenAccountTransaction() => clearField(10);
   @$pb.TagNumber(10)
-  TokenTransfer ensureTokenTransferTransaction() => $_ensure(9);
+  CreateTokenAccount ensureCreateTokenAccountTransaction() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  CreateAndTransferToken get createAndTransferTokenTransaction => $_getN(10);
+  TokenTransfer get tokenTransferTransaction => $_getN(10);
   @$pb.TagNumber(11)
-  set createAndTransferTokenTransaction(CreateAndTransferToken v) { setField(11, v); }
+  set tokenTransferTransaction(TokenTransfer v) { setField(11, v); }
   @$pb.TagNumber(11)
-  $core.bool hasCreateAndTransferTokenTransaction() => $_has(10);
+  $core.bool hasTokenTransferTransaction() => $_has(10);
   @$pb.TagNumber(11)
-  void clearCreateAndTransferTokenTransaction() => clearField(11);
+  void clearTokenTransferTransaction() => clearField(11);
   @$pb.TagNumber(11)
-  CreateAndTransferToken ensureCreateAndTransferTokenTransaction() => $_ensure(10);
+  TokenTransfer ensureTokenTransferTransaction() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  CreateAndTransferToken get createAndTransferTokenTransaction => $_getN(11);
+  @$pb.TagNumber(12)
+  set createAndTransferTokenTransaction(CreateAndTransferToken v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasCreateAndTransferTokenTransaction() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearCreateAndTransferTokenTransaction() => clearField(12);
+  @$pb.TagNumber(12)
+  CreateAndTransferToken ensureCreateAndTransferTokenTransaction() => $_ensure(11);
 }
 
 class SigningOutput extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningOutput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Solana.Proto'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encoded')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unsignedTx')
     ..hasRequiredFields = false
   ;
 
   SigningOutput._() : super();
   factory SigningOutput({
     $core.String? encoded,
+    $core.String? unsignedTx,
   }) {
     final _result = create();
     if (encoded != null) {
       _result.encoded = encoded;
+    }
+    if (unsignedTx != null) {
+      _result.unsignedTx = unsignedTx;
     }
     return _result;
   }
@@ -1037,5 +1056,14 @@ class SigningOutput extends $pb.GeneratedMessage {
   $core.bool hasEncoded() => $_has(0);
   @$pb.TagNumber(1)
   void clearEncoded() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get unsignedTx => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set unsignedTx($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUnsignedTx() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUnsignedTx() => clearField(2);
 }
 

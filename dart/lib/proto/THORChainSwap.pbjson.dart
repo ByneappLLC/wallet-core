@@ -66,7 +66,7 @@ final $typed_data.Uint8List assetDescriptor = $convert.base64Decode('CgVBc3NldBI
 const SwapInput$json = const {
   '1': 'SwapInput',
   '2': const [
-    const {'1': 'from_chain', '3': 1, '4': 1, '5': 14, '6': '.TW.THORChainSwap.Proto.Chain', '10': 'fromChain'},
+    const {'1': 'from_asset', '3': 1, '4': 1, '5': 11, '6': '.TW.THORChainSwap.Proto.Asset', '10': 'fromAsset'},
     const {'1': 'from_address', '3': 2, '4': 1, '5': 9, '10': 'fromAddress'},
     const {'1': 'to_asset', '3': 3, '4': 1, '5': 11, '6': '.TW.THORChainSwap.Proto.Asset', '10': 'toAsset'},
     const {'1': 'to_address', '3': 4, '4': 1, '5': 9, '10': 'toAddress'},
@@ -74,11 +74,15 @@ const SwapInput$json = const {
     const {'1': 'router_address', '3': 6, '4': 1, '5': 9, '10': 'routerAddress'},
     const {'1': 'from_amount', '3': 7, '4': 1, '5': 9, '10': 'fromAmount'},
     const {'1': 'to_amount_limit', '3': 8, '4': 1, '5': 9, '10': 'toAmountLimit'},
+    const {'1': 'affiliate_fee_address', '3': 9, '4': 1, '5': 9, '10': 'affiliateFeeAddress'},
+    const {'1': 'affiliate_fee_rate_bp', '3': 10, '4': 1, '5': 9, '10': 'affiliateFeeRateBp'},
+    const {'1': 'extra_memo', '3': 11, '4': 1, '5': 9, '10': 'extraMemo'},
+    const {'1': 'expiration_time', '3': 12, '4': 1, '5': 4, '10': 'expirationTime'},
   ],
 };
 
 /// Descriptor for `SwapInput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List swapInputDescriptor = $convert.base64Decode('CglTd2FwSW5wdXQSPAoKZnJvbV9jaGFpbhgBIAEoDjIdLlRXLlRIT1JDaGFpblN3YXAuUHJvdG8uQ2hhaW5SCWZyb21DaGFpbhIhCgxmcm9tX2FkZHJlc3MYAiABKAlSC2Zyb21BZGRyZXNzEjgKCHRvX2Fzc2V0GAMgASgLMh0uVFcuVEhPUkNoYWluU3dhcC5Qcm90by5Bc3NldFIHdG9Bc3NldBIdCgp0b19hZGRyZXNzGAQgASgJUgl0b0FkZHJlc3MSIwoNdmF1bHRfYWRkcmVzcxgFIAEoCVIMdmF1bHRBZGRyZXNzEiUKDnJvdXRlcl9hZGRyZXNzGAYgASgJUg1yb3V0ZXJBZGRyZXNzEh8KC2Zyb21fYW1vdW50GAcgASgJUgpmcm9tQW1vdW50EiYKD3RvX2Ftb3VudF9saW1pdBgIIAEoCVINdG9BbW91bnRMaW1pdA==');
+final $typed_data.Uint8List swapInputDescriptor = $convert.base64Decode('CglTd2FwSW5wdXQSPAoKZnJvbV9hc3NldBgBIAEoCzIdLlRXLlRIT1JDaGFpblN3YXAuUHJvdG8uQXNzZXRSCWZyb21Bc3NldBIhCgxmcm9tX2FkZHJlc3MYAiABKAlSC2Zyb21BZGRyZXNzEjgKCHRvX2Fzc2V0GAMgASgLMh0uVFcuVEhPUkNoYWluU3dhcC5Qcm90by5Bc3NldFIHdG9Bc3NldBIdCgp0b19hZGRyZXNzGAQgASgJUgl0b0FkZHJlc3MSIwoNdmF1bHRfYWRkcmVzcxgFIAEoCVIMdmF1bHRBZGRyZXNzEiUKDnJvdXRlcl9hZGRyZXNzGAYgASgJUg1yb3V0ZXJBZGRyZXNzEh8KC2Zyb21fYW1vdW50GAcgASgJUgpmcm9tQW1vdW50EiYKD3RvX2Ftb3VudF9saW1pdBgIIAEoCVINdG9BbW91bnRMaW1pdBIyChVhZmZpbGlhdGVfZmVlX2FkZHJlc3MYCSABKAlSE2FmZmlsaWF0ZUZlZUFkZHJlc3MSMQoVYWZmaWxpYXRlX2ZlZV9yYXRlX2JwGAogASgJUhJhZmZpbGlhdGVGZWVSYXRlQnASHQoKZXh0cmFfbWVtbxgLIAEoCVIJZXh0cmFNZW1vEicKD2V4cGlyYXRpb25fdGltZRgMIAEoBFIOZXhwaXJhdGlvblRpbWU=');
 @$core.Deprecated('Use swapOutputDescriptor instead')
 const SwapOutput$json = const {
   '1': 'SwapOutput',

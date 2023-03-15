@@ -12,14 +12,14 @@ dependencies:
     sdk: flutter
 
   fixnum: ^1.0.0
-  protobuf: ^2.0.1
-  ffi: ^1.1.2
+  protobuf: ^2.1.0
+  ffi: ^2.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
-  ffigen: ^3.0.0
+  ffigen: ^7.2.8
 
 flutter:
   plugin:

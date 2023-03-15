@@ -588,6 +588,151 @@ class Transaction extends $pb.GeneratedMessage {
   Transaction_ContractGeneric ensureContractGeneric() => $_ensure(5);
 }
 
+class UserOperation extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserOperation', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ethereum.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'entryPoint')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountFactory')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountLogic')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'owner')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isAccountDeployed')
+    ..a<$core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'preVerificationGas', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'verificationGasLimit', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'paymasterAndData', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  UserOperation._() : super();
+  factory UserOperation({
+    $core.String? entryPoint,
+    $core.String? accountFactory,
+    $core.String? accountLogic,
+    $core.String? owner,
+    $core.bool? isAccountDeployed,
+    $core.List<$core.int>? preVerificationGas,
+    $core.List<$core.int>? verificationGasLimit,
+    $core.List<$core.int>? paymasterAndData,
+  }) {
+    final _result = create();
+    if (entryPoint != null) {
+      _result.entryPoint = entryPoint;
+    }
+    if (accountFactory != null) {
+      _result.accountFactory = accountFactory;
+    }
+    if (accountLogic != null) {
+      _result.accountLogic = accountLogic;
+    }
+    if (owner != null) {
+      _result.owner = owner;
+    }
+    if (isAccountDeployed != null) {
+      _result.isAccountDeployed = isAccountDeployed;
+    }
+    if (preVerificationGas != null) {
+      _result.preVerificationGas = preVerificationGas;
+    }
+    if (verificationGasLimit != null) {
+      _result.verificationGasLimit = verificationGasLimit;
+    }
+    if (paymasterAndData != null) {
+      _result.paymasterAndData = paymasterAndData;
+    }
+    return _result;
+  }
+  factory UserOperation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserOperation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UserOperation clone() => UserOperation()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UserOperation copyWith(void Function(UserOperation) updates) => super.copyWith((message) => updates(message as UserOperation)) as UserOperation; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UserOperation create() => UserOperation._();
+  UserOperation createEmptyInstance() => create();
+  static $pb.PbList<UserOperation> createRepeated() => $pb.PbList<UserOperation>();
+  @$core.pragma('dart2js:noInline')
+  static UserOperation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserOperation>(create);
+  static UserOperation? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get entryPoint => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set entryPoint($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasEntryPoint() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearEntryPoint() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get accountFactory => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set accountFactory($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAccountFactory() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAccountFactory() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get accountLogic => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set accountLogic($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAccountLogic() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAccountLogic() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get owner => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set owner($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasOwner() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearOwner() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get isAccountDeployed => $_getBF(4);
+  @$pb.TagNumber(5)
+  set isAccountDeployed($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasIsAccountDeployed() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearIsAccountDeployed() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.int> get preVerificationGas => $_getN(5);
+  @$pb.TagNumber(6)
+  set preVerificationGas($core.List<$core.int> v) { $_setBytes(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasPreVerificationGas() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearPreVerificationGas() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<$core.int> get verificationGasLimit => $_getN(6);
+  @$pb.TagNumber(7)
+  set verificationGasLimit($core.List<$core.int> v) { $_setBytes(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasVerificationGasLimit() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearVerificationGasLimit() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<$core.int> get paymasterAndData => $_getN(7);
+  @$pb.TagNumber(8)
+  set paymasterAndData($core.List<$core.int> v) { $_setBytes(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasPaymasterAndData() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearPaymasterAndData() => clearField(8);
+}
+
 class SigningInput extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ethereum.Proto'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId', $pb.PbFieldType.OY)
@@ -600,6 +745,7 @@ class SigningInput extends $pb.GeneratedMessage {
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAddress')
     ..a<$core.List<$core.int>>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
     ..aOM<Transaction>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transaction', subBuilder: Transaction.create)
+    ..aOM<UserOperation>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userOperation', subBuilder: UserOperation.create)
     ..hasRequiredFields = false
   ;
 
@@ -615,6 +761,7 @@ class SigningInput extends $pb.GeneratedMessage {
     $core.String? toAddress,
     $core.List<$core.int>? privateKey,
     Transaction? transaction,
+    UserOperation? userOperation,
   }) {
     final _result = create();
     if (chainId != null) {
@@ -646,6 +793,9 @@ class SigningInput extends $pb.GeneratedMessage {
     }
     if (transaction != null) {
       _result.transaction = transaction;
+    }
+    if (userOperation != null) {
+      _result.userOperation = userOperation;
     }
     return _result;
   }
@@ -761,6 +911,17 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearTransaction() => clearField(10);
   @$pb.TagNumber(10)
   Transaction ensureTransaction() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  UserOperation get userOperation => $_getN(10);
+  @$pb.TagNumber(11)
+  set userOperation(UserOperation v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasUserOperation() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUserOperation() => clearField(11);
+  @$pb.TagNumber(11)
+  UserOperation ensureUserOperation() => $_ensure(10);
 }
 
 class SigningOutput extends $pb.GeneratedMessage {

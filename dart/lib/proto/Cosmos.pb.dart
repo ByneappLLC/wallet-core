@@ -1123,6 +1123,289 @@ class Message_WasmTerraExecuteContractGeneric extends $pb.GeneratedMessage {
   $core.List<Amount> get coins => $_getList(3);
 }
 
+class Message_WasmExecuteContractTransfer extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.WasmExecuteContractTransfer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'senderAddress')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contractAddress')
+    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OY)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipientAddress')
+    ..hasRequiredFields = false
+  ;
+
+  Message_WasmExecuteContractTransfer._() : super();
+  factory Message_WasmExecuteContractTransfer({
+    $core.String? senderAddress,
+    $core.String? contractAddress,
+    $core.List<$core.int>? amount,
+    $core.String? recipientAddress,
+  }) {
+    final _result = create();
+    if (senderAddress != null) {
+      _result.senderAddress = senderAddress;
+    }
+    if (contractAddress != null) {
+      _result.contractAddress = contractAddress;
+    }
+    if (amount != null) {
+      _result.amount = amount;
+    }
+    if (recipientAddress != null) {
+      _result.recipientAddress = recipientAddress;
+    }
+    return _result;
+  }
+  factory Message_WasmExecuteContractTransfer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_WasmExecuteContractTransfer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_WasmExecuteContractTransfer clone() => Message_WasmExecuteContractTransfer()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_WasmExecuteContractTransfer copyWith(void Function(Message_WasmExecuteContractTransfer) updates) => super.copyWith((message) => updates(message as Message_WasmExecuteContractTransfer)) as Message_WasmExecuteContractTransfer; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmExecuteContractTransfer create() => Message_WasmExecuteContractTransfer._();
+  Message_WasmExecuteContractTransfer createEmptyInstance() => create();
+  static $pb.PbList<Message_WasmExecuteContractTransfer> createRepeated() => $pb.PbList<Message_WasmExecuteContractTransfer>();
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmExecuteContractTransfer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_WasmExecuteContractTransfer>(create);
+  static Message_WasmExecuteContractTransfer? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get senderAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set senderAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSenderAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSenderAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contractAddress => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contractAddress($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContractAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContractAddress() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get amount => $_getN(2);
+  @$pb.TagNumber(3)
+  set amount($core.List<$core.int> v) { $_setBytes(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAmount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAmount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get recipientAddress => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set recipientAddress($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRecipientAddress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRecipientAddress() => clearField(4);
+}
+
+class Message_WasmExecuteContractSend extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.WasmExecuteContractSend', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'senderAddress')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contractAddress')
+    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OY)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipientContractAddress')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msg')
+    ..pPS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'coin')
+    ..hasRequiredFields = false
+  ;
+
+  Message_WasmExecuteContractSend._() : super();
+  factory Message_WasmExecuteContractSend({
+    $core.String? senderAddress,
+    $core.String? contractAddress,
+    $core.List<$core.int>? amount,
+    $core.String? recipientContractAddress,
+    $core.String? msg,
+    $core.Iterable<$core.String>? coin,
+  }) {
+    final _result = create();
+    if (senderAddress != null) {
+      _result.senderAddress = senderAddress;
+    }
+    if (contractAddress != null) {
+      _result.contractAddress = contractAddress;
+    }
+    if (amount != null) {
+      _result.amount = amount;
+    }
+    if (recipientContractAddress != null) {
+      _result.recipientContractAddress = recipientContractAddress;
+    }
+    if (msg != null) {
+      _result.msg = msg;
+    }
+    if (coin != null) {
+      _result.coin.addAll(coin);
+    }
+    return _result;
+  }
+  factory Message_WasmExecuteContractSend.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_WasmExecuteContractSend.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_WasmExecuteContractSend clone() => Message_WasmExecuteContractSend()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_WasmExecuteContractSend copyWith(void Function(Message_WasmExecuteContractSend) updates) => super.copyWith((message) => updates(message as Message_WasmExecuteContractSend)) as Message_WasmExecuteContractSend; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmExecuteContractSend create() => Message_WasmExecuteContractSend._();
+  Message_WasmExecuteContractSend createEmptyInstance() => create();
+  static $pb.PbList<Message_WasmExecuteContractSend> createRepeated() => $pb.PbList<Message_WasmExecuteContractSend>();
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmExecuteContractSend getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_WasmExecuteContractSend>(create);
+  static Message_WasmExecuteContractSend? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get senderAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set senderAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSenderAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSenderAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contractAddress => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contractAddress($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContractAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContractAddress() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get amount => $_getN(2);
+  @$pb.TagNumber(3)
+  set amount($core.List<$core.int> v) { $_setBytes(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasAmount() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearAmount() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get recipientContractAddress => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set recipientContractAddress($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasRecipientContractAddress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearRecipientContractAddress() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get msg => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set msg($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasMsg() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearMsg() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.String> get coin => $_getList(5);
+}
+
+class Message_WasmExecuteContractGeneric extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.WasmExecuteContractGeneric', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'senderAddress')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contractAddress')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'executeMsg')
+    ..pc<Amount>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'coins', $pb.PbFieldType.PM, subBuilder: Amount.create)
+    ..hasRequiredFields = false
+  ;
+
+  Message_WasmExecuteContractGeneric._() : super();
+  factory Message_WasmExecuteContractGeneric({
+    $core.String? senderAddress,
+    $core.String? contractAddress,
+    $core.String? executeMsg,
+    $core.Iterable<Amount>? coins,
+  }) {
+    final _result = create();
+    if (senderAddress != null) {
+      _result.senderAddress = senderAddress;
+    }
+    if (contractAddress != null) {
+      _result.contractAddress = contractAddress;
+    }
+    if (executeMsg != null) {
+      _result.executeMsg = executeMsg;
+    }
+    if (coins != null) {
+      _result.coins.addAll(coins);
+    }
+    return _result;
+  }
+  factory Message_WasmExecuteContractGeneric.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_WasmExecuteContractGeneric.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_WasmExecuteContractGeneric clone() => Message_WasmExecuteContractGeneric()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_WasmExecuteContractGeneric copyWith(void Function(Message_WasmExecuteContractGeneric) updates) => super.copyWith((message) => updates(message as Message_WasmExecuteContractGeneric)) as Message_WasmExecuteContractGeneric; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmExecuteContractGeneric create() => Message_WasmExecuteContractGeneric._();
+  Message_WasmExecuteContractGeneric createEmptyInstance() => create();
+  static $pb.PbList<Message_WasmExecuteContractGeneric> createRepeated() => $pb.PbList<Message_WasmExecuteContractGeneric>();
+  @$core.pragma('dart2js:noInline')
+  static Message_WasmExecuteContractGeneric getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_WasmExecuteContractGeneric>(create);
+  static Message_WasmExecuteContractGeneric? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get senderAddress => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set senderAddress($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSenderAddress() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSenderAddress() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get contractAddress => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set contractAddress($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasContractAddress() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContractAddress() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get executeMsg => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set executeMsg($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasExecuteMsg() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearExecuteMsg() => clearField(3);
+
+  @$pb.TagNumber(5)
+  $core.List<Amount> get coins => $_getList(3);
+}
+
 class Message_RawJSON extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.RawJSON', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
@@ -1184,6 +1467,472 @@ class Message_RawJSON extends $pb.GeneratedMessage {
   void clearValue() => clearField(2);
 }
 
+class Message_SignDirect extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.SignDirect', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bodyBytes', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authInfoBytes', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  Message_SignDirect._() : super();
+  factory Message_SignDirect({
+    $core.List<$core.int>? bodyBytes,
+    $core.List<$core.int>? authInfoBytes,
+  }) {
+    final _result = create();
+    if (bodyBytes != null) {
+      _result.bodyBytes = bodyBytes;
+    }
+    if (authInfoBytes != null) {
+      _result.authInfoBytes = authInfoBytes;
+    }
+    return _result;
+  }
+  factory Message_SignDirect.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_SignDirect.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_SignDirect clone() => Message_SignDirect()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_SignDirect copyWith(void Function(Message_SignDirect) updates) => super.copyWith((message) => updates(message as Message_SignDirect)) as Message_SignDirect; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_SignDirect create() => Message_SignDirect._();
+  Message_SignDirect createEmptyInstance() => create();
+  static $pb.PbList<Message_SignDirect> createRepeated() => $pb.PbList<Message_SignDirect>();
+  @$core.pragma('dart2js:noInline')
+  static Message_SignDirect getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_SignDirect>(create);
+  static Message_SignDirect? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.int> get bodyBytes => $_getN(0);
+  @$pb.TagNumber(1)
+  set bodyBytes($core.List<$core.int> v) { $_setBytes(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasBodyBytes() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearBodyBytes() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.int> get authInfoBytes => $_getN(1);
+  @$pb.TagNumber(2)
+  set authInfoBytes($core.List<$core.int> v) { $_setBytes(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAuthInfoBytes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAuthInfoBytes() => clearField(2);
+}
+
+class Message_StakeAuthorization_Validators extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.StakeAuthorization.Validators', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address')
+    ..hasRequiredFields = false
+  ;
+
+  Message_StakeAuthorization_Validators._() : super();
+  factory Message_StakeAuthorization_Validators({
+    $core.Iterable<$core.String>? address,
+  }) {
+    final _result = create();
+    if (address != null) {
+      _result.address.addAll(address);
+    }
+    return _result;
+  }
+  factory Message_StakeAuthorization_Validators.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_StakeAuthorization_Validators.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_StakeAuthorization_Validators clone() => Message_StakeAuthorization_Validators()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_StakeAuthorization_Validators copyWith(void Function(Message_StakeAuthorization_Validators) updates) => super.copyWith((message) => updates(message as Message_StakeAuthorization_Validators)) as Message_StakeAuthorization_Validators; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_StakeAuthorization_Validators create() => Message_StakeAuthorization_Validators._();
+  Message_StakeAuthorization_Validators createEmptyInstance() => create();
+  static $pb.PbList<Message_StakeAuthorization_Validators> createRepeated() => $pb.PbList<Message_StakeAuthorization_Validators>();
+  @$core.pragma('dart2js:noInline')
+  static Message_StakeAuthorization_Validators getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_StakeAuthorization_Validators>(create);
+  static Message_StakeAuthorization_Validators? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<$core.String> get address => $_getList(0);
+}
+
+enum Message_StakeAuthorization_Validators_ {
+  allowList, 
+  denyList, 
+  notSet
+}
+
+class Message_StakeAuthorization extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, Message_StakeAuthorization_Validators_> _Message_StakeAuthorization_Validators_ByTag = {
+    2 : Message_StakeAuthorization_Validators_.allowList,
+    3 : Message_StakeAuthorization_Validators_.denyList,
+    0 : Message_StakeAuthorization_Validators_.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.StakeAuthorization', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..oo(0, [2, 3])
+    ..aOM<Amount>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxTokens', subBuilder: Amount.create)
+    ..aOM<Message_StakeAuthorization_Validators>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'allowList', subBuilder: Message_StakeAuthorization_Validators.create)
+    ..aOM<Message_StakeAuthorization_Validators>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'denyList', subBuilder: Message_StakeAuthorization_Validators.create)
+    ..e<Message_AuthorizationType>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorizationType', $pb.PbFieldType.OE, defaultOrMaker: Message_AuthorizationType.UNSPECIFIED, valueOf: Message_AuthorizationType.valueOf, enumValues: Message_AuthorizationType.values)
+    ..hasRequiredFields = false
+  ;
+
+  Message_StakeAuthorization._() : super();
+  factory Message_StakeAuthorization({
+    Amount? maxTokens,
+    Message_StakeAuthorization_Validators? allowList,
+    Message_StakeAuthorization_Validators? denyList,
+    Message_AuthorizationType? authorizationType,
+  }) {
+    final _result = create();
+    if (maxTokens != null) {
+      _result.maxTokens = maxTokens;
+    }
+    if (allowList != null) {
+      _result.allowList = allowList;
+    }
+    if (denyList != null) {
+      _result.denyList = denyList;
+    }
+    if (authorizationType != null) {
+      _result.authorizationType = authorizationType;
+    }
+    return _result;
+  }
+  factory Message_StakeAuthorization.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_StakeAuthorization.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_StakeAuthorization clone() => Message_StakeAuthorization()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_StakeAuthorization copyWith(void Function(Message_StakeAuthorization) updates) => super.copyWith((message) => updates(message as Message_StakeAuthorization)) as Message_StakeAuthorization; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_StakeAuthorization create() => Message_StakeAuthorization._();
+  Message_StakeAuthorization createEmptyInstance() => create();
+  static $pb.PbList<Message_StakeAuthorization> createRepeated() => $pb.PbList<Message_StakeAuthorization>();
+  @$core.pragma('dart2js:noInline')
+  static Message_StakeAuthorization getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_StakeAuthorization>(create);
+  static Message_StakeAuthorization? _defaultInstance;
+
+  Message_StakeAuthorization_Validators_ whichValidators() => _Message_StakeAuthorization_Validators_ByTag[$_whichOneof(0)]!;
+  void clearValidators() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  Amount get maxTokens => $_getN(0);
+  @$pb.TagNumber(1)
+  set maxTokens(Amount v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasMaxTokens() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearMaxTokens() => clearField(1);
+  @$pb.TagNumber(1)
+  Amount ensureMaxTokens() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  Message_StakeAuthorization_Validators get allowList => $_getN(1);
+  @$pb.TagNumber(2)
+  set allowList(Message_StakeAuthorization_Validators v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasAllowList() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearAllowList() => clearField(2);
+  @$pb.TagNumber(2)
+  Message_StakeAuthorization_Validators ensureAllowList() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  Message_StakeAuthorization_Validators get denyList => $_getN(2);
+  @$pb.TagNumber(3)
+  set denyList(Message_StakeAuthorization_Validators v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDenyList() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDenyList() => clearField(3);
+  @$pb.TagNumber(3)
+  Message_StakeAuthorization_Validators ensureDenyList() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  Message_AuthorizationType get authorizationType => $_getN(3);
+  @$pb.TagNumber(4)
+  set authorizationType(Message_AuthorizationType v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAuthorizationType() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAuthorizationType() => clearField(4);
+}
+
+enum Message_AuthGrant_GrantType {
+  grantStake, 
+  notSet
+}
+
+class Message_AuthGrant extends $pb.GeneratedMessage {
+  static const $core.Map<$core.int, Message_AuthGrant_GrantType> _Message_AuthGrant_GrantTypeByTag = {
+    3 : Message_AuthGrant_GrantType.grantStake,
+    0 : Message_AuthGrant_GrantType.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.AuthGrant', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..oo(0, [3])
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'granter')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grantee')
+    ..aOM<Message_StakeAuthorization>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grantStake', subBuilder: Message_StakeAuthorization.create)
+    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiration')
+    ..hasRequiredFields = false
+  ;
+
+  Message_AuthGrant._() : super();
+  factory Message_AuthGrant({
+    $core.String? granter,
+    $core.String? grantee,
+    Message_StakeAuthorization? grantStake,
+    $fixnum.Int64? expiration,
+  }) {
+    final _result = create();
+    if (granter != null) {
+      _result.granter = granter;
+    }
+    if (grantee != null) {
+      _result.grantee = grantee;
+    }
+    if (grantStake != null) {
+      _result.grantStake = grantStake;
+    }
+    if (expiration != null) {
+      _result.expiration = expiration;
+    }
+    return _result;
+  }
+  factory Message_AuthGrant.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_AuthGrant.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_AuthGrant clone() => Message_AuthGrant()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_AuthGrant copyWith(void Function(Message_AuthGrant) updates) => super.copyWith((message) => updates(message as Message_AuthGrant)) as Message_AuthGrant; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_AuthGrant create() => Message_AuthGrant._();
+  Message_AuthGrant createEmptyInstance() => create();
+  static $pb.PbList<Message_AuthGrant> createRepeated() => $pb.PbList<Message_AuthGrant>();
+  @$core.pragma('dart2js:noInline')
+  static Message_AuthGrant getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_AuthGrant>(create);
+  static Message_AuthGrant? _defaultInstance;
+
+  Message_AuthGrant_GrantType whichGrantType() => _Message_AuthGrant_GrantTypeByTag[$_whichOneof(0)]!;
+  void clearGrantType() => clearField($_whichOneof(0));
+
+  @$pb.TagNumber(1)
+  $core.String get granter => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set granter($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGranter() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGranter() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get grantee => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set grantee($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGrantee() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantee() => clearField(2);
+
+  @$pb.TagNumber(3)
+  Message_StakeAuthorization get grantStake => $_getN(2);
+  @$pb.TagNumber(3)
+  set grantStake(Message_StakeAuthorization v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasGrantStake() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearGrantStake() => clearField(3);
+  @$pb.TagNumber(3)
+  Message_StakeAuthorization ensureGrantStake() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $fixnum.Int64 get expiration => $_getI64(3);
+  @$pb.TagNumber(4)
+  set expiration($fixnum.Int64 v) { $_setInt64(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasExpiration() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExpiration() => clearField(4);
+}
+
+class Message_AuthRevoke extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.AuthRevoke', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'granter')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grantee')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msgTypeUrl')
+    ..hasRequiredFields = false
+  ;
+
+  Message_AuthRevoke._() : super();
+  factory Message_AuthRevoke({
+    $core.String? granter,
+    $core.String? grantee,
+    $core.String? msgTypeUrl,
+  }) {
+    final _result = create();
+    if (granter != null) {
+      _result.granter = granter;
+    }
+    if (grantee != null) {
+      _result.grantee = grantee;
+    }
+    if (msgTypeUrl != null) {
+      _result.msgTypeUrl = msgTypeUrl;
+    }
+    return _result;
+  }
+  factory Message_AuthRevoke.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_AuthRevoke.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_AuthRevoke clone() => Message_AuthRevoke()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_AuthRevoke copyWith(void Function(Message_AuthRevoke) updates) => super.copyWith((message) => updates(message as Message_AuthRevoke)) as Message_AuthRevoke; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_AuthRevoke create() => Message_AuthRevoke._();
+  Message_AuthRevoke createEmptyInstance() => create();
+  static $pb.PbList<Message_AuthRevoke> createRepeated() => $pb.PbList<Message_AuthRevoke>();
+  @$core.pragma('dart2js:noInline')
+  static Message_AuthRevoke getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_AuthRevoke>(create);
+  static Message_AuthRevoke? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get granter => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set granter($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasGranter() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearGranter() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get grantee => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set grantee($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasGrantee() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearGrantee() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get msgTypeUrl => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set msgTypeUrl($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMsgTypeUrl() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMsgTypeUrl() => clearField(3);
+}
+
+class Message_MsgVote extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message.MsgVote', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
+    ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'proposalId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'voter')
+    ..e<Message_VoteOption>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'option', $pb.PbFieldType.OE, defaultOrMaker: Message_VoteOption.UNSPECIFIED_, valueOf: Message_VoteOption.valueOf, enumValues: Message_VoteOption.values)
+    ..hasRequiredFields = false
+  ;
+
+  Message_MsgVote._() : super();
+  factory Message_MsgVote({
+    $fixnum.Int64? proposalId,
+    $core.String? voter,
+    Message_VoteOption? option,
+  }) {
+    final _result = create();
+    if (proposalId != null) {
+      _result.proposalId = proposalId;
+    }
+    if (voter != null) {
+      _result.voter = voter;
+    }
+    if (option != null) {
+      _result.option = option;
+    }
+    return _result;
+  }
+  factory Message_MsgVote.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Message_MsgVote.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Message_MsgVote clone() => Message_MsgVote()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Message_MsgVote copyWith(void Function(Message_MsgVote) updates) => super.copyWith((message) => updates(message as Message_MsgVote)) as Message_MsgVote; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Message_MsgVote create() => Message_MsgVote._();
+  Message_MsgVote createEmptyInstance() => create();
+  static $pb.PbList<Message_MsgVote> createRepeated() => $pb.PbList<Message_MsgVote>();
+  @$core.pragma('dart2js:noInline')
+  static Message_MsgVote getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Message_MsgVote>(create);
+  static Message_MsgVote? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get proposalId => $_getI64(0);
+  @$pb.TagNumber(1)
+  set proposalId($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasProposalId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearProposalId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get voter => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set voter($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasVoter() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearVoter() => clearField(2);
+
+  @$pb.TagNumber(3)
+  Message_VoteOption get option => $_getN(2);
+  @$pb.TagNumber(3)
+  set option(Message_VoteOption v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOption() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOption() => clearField(3);
+}
+
 enum Message_MessageOneof {
   sendCoinsMessage, 
   transferTokensMessage, 
@@ -1196,6 +1945,13 @@ enum Message_MessageOneof {
   wasmTerraExecuteContractSendMessage, 
   thorchainSendMessage, 
   wasmTerraExecuteContractGeneric, 
+  wasmExecuteContractTransferMessage, 
+  wasmExecuteContractSendMessage, 
+  wasmExecuteContractGeneric, 
+  signDirectMessage, 
+  authGrant, 
+  authRevoke, 
+  msgVote, 
   notSet
 }
 
@@ -1212,10 +1968,17 @@ class Message extends $pb.GeneratedMessage {
     9 : Message_MessageOneof.wasmTerraExecuteContractSendMessage,
     10 : Message_MessageOneof.thorchainSendMessage,
     11 : Message_MessageOneof.wasmTerraExecuteContractGeneric,
+    12 : Message_MessageOneof.wasmExecuteContractTransferMessage,
+    13 : Message_MessageOneof.wasmExecuteContractSendMessage,
+    14 : Message_MessageOneof.wasmExecuteContractGeneric,
+    15 : Message_MessageOneof.signDirectMessage,
+    16 : Message_MessageOneof.authGrant,
+    17 : Message_MessageOneof.authRevoke,
+    18 : Message_MessageOneof.msgVote,
     0 : Message_MessageOneof.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Message', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Cosmos.Proto'), createEmptyInstance: create)
-    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+    ..oo(0, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18])
     ..aOM<Message_Send>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sendCoinsMessage', subBuilder: Message_Send.create)
     ..aOM<Message_Transfer>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transferTokensMessage', subBuilder: Message_Transfer.create)
     ..aOM<Message_Delegate>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stakeMessage', subBuilder: Message_Delegate.create)
@@ -1227,6 +1990,13 @@ class Message extends $pb.GeneratedMessage {
     ..aOM<Message_WasmTerraExecuteContractSend>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wasmTerraExecuteContractSendMessage', subBuilder: Message_WasmTerraExecuteContractSend.create)
     ..aOM<Message_THORChainSend>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'thorchainSendMessage', subBuilder: Message_THORChainSend.create)
     ..aOM<Message_WasmTerraExecuteContractGeneric>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wasmTerraExecuteContractGeneric', subBuilder: Message_WasmTerraExecuteContractGeneric.create)
+    ..aOM<Message_WasmExecuteContractTransfer>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wasmExecuteContractTransferMessage', subBuilder: Message_WasmExecuteContractTransfer.create)
+    ..aOM<Message_WasmExecuteContractSend>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wasmExecuteContractSendMessage', subBuilder: Message_WasmExecuteContractSend.create)
+    ..aOM<Message_WasmExecuteContractGeneric>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wasmExecuteContractGeneric', subBuilder: Message_WasmExecuteContractGeneric.create)
+    ..aOM<Message_SignDirect>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signDirectMessage', subBuilder: Message_SignDirect.create)
+    ..aOM<Message_AuthGrant>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authGrant', subBuilder: Message_AuthGrant.create)
+    ..aOM<Message_AuthRevoke>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authRevoke', subBuilder: Message_AuthRevoke.create)
+    ..aOM<Message_MsgVote>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msgVote', subBuilder: Message_MsgVote.create)
     ..hasRequiredFields = false
   ;
 
@@ -1243,6 +2013,13 @@ class Message extends $pb.GeneratedMessage {
     Message_WasmTerraExecuteContractSend? wasmTerraExecuteContractSendMessage,
     Message_THORChainSend? thorchainSendMessage,
     Message_WasmTerraExecuteContractGeneric? wasmTerraExecuteContractGeneric,
+    Message_WasmExecuteContractTransfer? wasmExecuteContractTransferMessage,
+    Message_WasmExecuteContractSend? wasmExecuteContractSendMessage,
+    Message_WasmExecuteContractGeneric? wasmExecuteContractGeneric,
+    Message_SignDirect? signDirectMessage,
+    Message_AuthGrant? authGrant,
+    Message_AuthRevoke? authRevoke,
+    Message_MsgVote? msgVote,
   }) {
     final _result = create();
     if (sendCoinsMessage != null) {
@@ -1277,6 +2054,27 @@ class Message extends $pb.GeneratedMessage {
     }
     if (wasmTerraExecuteContractGeneric != null) {
       _result.wasmTerraExecuteContractGeneric = wasmTerraExecuteContractGeneric;
+    }
+    if (wasmExecuteContractTransferMessage != null) {
+      _result.wasmExecuteContractTransferMessage = wasmExecuteContractTransferMessage;
+    }
+    if (wasmExecuteContractSendMessage != null) {
+      _result.wasmExecuteContractSendMessage = wasmExecuteContractSendMessage;
+    }
+    if (wasmExecuteContractGeneric != null) {
+      _result.wasmExecuteContractGeneric = wasmExecuteContractGeneric;
+    }
+    if (signDirectMessage != null) {
+      _result.signDirectMessage = signDirectMessage;
+    }
+    if (authGrant != null) {
+      _result.authGrant = authGrant;
+    }
+    if (authRevoke != null) {
+      _result.authRevoke = authRevoke;
+    }
+    if (msgVote != null) {
+      _result.msgVote = msgVote;
     }
     return _result;
   }
@@ -1424,6 +2222,83 @@ class Message extends $pb.GeneratedMessage {
   void clearWasmTerraExecuteContractGeneric() => clearField(11);
   @$pb.TagNumber(11)
   Message_WasmTerraExecuteContractGeneric ensureWasmTerraExecuteContractGeneric() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  Message_WasmExecuteContractTransfer get wasmExecuteContractTransferMessage => $_getN(11);
+  @$pb.TagNumber(12)
+  set wasmExecuteContractTransferMessage(Message_WasmExecuteContractTransfer v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasWasmExecuteContractTransferMessage() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearWasmExecuteContractTransferMessage() => clearField(12);
+  @$pb.TagNumber(12)
+  Message_WasmExecuteContractTransfer ensureWasmExecuteContractTransferMessage() => $_ensure(11);
+
+  @$pb.TagNumber(13)
+  Message_WasmExecuteContractSend get wasmExecuteContractSendMessage => $_getN(12);
+  @$pb.TagNumber(13)
+  set wasmExecuteContractSendMessage(Message_WasmExecuteContractSend v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasWasmExecuteContractSendMessage() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearWasmExecuteContractSendMessage() => clearField(13);
+  @$pb.TagNumber(13)
+  Message_WasmExecuteContractSend ensureWasmExecuteContractSendMessage() => $_ensure(12);
+
+  @$pb.TagNumber(14)
+  Message_WasmExecuteContractGeneric get wasmExecuteContractGeneric => $_getN(13);
+  @$pb.TagNumber(14)
+  set wasmExecuteContractGeneric(Message_WasmExecuteContractGeneric v) { setField(14, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasWasmExecuteContractGeneric() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearWasmExecuteContractGeneric() => clearField(14);
+  @$pb.TagNumber(14)
+  Message_WasmExecuteContractGeneric ensureWasmExecuteContractGeneric() => $_ensure(13);
+
+  @$pb.TagNumber(15)
+  Message_SignDirect get signDirectMessage => $_getN(14);
+  @$pb.TagNumber(15)
+  set signDirectMessage(Message_SignDirect v) { setField(15, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasSignDirectMessage() => $_has(14);
+  @$pb.TagNumber(15)
+  void clearSignDirectMessage() => clearField(15);
+  @$pb.TagNumber(15)
+  Message_SignDirect ensureSignDirectMessage() => $_ensure(14);
+
+  @$pb.TagNumber(16)
+  Message_AuthGrant get authGrant => $_getN(15);
+  @$pb.TagNumber(16)
+  set authGrant(Message_AuthGrant v) { setField(16, v); }
+  @$pb.TagNumber(16)
+  $core.bool hasAuthGrant() => $_has(15);
+  @$pb.TagNumber(16)
+  void clearAuthGrant() => clearField(16);
+  @$pb.TagNumber(16)
+  Message_AuthGrant ensureAuthGrant() => $_ensure(15);
+
+  @$pb.TagNumber(17)
+  Message_AuthRevoke get authRevoke => $_getN(16);
+  @$pb.TagNumber(17)
+  set authRevoke(Message_AuthRevoke v) { setField(17, v); }
+  @$pb.TagNumber(17)
+  $core.bool hasAuthRevoke() => $_has(16);
+  @$pb.TagNumber(17)
+  void clearAuthRevoke() => clearField(17);
+  @$pb.TagNumber(17)
+  Message_AuthRevoke ensureAuthRevoke() => $_ensure(16);
+
+  @$pb.TagNumber(18)
+  Message_MsgVote get msgVote => $_getN(17);
+  @$pb.TagNumber(18)
+  set msgVote(Message_MsgVote v) { setField(18, v); }
+  @$pb.TagNumber(18)
+  $core.bool hasMsgVote() => $_has(17);
+  @$pb.TagNumber(18)
+  void clearMsgVote() => clearField(18);
+  @$pb.TagNumber(18)
+  Message_MsgVote ensureMsgVote() => $_ensure(17);
 }
 
 class SigningInput extends $pb.GeneratedMessage {
@@ -1587,6 +2462,7 @@ class SigningOutput extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'json')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'serialized')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signatureJson')
     ..hasRequiredFields = false
   ;
 
@@ -1596,6 +2472,7 @@ class SigningOutput extends $pb.GeneratedMessage {
     $core.String? json,
     $core.String? serialized,
     $core.String? error,
+    $core.String? signatureJson,
   }) {
     final _result = create();
     if (signature != null) {
@@ -1609,6 +2486,9 @@ class SigningOutput extends $pb.GeneratedMessage {
     }
     if (error != null) {
       _result.error = error;
+    }
+    if (signatureJson != null) {
+      _result.signatureJson = signatureJson;
     }
     return _result;
   }
@@ -1668,5 +2548,14 @@ class SigningOutput extends $pb.GeneratedMessage {
   $core.bool hasError() => $_has(3);
   @$pb.TagNumber(4)
   void clearError() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get signatureJson => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set signatureJson($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasSignatureJson() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearSignatureJson() => clearField(5);
 }
 

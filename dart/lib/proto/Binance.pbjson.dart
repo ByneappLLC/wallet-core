@@ -31,16 +31,10 @@ const Signature$json = const {
     const {'1': 'account_number', '3': 3, '4': 1, '5': 3, '10': 'accountNumber'},
     const {'1': 'sequence', '3': 4, '4': 1, '5': 3, '10': 'sequence'},
   ],
-  '3': const [Signature_PubKey$json],
-};
-
-@$core.Deprecated('Use signatureDescriptor instead')
-const Signature_PubKey$json = const {
-  '1': 'PubKey',
 };
 
 /// Descriptor for `Signature`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signatureDescriptor = $convert.base64Decode('CglTaWduYXR1cmUSFwoHcHViX2tleRgBIAEoDFIGcHViS2V5EhwKCXNpZ25hdHVyZRgCIAEoDFIJc2lnbmF0dXJlEiUKDmFjY291bnRfbnVtYmVyGAMgASgDUg1hY2NvdW50TnVtYmVyEhoKCHNlcXVlbmNlGAQgASgDUghzZXF1ZW5jZRoICgZQdWJLZXk=');
+final $typed_data.Uint8List signatureDescriptor = $convert.base64Decode('CglTaWduYXR1cmUSFwoHcHViX2tleRgBIAEoDFIGcHViS2V5EhwKCXNpZ25hdHVyZRgCIAEoDFIJc2lnbmF0dXJlEiUKDmFjY291bnRfbnVtYmVyGAMgASgDUg1hY2NvdW50TnVtYmVyEhoKCHNlcXVlbmNlGAQgASgDUghzZXF1ZW5jZQ==');
 @$core.Deprecated('Use tradeOrderDescriptor instead')
 const TradeOrder$json = const {
   '1': 'TradeOrder',

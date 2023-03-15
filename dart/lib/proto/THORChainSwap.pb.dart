@@ -7,6 +7,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'Bitcoin.pb.dart' as $1;
@@ -155,7 +156,7 @@ class Asset extends $pb.GeneratedMessage {
 
 class SwapInput extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SwapInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.THORChainSwap.Proto'), createEmptyInstance: create)
-    ..e<Chain>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromChain', $pb.PbFieldType.OE, defaultOrMaker: Chain.THOR, valueOf: Chain.valueOf, enumValues: Chain.values)
+    ..aOM<Asset>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromAsset', subBuilder: Asset.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromAddress')
     ..aOM<Asset>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAsset', subBuilder: Asset.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAddress')
@@ -163,12 +164,16 @@ class SwapInput extends $pb.GeneratedMessage {
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'routerAddress')
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromAmount')
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAmountLimit')
+    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'affiliateFeeAddress')
+    ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'affiliateFeeRateBp')
+    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extraMemo')
+    ..a<$fixnum.Int64>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expirationTime', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
   SwapInput._() : super();
   factory SwapInput({
-    Chain? fromChain,
+    Asset? fromAsset,
     $core.String? fromAddress,
     Asset? toAsset,
     $core.String? toAddress,
@@ -176,10 +181,14 @@ class SwapInput extends $pb.GeneratedMessage {
     $core.String? routerAddress,
     $core.String? fromAmount,
     $core.String? toAmountLimit,
+    $core.String? affiliateFeeAddress,
+    $core.String? affiliateFeeRateBp,
+    $core.String? extraMemo,
+    $fixnum.Int64? expirationTime,
   }) {
     final _result = create();
-    if (fromChain != null) {
-      _result.fromChain = fromChain;
+    if (fromAsset != null) {
+      _result.fromAsset = fromAsset;
     }
     if (fromAddress != null) {
       _result.fromAddress = fromAddress;
@@ -201,6 +210,18 @@ class SwapInput extends $pb.GeneratedMessage {
     }
     if (toAmountLimit != null) {
       _result.toAmountLimit = toAmountLimit;
+    }
+    if (affiliateFeeAddress != null) {
+      _result.affiliateFeeAddress = affiliateFeeAddress;
+    }
+    if (affiliateFeeRateBp != null) {
+      _result.affiliateFeeRateBp = affiliateFeeRateBp;
+    }
+    if (extraMemo != null) {
+      _result.extraMemo = extraMemo;
+    }
+    if (expirationTime != null) {
+      _result.expirationTime = expirationTime;
     }
     return _result;
   }
@@ -226,13 +247,15 @@ class SwapInput extends $pb.GeneratedMessage {
   static SwapInput? _defaultInstance;
 
   @$pb.TagNumber(1)
-  Chain get fromChain => $_getN(0);
+  Asset get fromAsset => $_getN(0);
   @$pb.TagNumber(1)
-  set fromChain(Chain v) { setField(1, v); }
+  set fromAsset(Asset v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasFromChain() => $_has(0);
+  $core.bool hasFromAsset() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFromChain() => clearField(1);
+  void clearFromAsset() => clearField(1);
+  @$pb.TagNumber(1)
+  Asset ensureFromAsset() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get fromAddress => $_getSZ(1);
@@ -298,6 +321,42 @@ class SwapInput extends $pb.GeneratedMessage {
   $core.bool hasToAmountLimit() => $_has(7);
   @$pb.TagNumber(8)
   void clearToAmountLimit() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get affiliateFeeAddress => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set affiliateFeeAddress($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasAffiliateFeeAddress() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearAffiliateFeeAddress() => clearField(9);
+
+  @$pb.TagNumber(10)
+  $core.String get affiliateFeeRateBp => $_getSZ(9);
+  @$pb.TagNumber(10)
+  set affiliateFeeRateBp($core.String v) { $_setString(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasAffiliateFeeRateBp() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAffiliateFeeRateBp() => clearField(10);
+
+  @$pb.TagNumber(11)
+  $core.String get extraMemo => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set extraMemo($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasExtraMemo() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearExtraMemo() => clearField(11);
+
+  @$pb.TagNumber(12)
+  $fixnum.Int64 get expirationTime => $_getI64(11);
+  @$pb.TagNumber(12)
+  set expirationTime($fixnum.Int64 v) { $_setInt64(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasExpirationTime() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearExpirationTime() => clearField(12);
 }
 
 enum SwapOutput_SigningInputOneof {

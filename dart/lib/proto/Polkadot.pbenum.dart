@@ -9,21 +9,6 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class Network extends $pb.ProtobufEnum {
-  static const Network POLKADOT = Network._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'POLKADOT');
-  static const Network KUSAMA = Network._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'KUSAMA');
-
-  static const $core.List<Network> values = <Network> [
-    POLKADOT,
-    KUSAMA,
-  ];
-
-  static final $core.Map<$core.int, Network> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static Network? valueOf($core.int value) => _byValue[value];
-
-  const Network._($core.int v, $core.String n) : super(v, n);
-}
-
 class RewardDestination extends $pb.ProtobufEnum {
   static const RewardDestination STAKED = RewardDestination._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'STAKED');
   static const RewardDestination STASH = RewardDestination._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'STASH');
