@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -9,10 +9,10 @@
 #include "../Hash.h"
 #include "../HexCoding.h"
 
-using namespace TW::Nebulas;
+namespace TW::Nebulas {
 
 bool Address::isValid(const std::string& string) {
-    auto data = Base58::bitcoin.decode(string);
+    auto data = Base58::decode(string);
     if (data.size() != (size_t)Address::size) {
         return false;
     }
@@ -35,7 +35,7 @@ Address::Address(const std::string& string) {
         throw std::invalid_argument("Invalid address string");
     }
 
-    auto data = Base58::bitcoin.decode(string);
+    auto data = Base58::decode(string);
     std::copy(data.begin(), data.end(), bytes.begin());
 }
 
@@ -46,19 +46,21 @@ Address::Address(const Data& data) {
     std::copy(data.begin(), data.end(), bytes.begin());
 }
 
-Address::Address(const PublicKey &publicKey) {
+Address::Address(const PublicKey& publicKey) {
     if (publicKey.type != TWPublicKeyTypeSECP256k1Extended) {
         throw std::invalid_argument("Nebulas::Address needs an extended SECP256k1 public key.");
     }
     const auto data = publicKey.hash(
         {Address::AddressPrefix, Address::NormalType},
         Hash::HasherSha3_256ripemd, false);
-        
+
     std::copy(data.begin(), data.end(), bytes.begin());
     auto checksum = Hash::sha3_256(data);
     std::copy(checksum.begin(), checksum.begin() + 4, bytes.begin() + 22);
 }
 
 std::string Address::string() const {
-    return Base58::bitcoin.encode(bytes);
+    return Base58::encode(bytes);
 }
+
+} // namespace TW::Nebulas

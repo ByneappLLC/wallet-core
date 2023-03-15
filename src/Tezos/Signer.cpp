@@ -1,12 +1,11 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
 
-#include "OperationList.h"
 #include "Signer.h"
-#include "../Hash.h"
+#include "OperationList.h"
 #include "../HexCoding.h"
 
 #include <TrustWalletCore/TWCurve.h>
@@ -15,17 +14,22 @@
 #include <string>
 
 using namespace TW;
-using namespace TW::Tezos;
+
+namespace TW::Tezos {
 
 Proto::SigningOutput Signer::sign(const Proto::SigningInput& input) noexcept {
-    auto operationList = Tezos::OperationList(input.operation_list().branch());
-    for (Proto::Operation operation : input.operation_list().operations()) {
-      operationList.addOperation(operation);
-    }
-
     auto signer = Signer();
     PrivateKey key = PrivateKey(Data(input.private_key().begin(), input.private_key().end()));
-    Data encoded = signer.signOperationList(key, operationList);
+    Data encoded;
+    if (input.encoded_operations().empty()) {
+        auto operationList = Tezos::OperationList(input.operation_list().branch());
+        for (Proto::Operation operation : input.operation_list().operations()) {
+            operationList.addOperation(operation);
+        }
+        encoded = signer.signOperationList(key, operationList);
+    } else {
+        encoded = signer.signData(key, TW::data(input.encoded_operations()));
+    }
 
     auto output = Proto::SigningOutput();
     output.set_encoded(encoded.data(), encoded.size());
@@ -58,3 +62,5 @@ Data Signer::signData(const PrivateKey& privateKey, const Data& data) {
     append(signedData, signature);
     return signedData;
 }
+
+} // namespace TW::Tezos

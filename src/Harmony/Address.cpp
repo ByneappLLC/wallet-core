@@ -1,6 +1,6 @@
 
 // Copyright © 2017 Pieter Wuille
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -10,7 +10,8 @@
 
 #include <TrustWalletCore/TWHRP.h>
 
-using namespace TW::Harmony;
+namespace TW::Harmony {
 
 const std::string Address::hrp = HRP_HARMONY;
 
+}

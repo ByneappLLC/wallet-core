@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -117,6 +117,23 @@ std::shared_ptr<ParamNamed> ParamFactory::makeNamed(const std::string& name, con
     return std::make_shared<ParamNamed>(name, param);
 }
 
+bool ParamFactory::isPrimitive(const std::string& type) {
+    if (starts_with(type, "address")) {
+        return true;
+    } else if (starts_with(type, "uint")) {
+        return true;
+    } else if (starts_with(type, "int")) {
+        return true;
+    } else if (starts_with(type, "bool")) {
+        return true;
+    } else if (starts_with(type, "bytes")) {
+        return true;
+    } else if (starts_with(type, "string")) {
+        return true;
+    }
+    return false;
+}
+
 std::string ParamFactory::getValue(const std::shared_ptr<ParamBase>& param, const std::string& type) {
     std::string result = "";
     if (isArrayType(type)) {
@@ -178,7 +195,7 @@ std::vector<std::string> ParamFactory::getArrayValue(const std::shared_ptr<Param
     auto elemType = getArrayElemType(type);
     auto elems = array->getVal();
     std::vector<std::string> values(elems.size());
-    for (auto i = 0; i < elems.size(); ++i) {
+    for (auto i = 0ul; i < elems.size(); ++i) {
         values[i] = getValue(elems[i], elemType);
     }
     return values;

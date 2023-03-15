@@ -1,4 +1,4 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -12,7 +12,8 @@
 #include "../HexCoding.h"
 
 using namespace TW;
-using namespace TW::NULS;
+
+namespace TW::NULS {
 
 const std::string Address::prefix("NULSd");
 const std::array<byte, 2> Address::mainnetId = {0x01, 0x00};
@@ -21,12 +22,12 @@ bool Address::isValid(const std::string& string) {
     if (string.empty()) {
         return false;
     }
-    if (string.length() <=  prefix.length()) {
+    if (string.length() <= prefix.length()) {
         return false;
     }
 
     std::string address = string.substr(prefix.length(), string.length() - prefix.length());
-    Data decoded = Base58::bitcoin.decode(address);
+    Data decoded = Base58::decode(address);
     if (decoded.size() != size) {
         return false;
     }
@@ -51,11 +52,11 @@ Address::Address(const TW::PublicKey& publicKey) {
 }
 
 Address::Address(const std::string& string) {
-    if (false == isValid(string)){
+    if (false == isValid(string)) {
         throw std::invalid_argument("Invalid address string");
     }
-    std::string address = string.substr(prefix.length(), string.length() - prefix.length()); 
-    const auto decoded = Base58::bitcoin.decode(address);
+    std::string address = string.substr(prefix.length(), string.length() - prefix.length());
+    const auto decoded = Base58::decode(address);
     std::copy(decoded.begin(), decoded.end(), bytes.begin());
 }
 
@@ -68,10 +69,10 @@ uint8_t Address::type() const {
 }
 
 std::string Address::string() const {
-    return prefix + Base58::bitcoin.encode(bytes.begin(), bytes.end());
+    return prefix + Base58::encode(bytes);
 }
 
-uint8_t Address::checksum(std::array<byte, size>& byteArray) const{
+uint8_t Address::checksum(std::array<byte, size>& byteArray) const {
     uint8_t checkSum = 0x00;
     for (int i = 0; i < 23; ++i) {
         checkSum ^= byteArray[i];
@@ -79,4 +80,4 @@ uint8_t Address::checksum(std::array<byte, size>& byteArray) const{
     return checkSum;
 }
 
-
+} // namespace TW::NULS

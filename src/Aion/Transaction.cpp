@@ -1,16 +1,16 @@
-// Copyright © 2017-2020 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
 
-#include "RLP.h"
 #include "Transaction.h"
-#include "../Ethereum/RLP.h"
+#include "RLP.h"
 
 using namespace TW;
-using namespace TW::Aion;
 using boost::multiprecision::uint128_t;
+
+namespace TW::Aion {
 
 Data Transaction::encode() const noexcept {
     auto encoded = Data();
@@ -27,3 +27,5 @@ Data Transaction::encode() const noexcept {
     }
     return Ethereum::RLP::encodeList(encoded);
 }
+
+} // namespace TW::Aion

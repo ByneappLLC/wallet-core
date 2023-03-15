@@ -1,4 +1,4 @@
-// Copyright © 2017-2021 Trust Wallet.
+// Copyright © 2017-2023 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
@@ -12,7 +12,8 @@
 namespace TW::Algorand {
 
 class BaseTransaction {
-  public:
+public:
+    virtual ~BaseTransaction() noexcept = default;
     virtual Data serialize() const = 0;
     virtual Data serialize(const Data& signature) const {
         /* Algorand transaction and signature are encoded with msgpack:

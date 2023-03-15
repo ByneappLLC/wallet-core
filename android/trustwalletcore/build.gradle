@@ -11,7 +11,7 @@ android {
         versionName "1.0"
         externalNativeBuild {
             cmake {
-                arguments "-DCMAKE_BUILD_TYPE=Release"
+                arguments "-DCMAKE_BUILD_TYPE=Release", "-DTW_UNITY_BUILD=ON"
             }
         }
     }
@@ -47,7 +47,7 @@ android {
 }
 
 dependencies {
-    implementation 'io.grpc:grpc-protobuf:1.43.2'
+    implementation 'com.google.protobuf:protobuf-javalite:3.21.2'
 }
 
 apply from: 'maven-push.gradle'
