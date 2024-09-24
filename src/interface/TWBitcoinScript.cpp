@@ -1,13 +1,11 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 
 #include <TrustWalletCore/TWBitcoinScript.h>
-
 #include "../Bitcoin/Script.h"
 #include "../Bitcoin/SigHashType.h"
+#include "Data.h"
 
 #include <iterator>
 
@@ -151,6 +149,13 @@ struct TWBitcoinScript *TWBitcoinScriptBuildPayToWitnessScriptHash(TWData *scrip
 struct TWBitcoinScript *_Nonnull TWBitcoinScriptLockScriptForAddress(TWString *_Nonnull address, enum TWCoinType coin) {
     auto* s = reinterpret_cast<const std::string*>(address);
     auto script = TW::Bitcoin::Script::lockScriptForAddress(*s, coin);
+    return new TWBitcoinScript{ .impl = script };
+}
+
+struct TWBitcoinScript *_Nonnull TWBitcoinScriptLockScriptForAddressReplay(TWString *_Nonnull address, enum TWCoinType coin, TWData *blockHash, int64_t blockHeight) {
+    auto* s = reinterpret_cast<const std::string*>(address);
+    auto* v = reinterpret_cast<const std::vector<uint8_t>*>(blockHash);
+    auto script = TW::Bitcoin::Script::lockScriptForAddress(*s, coin, *v, blockHeight);
     return new TWBitcoinScript{ .impl = script };
 }
 

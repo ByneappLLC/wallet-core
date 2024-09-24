@@ -1,14 +1,11 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 
 #include "Hash.h"
-#include "BinaryCoding.h"
 
-#include "rust/bindgen/RAII.h"
 #include "rust/bindgen/WalletCoreRSBindgen.h"
+#include "rust/Wrapper.h"
 #include <string>
 
 using namespace TW;
@@ -17,7 +14,6 @@ TW::Hash::HasherSimpleType Hash::functionPointerFromEnum(TW::Hash::Hasher hasher
     switch (hasher) {
     case Hash::HasherSha1:
         return Hash::sha1;
-    default:
     case Hash::HasherSha256:
         return Hash::sha256;
     case Hash::HasherSha512:
@@ -44,6 +40,8 @@ TW::Hash::HasherSimpleType Hash::functionPointerFromEnum(TW::Hash::Hasher hasher
         return Hash::sha256ripemd;
     case Hash::HasherSha3_256ripemd:
         return Hash::sha3_256ripemd;
+    case Hash::HasherBlake2b:
+        return Hash::blake2b;
     case Hash::HasherBlake256d:
         return Hash::blake256d;
     case Hash::HasherBlake256ripemd:
@@ -54,57 +52,74 @@ TW::Hash::HasherSimpleType Hash::functionPointerFromEnum(TW::Hash::Hasher hasher
 }
 
 Data Hash::sha1(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::sha1(data, size));
+    return Rust::CByteArrayWrapper(Rust::sha1(data, size)).data;
 }
 
 Data Hash::sha256(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::sha256(data, size));
+    return Rust::CByteArrayWrapper(Rust::sha256(data, size)).data;
 }
 
 Data Hash::sha512(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::sha512(data, size));
+    return Rust::CByteArrayWrapper(Rust::sha512(data, size)).data;
 }
 
 Data Hash::sha512_256(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::sha512_256(data, size));
+    return Rust::CByteArrayWrapper(Rust::sha512_256(data, size)).data;
 }
 
 Data Hash::keccak256(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::keccak256(data, size));
+    return Rust::CByteArrayWrapper(Rust::keccak256(data, size)).data;
 }
 
 Data Hash::keccak512(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::keccak512(data, size));
+    return Rust::CByteArrayWrapper(Rust::keccak512(data, size)).data;
 }
 
 Data Hash::sha3_256(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::sha3__256(data, size));
+    return Rust::CByteArrayWrapper(Rust::sha3__256(data, size)).data;
 }
 
 Data Hash::sha3_512(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::sha3__512(data, size));
+    return Rust::CByteArrayWrapper(Rust::sha3__512(data, size)).data;
 }
 
 Data Hash::ripemd(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::ripemd_160(data, size));
+    return Rust::CByteArrayWrapper(Rust::ripemd_160(data, size)).data;
 }
 
 Data Hash::blake256(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::blake_256(data, size));
+    return Rust::CByteArrayWrapper(Rust::blake_256(data, size)).data;
+}
+
+Data Hash::blake2b(const byte* data, size_t dataSize) {
+    Rust::CByteArrayResultWrapper res = Rust::blake2_b(data, dataSize, 32);
+    if (res.isErr()) {
+        throw std::runtime_error("Error 'blake2_b' hashing");
+    }
+    return res.unwrap().data;
 }
 
 Data Hash::blake2b(const byte* data, size_t dataSize, size_t hashSize) {
-    return Rust::data_from_c_byte_array(Rust::blake2_b(data, dataSize, hashSize));
+    Rust::CByteArrayResultWrapper res = Rust::blake2_b(data, dataSize, hashSize);
+    if (res.isErr()) {
+        throw std::runtime_error("Error 'blake2_b' hashing");
+    }
+    return res.unwrap().data;
 }
 
 Data Hash::blake2b(const byte* data, size_t dataSize, size_t hashSize, const Data& personal) {
-    return Rust::data_from_c_byte_array(Rust::blake2_b_personal(data, dataSize, hashSize, personal.data(), personal.size()));
+    Rust::CByteArrayResultWrapper res = Rust::blake2_b_personal(data, dataSize, hashSize, personal.data(), personal.size());
+    if (res.isErr()) {
+        throw std::runtime_error("Error 'blake2_b_personal' hashing");
+    }
+    return res.unwrap().data;
 }
 
 Data Hash::groestl512(const byte* data, size_t size) {
-    return Rust::data_from_c_byte_array(Rust::groestl_512(data, size));
+    return Rust::CByteArrayWrapper(Rust::groestl_512(data, size)).data;
 }
 
 Data Hash::hmac256(const Data& key, const Data& message) {
-    return Rust::data_from_c_byte_array(Rust::hmac__sha256(key.data(), key.size(), message.data(), message.size()));
+    Rust::CByteArrayWrapper res = Rust::hmac__sha256(key.data(), key.size(), message.data(), message.size());
+    return res.data;
 }

@@ -1,8 +1,6 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 
 #include "Coin.h"
 #include "HexCoding.h"
@@ -45,7 +43,10 @@ TEST(Coin, validateAddressBitcoin) {
 
 TEST(Coin, ValidateAddressBinance) {
     EXPECT_TRUE(validateAddress(TWCoinTypeBinance, "bnb12vtaxl9952zm6rwf7v8jerq74pvaf77fcmvzhw"));
-    EXPECT_FALSE(validateAddress(TWCoinTypeBinance, "tbnb12vtaxl9952zm6rwf7v8jerq74pvaf77fkw9xhl"));
+    EXPECT_TRUE(validateAddress(TWCoinTypeBinance, "tbnb1devga6q804tx9fqrnx0vtu5r36kxgp9t4ruzk2", "tbnb"));
+
+    EXPECT_FALSE(validateAddress(TWCoinTypeBinance, "tbnb1devga6q804tx9fqrnx0vtu5r36kxgp9t4ruzk2"));
+    EXPECT_FALSE(validateAddress(TWCoinTypeBinance, "bad1devga6q804tx9fqrnx0vtu5r36kxgp9tqx8h9k"));
 }
 
 TEST(Coin, ValidateAddressLitecoin) {
@@ -409,11 +410,16 @@ TEST(Coin, ValidateAddressEverscale) {
     ASSERT_EQ(normalizeAddress(TWCoinTypeEverscale, "0:83A0352908060FA87839195D8A763A8D9AB28F8FA41468832B398A719CC6469A"), "0:83a0352908060fa87839195d8a763a8d9ab28f8fa41468832b398a719cc6469a");
 }
 
+TEST(Coin, ValidateAddressNebl) {
+    EXPECT_TRUE(validateAddress(TWCoinTypeNebl, "NboLGGKWtK5eXzaah5GVpXju9jCcoMi4cc"));
+    EXPECT_TRUE(validateAddress(TWCoinTypeNebl, "NidLccuLD8J4oK25PwPg5ipLj5L9VVrwi5"));
+}
+
 TEST(Coin, ValidateAddressTheOpenNetwork) {
     EXPECT_TRUE(validateAddress(TWCoinTypeTON, "0:8a8627861a5dd96c9db3ce0807b122da5ed473934ce7568a5b4b1c361cbb28ae"));
     EXPECT_FALSE(validateAddress(TWCoinTypeTON, "8a8627861a5dd96c9db3ce0807b122da5ed473934ce7568a5b4b1c361cbb28ae"));
 
-    ASSERT_EQ(normalizeAddress(TWCoinTypeTON, "0:8a8627861a5dd96c9db3ce0807b122da5ed473934ce7568a5b4b1c361cbb28ae"), "EQCKhieGGl3ZbJ2zzggHsSLaXtRzk0znVopbSxw2HLsorkdl");
+    ASSERT_EQ(normalizeAddress(TWCoinTypeTON, "0:8a8627861a5dd96c9db3ce0807b122da5ed473934ce7568a5b4b1c361cbb28ae"), "UQCKhieGGl3ZbJ2zzggHsSLaXtRzk0znVopbSxw2HLsorhqg");
 }
 
 } // namespace TW

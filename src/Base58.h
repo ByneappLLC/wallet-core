@@ -1,14 +1,13 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 
 #pragma once
 
 #include "Data.h"
 #include "Hash.h"
 #include "rust/bindgen/WalletCoreRSBindgen.h"
+#include "rust/Wrapper.h"
 
 #include <string>
 
@@ -18,13 +17,8 @@ namespace TW::Base58 {
         if (string.empty()) {
             return {};
         }
-        auto decoded = decode_base58(string.c_str(), alphabet);
-        if (decoded.data == nullptr || decoded.size == 0) {
-            return {};
-        }
-        Data decoded_vec(&decoded.data[0], &decoded.data[decoded.size]);
-        std::free(decoded.data);
-        return decoded_vec;
+        Rust::CByteArrayResultWrapper res = Rust::decode_base58(string.c_str(), alphabet);
+        return res.unwrap_or_default().data;
     }
 
     static inline Data decodeCheck(const std::string& string, Rust::Base58Alphabet alphabet = Rust::Base58Alphabet::Bitcoin, Hash::Hasher hasher = Hash::HasherSha256d) {
